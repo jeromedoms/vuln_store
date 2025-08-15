@@ -1,0 +1,289 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="mb-8">
+    <div class="flex items-center justify-between">
+        <h1 class="text-3xl font-bold text-gray-900">
+            <i class="fas fa-folder-open mr-3 text-orange-600"></i>
+            File Browser
+        </h1>
+        <div class="flex items-center space-x-3">
+            {% if parent_path %}
+                <a href="{{ url_for('files.browse_files', path=parent_path) }}" 
+                   class="text-gray-600 hover:text-gray-900 flex items-center">
+                    <i class="fas fa-arrow-up mr-2"></i>Parent Directory
+                </a>
+            {% endif %}
+            <span class="text-sm text-gray-500">{{ files|length + dirs|length }} items</span>
+        </div>
+    </div>
+    <div class="flex items-center text-sm text-gray-600 mt-2">
+        <i class="fas fa-map-marker-alt mr-2"></i>
+        <span class="font-mono bg-gray-100 px-2 py-1 rounded">{{ current_path }}</span>
+    </div>
+</div>
+
+<!-- Security Warning -->
+<div class="mb-6 p-4 bg-red-50 border-l-4 border-red-400 rounded-r-lg">
+    <div class="flex">
+        <div class="flex-shrink-0">
+            <i class="fas fa-exclamation-triangle text-red-400 mt-0.5"></i>
+        </div>
+        <div class="ml-3">
+            <h3 class="text-sm font-medium text-red-800">Security Notice</h3>
+            <div class="text-sm text-red-700 mt-1">
+                <p>This file browser allows execution of uploaded files. This is a <strong>critical security vulnerability</strong> in a production environment.</p>
+                <p class="mt-1"><strong>Warning:</strong> Executing unknown files can compromise system security.</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Navigation Breadcrumb -->
+<nav class="flex mb-6" aria-label="Breadcrumb">
+    <ol class="inline-flex items-center space-x-1 md:space-x-3">
+        <li class="inline-flex items-center">
+            <a href="{{ url_for('files.browse_files') }}" class="text-gray-700 hover:text-gray-900 inline-flex items-center">
+                <i class="fas fa-home mr-2"></i>
+                Root
+            </a>
+        </li>
+        {% set path_parts = current_path.split('/') %}
+        {% for part in path_parts[1:] %}
+            {% if part %}
+            <li>
+                <div class="flex items-center">
+                    <i class="fas fa-chevron-right text-gray-400 mx-2"></i>
+                    <span class="text-gray-500">{{ part }}</span>
+                </div>
+            </li>
+            {% endif %}
+        {% endfor %}
+    </ol>
+</nav>
+
+<!-- File/Directory Grid -->
+<div class="bg-white rounded-lg shadow-sm border border-gray-200">
+    <div class="px-6 py-4 border-b border-gray-200 flex justify-between items-center">
+        <h2 class="text-xl font-semibold text-gray-900">Contents</h2>
+        <div class="flex items-center space-x-2">
+            <button onclick="toggleView('grid')" id="grid-btn" class="p-2 text-gray-600 hover:text-gray-900 bg-blue-100 rounded">
+                <i class="fas fa-th"></i>
+            </button>
+            <button onclick="toggleView('list')" id="list-btn" class="p-2 text-gray-600 hover:text-gray-900 rounded">
+                <i class="fas fa-list"></i>
+            </button>
+        </div>
+    </div>
+
+    {% if dirs or files %}
+        <!-- Grid View -->
+        <div id="grid-view" class="p-6">
+            <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4">
+                <!-- Directories -->
+                {% for dir in dirs %}
+                <div class="group border border-gray-200 rounded-lg p-4 hover:shadow-md transition cursor-pointer"
+                     onclick="window.location.href='{{ url_for('files.browse_files', path=current_path + '/' + dir) }}'">
+                    <div class="text-center">
+                        <div class="w-12 h-12 mx-auto mb-2 bg-blue-100 rounded-lg flex items-center justify-center">
+                            <i class="fas fa-folder text-blue-600 text-xl"></i>
+                        </div>
+                        <p class="text-sm font-medium text-gray-900 truncate">{{ dir }}</p>
+                        <p class="text-xs text-gray-500">Directory</p>
+                    </div>
+                </div>
+                {% endfor %}
+
+                <!-- Files -->
+                {% for file in files %}
+                <div class="group border border-gray-200 rounded-lg p-4 hover:shadow-md transition">
+                    <div class="text-center">
+                        <div class="w-12 h-12 mx-auto mb-2 bg-gray-100 rounded-lg flex items-center justify-center">
+                            {% if file.name.lower().endswith(('.png', '.jpg', '.jpeg', '.gif', '.bmp')) %}
+                                <i class="fas fa-image text-green-600 text-xl"></i>
+                            {% elif file.name.lower().endswith(('.pdf', '.doc', '.docx')) %}
+                                <i class="fas fa-file-alt text-red-600 text-xl"></i>
+                            {% elif file.name.lower().endswith(('.py', '.php', '.sh', '.js')) %}
+                                <i class="fas fa-code text-purple-600 text-xl"></i>
+                            {% elif file.name.lower().endswith(('.zip', '.rar', '.tar', '.gz')) %}
+                                <i class="fas fa-file-archive text-yellow-600 text-xl"></i>
+                            {% else %}
+                                <i class="fas fa-file text-gray-600 text-xl"></i>
+                            {% endif %}
+                        </div>
+                        <p class="text-sm font-medium text-gray-900 truncate" title="{{ file.name }}">{{ file.name }}</p>
+                        <p class="text-xs text-gray-500">{{ (file.size / 1024)|round(1) }} KB</p>
+                    </div>
+                    
+                    <!-- File Actions -->
+                    <div class="mt-3 flex justify-center space-x-2">
+                        <a href="{{ url_for('uploaded_file', filename=file.name) }}" target="_blank"
+                           class="text-blue-600 hover:text-blue-800 text-xs flex items-center">
+                            <i class="fas fa-external-link-alt mr-1"></i>View
+                        </a>
+                        {% if file.name.lower().endswith(('.py', '.php', '.sh', '.js', '.bat', '.cmd')) %}
+                        <a href="{{ url_for('execute_file', file=file.name) }}" 
+                           class="text-red-600 hover:text-red-800 text-xs flex items-center"
+                           onclick="return confirm('WARNING: This will execute the file on the server. Are you sure?')">
+                            <i class="fas fa-play mr-1"></i>Execute
+                        </a>
+                        {% endif %}
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+
+        <!-- List View -->
+        <div id="list-view" class="hidden">
+            <div class="overflow-x-auto">
+                <table class="min-w-full divide-y divide-gray-200">
+                    <thead class="bg-gray-50">
+                        <tr>
+                            <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Name</th>
+                            <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Type</th>
+                            <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Size</th>
+                            <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Modified</th>
+                            <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody class="bg-white divide-y divide-gray-200">
+                        <!-- Directories -->
+                        {% for dir in dirs %}
+                        <tr class="hover:bg-gray-50 cursor-pointer" 
+                            onclick="window.location.href='{{ url_for('files.browse_files', path=current_path + '/' + dir) }}'">
+                            <td class="px-6 py-4 whitespace-nowrap">
+                                <div class="flex items-center">
+                                    <i class="fas fa-folder text-blue-600 mr-3"></i>
+                                    <span class="text-sm font-medium text-gray-900">{{ dir }}</span>
+                                </div>
+                            </td>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">Directory</td>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">--</td>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">--</td>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+                                <span class="text-blue-600 hover:text-blue-800">Open</span>
+                            </td>
+                        </tr>
+                        {% endfor %}
+
+                        <!-- Files -->
+                        {% for file in files %}
+                        <tr class="hover:bg-gray-50">
+                            <td class="px-6 py-4 whitespace-nowrap">
+                                <div class="flex items-center">
+                                    {% if file.name.lower().endswith(('.png', '.jpg', '.jpeg', '.gif', '.bmp')) %}
+                                        <i class="fas fa-image text-green-600 mr-3"></i>
+                                    {% elif file.name.lower().endswith(('.py', '.php', '.sh', '.js')) %}
+                                        <i class="fas fa-code text-purple-600 mr-3"></i>
+                                    {% else %}
+                                        <i class="fas fa-file text-gray-600 mr-3"></i>
+                                    {% endif %}
+                                    <span class="text-sm font-medium text-gray-900">{{ file.name }}</span>
+                                </div>
+                            </td>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+                                {{ file.name.split('.')[-1].upper() if '.' in file.name else 'File' }}
+                            </td>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+                                {{ (file.size / 1024)|round(1) }} KB
+                            </td>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+                                {{ file.modified }}
+                            </td>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+                                <div class="flex space-x-3">
+                                    <a href="{{ url_for('uploaded_file', filename=file.name) }}" target="_blank"
+                                       class="text-blue-600 hover:text-blue-800 flex items-center">
+                                        <i class="fas fa-external-link-alt mr-1"></i>View
+                                    </a>
+                                    {% if file.name.lower().endswith(('.py', '.php', '.sh', '.js', '.bat', '.cmd')) %}
+                                    <a href="{{ url_for('execute_file', file=file.name) }}" 
+                                       class="text-red-600 hover:text-red-800 flex items-center"
+                                       onclick="return confirm('WARNING: This will execute {{ file.name }} on the server. This could be dangerous! Continue?')">
+                                        <i class="fas fa-play mr-1"></i>Execute
+                                    </a>
+                                    {% endif %}
+                                </div>
+                            </td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    {% else %}
+        <div class="text-center py-16">
+            <div class="mx-auto h-16 w-16 text-gray-400 mb-6">
+                <i class="fas fa-folder-open text-6xl"></i>
+            </div>
+            <h3 class="text-xl font-medium text-gray-900 mb-2">Directory is empty</h3>
+            <p class="text-gray-500 mb-8">No files or directories found in this location.</p>
+            {% if current_path == 'uploads' %}
+            <a href="{{ url_for('seller.add_product') }}" 
+               class="inline-flex items-center px-4 py-2 bg-green-600 hover:bg-green-700 text-white font-medium rounded-lg transition">
+                <i class="fas fa-plus mr-2"></i>Upload Files via Product Creation
+            </a>
+            {% endif %}
+        </div>
+    {% endif %}
+</div>
+
+<!-- File Upload Demo (Vulnerable) -->
+<div class="mt-8 bg-white rounded-lg shadow-sm border border-gray-200 p-6">
+    <h3 class="text-lg font-semibold text-gray-900 mb-4 flex items-center">
+        <i class="fas fa-upload mr-2 text-orange-600"></i>
+        Quick File Upload
+    </h3>
+    <div class="bg-yellow-50 border-l-4 border-yellow-400 p-4 mb-4">
+        <div class="flex">
+            <i class="fas fa-exclamation-triangle text-yellow-400 mt-0.5 mr-2"></i>
+            <div class="text-sm text-yellow-800">
+                <p><strong>Vulnerability Demo:</strong> This upload functionality has no security restrictions.</p>
+            </div>
+        </div>
+    </div>
+    
+    <form action="{{ url_for('seller.add_product') }}" method="get" class="text-center">
+        <p class="text-gray-600 mb-4">To upload files, use the product creation form which allows file uploads.</p>
+        <button type="submit" class="bg-orange-600 hover:bg-orange-700 text-white px-4 py-2 rounded-lg flex items-center mx-auto transition">
+            <i class="fas fa-plus mr-2"></i>Go to Product Upload
+        </button>
+    </form>
+</div>
+
+<script>
+function toggleView(viewType) {
+    const gridView = document.getElementById('grid-view');
+    const listView = document.getElementById('list-view');
+    const gridBtn = document.getElementById('grid-btn');
+    const listBtn = document.getElementById('list-btn');
+    
+    if (viewType === 'grid') {
+        gridView.classList.remove('hidden');
+        listView.classList.add('hidden');
+        gridBtn.classList.add('bg-blue-100');
+        listBtn.classList.remove('bg-blue-100');
+    } else {
+        gridView.classList.add('hidden');
+        listView.classList.remove('hidden');
+        listBtn.classList.add('bg-blue-100');
+        gridBtn.classList.remove('bg-blue-100');
+    }
+}
+
+// File type detection and icon assignment
+document.addEventListener('DOMContentLoaded', function() {
+    // Add hover effects for file items
+    const fileItems = document.querySelectorAll('.group');
+    fileItems.forEach(item => {
+        item.addEventListener('mouseenter', function() {
+            this.classList.add('shadow-md');
+        });
+        item.addEventListener('mouseleave', function() {
+            this.classList.remove('shadow-md');
+        });
+    });
+});
+</script>
+{% endblock %}

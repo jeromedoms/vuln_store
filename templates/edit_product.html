@@ -1,0 +1,188 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="max-w-4xl mx-auto">
+    <div class="mb-8">
+        <div class="flex items-center justify-between">
+            <h1 class="text-3xl font-bold text-gray-900">
+                <i class="fas fa-edit mr-3 text-blue-600"></i>
+                Edit Product
+            </h1>
+            <a href="{{ url_for('seller.seller_dashboard') }}" class="text-gray-600 hover:text-gray-900 flex items-center">
+                <i class="fas fa-arrow-left mr-2"></i>Back to Dashboard
+            </a>
+        </div>
+        <p class="text-gray-600 mt-2">Update your product information</p>
+    </div>
+
+    <div class="bg-white rounded-lg shadow-sm border border-gray-200">
+        <form method="POST" class="p-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                <!-- Left Column - Basic Info -->
+                <div class="space-y-6">
+                    <div>
+                        <label for="name" class="block text-sm font-medium text-gray-700 mb-2">
+                            <i class="fas fa-tag mr-1"></i>Product Name *
+                        </label>
+                        <input type="text" id="name" name="name" required value="{{ product.name }}"
+                               class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition">
+                    </div>
+
+                    <div>
+                        <label for="description" class="block text-sm font-medium text-gray-700 mb-2">
+                            <i class="fas fa-align-left mr-1"></i>Description *
+                        </label>
+                        <textarea id="description" name="description" rows="5" required
+                                  class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition">{{ product.description }}</textarea>
+                    </div>
+
+                    <div>
+                        <label for="price" class="block text-sm font-medium text-gray-700 mb-2">
+                            <i class="fas fa-dollar-sign mr-1"></i>Price *
+                        </label>
+                        <div class="relative">
+                            <span class="absolute left-3 top-3 text-gray-500">$</span>
+                            <input type="number" id="price" name="price" step="0.01" min="0" required 
+                                   value="{{ product.price }}"
+                                   class="w-full pl-8 pr-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition">
+                        </div>
+                    </div>
+
+                    <div>
+                        <label for="status" class="block text-sm font-medium text-gray-700 mb-2">
+                            <i class="fas fa-toggle-on mr-1"></i>Status
+                        </label>
+                        <select id="status" name="status" 
+                                class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition">
+                            <option value="active" {% if product.status == 'active' %}selected{% endif %}>Active</option>
+                            <option value="inactive" {% if product.status == 'inactive' %}selected{% endif %}>Inactive</option>
+                        </select>
+                        <p class="text-sm text-gray-500 mt-1">Inactive products won't be visible to customers</p>
+                    </div>
+                </div>
+
+                <!-- Right Column - Current Image & Preview -->
+                <div class="space-y-6">
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-4">
+                            <i class="fas fa-image mr-1"></i>Current Image
+                        </label>
+                        
+                        <div class="border border-gray-200 rounded-lg p-4 bg-gray-50">
+                            <div class="text-center">
+                                {% if product.image.startswith('http') %}
+                                    <img src="{{ product.image }}" alt="{{ product.name }}" 
+                                         class="w-full h-48 object-cover rounded-lg border border-gray-200 mb-3">
+                                    <p class="text-sm text-gray-600">External Image URL</p>
+                                    <p class="text-xs text-gray-500 break-all">{{ product.image }}</p>
+                                {% else %}
+                                    <img src="{{ product.image }}" alt="{{ product.name }}" 
+                                         class="w-full h-48 object-cover rounded-lg border border-gray-200 mb-3">
+                                    <p class="text-sm text-gray-600">Uploaded File</p>
+                                    <p class="text-xs text-gray-500">{{ product.image }}</p>
+                                {% endif %}
+                            </div>
+                        </div>
+                        
+                        <div class="mt-4 p-3 bg-blue-50 border border-blue-200 rounded-lg">
+                            <div class="flex">
+                                <i class="fas fa-info-circle text-blue-400 mt-0.5 mr-2"></i>
+                                <div class="text-xs text-blue-800">
+                                    <p class="font-medium">Image Update:</p>
+                                    <p>To change the product image, please create a new product or contact administrator.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Product Statistics -->
+                    <div class="border border-gray-200 rounded-lg p-4 bg-gray-50">
+                        <h3 class="text-sm font-medium text-gray-700 mb-3">
+                            <i class="fas fa-chart-line mr-1"></i>Product Stats
+                        </h3>
+                        <div class="space-y-2">
+                            <div class="flex justify-between">
+                                <span class="text-sm text-gray-600">Product ID:</span>
+                                <span class="text-sm font-medium text-gray-900">#{{ product.id }}</span>
+                            </div>
+                            <div class="flex justify-between">
+                                <span class="text-sm text-gray-600">Created:</span>
+                                <span class="text-sm font-medium text-gray-900">{{ product.created_at }}</span>
+                            </div>
+                            <div class="flex justify-between">
+                                <span class="text-sm text-gray-600">Status:</span>
+                                <span class="inline-flex px-2 py-1 text-xs font-semibold rounded-full {% if product.status == 'active' %}bg-green-100 text-green-800{% else %}bg-red-100 text-red-800{% endif %}">
+                                    {{ product.status|title }}
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Preview Section -->
+                    <div class="border border-gray-200 rounded-lg p-4 bg-gray-50">
+                        <h3 class="text-sm font-medium text-gray-700 mb-3">
+                            <i class="fas fa-eye mr-1"></i>Live Preview
+                        </h3>
+                        <div class="bg-white rounded border border-gray-200 p-3">
+                            <div class="flex items-center space-x-3">
+                                <div class="w-12 h-12 bg-gray-100 rounded overflow-hidden">
+                                    <img id="preview-img" src="{{ product.image }}" alt="Preview" 
+                                         class="w-full h-full object-cover">
+                                </div>
+                                <div>
+                                    <p class="font-medium text-gray-900" id="preview-name">{{ product.name }}</p>
+                                    <p class="text-sm text-gray-500" id="preview-price">${{ "%.2f"|format(product.price) }}</p>
+                                    <p class="text-xs" id="preview-status">
+                                        <span class="inline-flex px-1.5 py-0.5 text-xs font-semibold rounded {% if product.status == 'active' %}bg-green-100 text-green-800{% else %}bg-red-100 text-red-800{% endif %}">
+                                            {{ product.status|title }}
+                                        </span>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Form Actions -->
+            <div class="flex justify-between items-center pt-8 border-t border-gray-200 mt-8">
+                <div class="flex items-center space-x-4">
+                    <a href="{{ url_for('products.product_detail', product_id=product.id) }}" 
+                       class="text-blue-600 hover:text-blue-800 flex items-center text-sm">
+                        <i class="fas fa-external-link-alt mr-1"></i>View Public Page
+                    </a>
+                </div>
+                <div class="flex space-x-3">
+                    <a href="{{ url_for('seller.seller_dashboard') }}" 
+                       class="px-6 py-3 border border-gray-300 text-gray-700 rounded-lg hover:bg-gray-50 transition">
+                        Cancel
+                    </a>
+                    <button type="submit" 
+                            class="px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white rounded-lg font-medium flex items-center transition">
+                        <i class="fas fa-save mr-2"></i>Update Product
+                    </button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+<script>
+// Live preview updates
+document.getElementById('name').addEventListener('input', function() {
+    document.getElementById('preview-name').textContent = this.value || 'Product Name';
+});
+
+document.getElementById('price').addEventListener('input', function() {
+    document.getElementById('preview-price').textContent = '$' + (parseFloat(this.value) || 0).toFixed(2);
+});
+
+document.getElementById('status').addEventListener('change', function() {
+    const statusElement = document.getElementById('preview-status');
+    const status = this.value;
+    const statusText = status.charAt(0).toUpperCase() + status.slice(1);
+    
+    statusElement.innerHTML = `<span class="inline-flex px-1.5 py-0.5 text-xs font-semibold rounded ${status === 'active' ? 'bg-green-100 text-green-800' : 'bg-red-100 text-red-800'}">${statusText}</span>`;
+});
+</script>
+{% endblock %}

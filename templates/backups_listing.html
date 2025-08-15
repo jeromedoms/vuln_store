@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="apple-touch-icon" sizes="180x180" href="/static/icons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/static/icons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/static/icons/favicon-16x16.png">
+    <link rel="manifest" href="/static/icons/site.webmanifest">
+    <title>Index of {{ title }}</title>
+    <style>
+        body {
+            /* font-family: 'Courier New', monospace; */
+            background-color: #ffffff;
+            color: #000000;
+            margin: 0;
+            padding: 20px;
+            line-height: 1.4;
+        }
+        
+        h1 {
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 20px;
+            border-bottom: 1px solid #000000;
+            padding-bottom: 5px;
+        }
+        
+        .directory-listing {
+            /* font-family: 'Courier New', monospace; */
+            font-size: 14px;
+        }
+        
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            /* font-family: 'Courier New', monospace; */
+        }
+        
+        th {
+            text-align: left;
+            padding: 5px 15px 5px 0;
+            border-bottom: 1px solid #000000;
+            font-weight: bold;
+            background: none;
+        }
+        
+        td {
+            padding: 2px 15px 2px 0;
+            vertical-align: top;
+            white-space: nowrap;
+        }
+        
+        tr:hover {
+            background-color: #f0f0f0;
+        }
+        
+        a {
+            color: #0000EE;
+            text-decoration: none;
+        }
+        
+        a:visited {
+            color: #551A8B;
+        }
+        
+        a:hover {
+            text-decoration: underline;
+        }
+        
+        .size {
+            text-align: right;
+            width: 80px;
+        }
+        
+        .date {
+            width: 200px;
+        }
+        
+        .name {
+            width: auto;
+        }
+        
+        .directory a {
+            font-weight: normal;
+        }
+        
+        hr {
+            border: 0;
+            border-top: 1px solid #000000;
+            margin: 30px 0 10px 0;
+        }
+        
+        .server-info {
+            font-size: 12px;
+            color: #666666;
+            font-style: italic;
+            margin-top: 10px;
+        }
+        
+        /* Remove file icons styling for clean nginx look */
+        .file-icon {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <h1>Index of {{ title }}</h1>
+    
+    <div class="directory-listing">
+        <table>
+            <thead>
+                <tr>
+                    <th class="name">Name</th>
+                    <th class="date">Last modified</th>
+                    <th class="size">Size</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="name"><a href="javascript:history.back()">../</a></td>
+                    <td class="date">-</td>
+                    <td class="size">-</td>
+                </tr>
+                <!-- Dynamic directories -->
+                {% for directory in directories %}
+                <tr>
+                    <td class="name directory">
+                        {% if directory is string %}
+                            <a href="/shop_admin/view_backup?path={{ directory }}/">{{ directory }}/</a>
+                        {% else %}
+                            <a href="{{ directory[1] }}">{{ directory[0] }}/</a>
+                        {% endif %}
+                    </td>
+                    <td class="date">{{ '%02d' % (15 - loop.index) }}-Mar-2024 {{ '%02d' % (8 + (loop.index * 3) % 24) }}:{{ '%02d' % (10 + (loop.index * 7) % 60) }}</td>
+                    <td class="size">-</td>
+                </tr>
+                {% endfor %}
+
+                <!-- Dynamic files -->
+                {% for file in files %}
+                <tr>
+                    <td class="name">
+                        {% if file is string %}
+                            <a href="/shop_admin/view_backup?path={{ file }}">{{ file }}</a>
+                        {% else %}
+                            <a href="{{ file[1] }}">{{ file[0] }}</a>
+                        {% endif %}
+                    </td>
+                    <td class="date">{{ '%02d' % (15 - loop.index) }}-Mar-2024 {{ '%02d' % (8 + (loop.index * 3) % 24) }}:{{ '%02d' % (10 + (loop.index * 7) % 60) }}</td>
+                    <td class="size">
+                        {% set filename = file[0] if file is not string else file %}
+                        {% if 'log' in filename.lower() %}{{ (loop.index * 123 + 50) }}K
+                        {% elif 'database' in filename.lower() or 'sql' in filename.lower() %}{{ (loop.index * 50 + 100) }}M
+                        {% elif 'zip' in filename.lower() or 'tar' in filename.lower() %}{{ (loop.index * 20 + 15) }}M
+                        {% elif 'pdf' in filename.lower() %}{{ (loop.index * 800 + 1200) }}K
+                        {% elif 'config' in filename.lower() or 'ini' in filename.lower() %}{{ (loop.index * 2 + 1) }}.{{ loop.index }}K
+                        {% elif 'key' in filename.lower() or 'pem' in filename.lower() %}{{ (loop.index + 3) }}.{{ loop.index * 2 }}K
+                        {% elif 'env' in filename.lower() %}{{ loop.index }}.{{ loop.index * 3 }}K
+                        {% elif 'json' in filename.lower() %}{{ (loop.index * 15 + 5) }}K
+                        {% elif 'csv' in filename.lower() %}{{ (loop.index * 45 + 20) }}K
+                        {% elif 'xml' in filename.lower() %}{{ (loop.index * 8 + 5) }}K
+                        {% else %}{{ (loop.index * 456 + 789) }}
+                        {% endif %}
+                    </td>
+                </tr>
+                {% endfor %}
+                </tbody>
+        </table>
+    </div>
+
+    <hr>
+    <div class="server-info">
+        nginx/1.18.0 (Ubuntu)
+    </div>
+</body>
+</html>
+</html>

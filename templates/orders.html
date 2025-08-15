@@ -1,0 +1,207 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="mb-8">
+    <div class="flex justify-between items-center">
+        <h1 class="text-3xl font-bold text-gray-900">
+            <i class="fas fa-shopping-bag mr-3 text-blue-600"></i>
+            My Orders
+        </h1>
+        <div class="flex space-x-3">
+            <a href="{{ url_for('products.products') }}" class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg flex items-center transition">
+                <i class="fas fa-shopping-cart mr-2"></i>Continue Shopping
+            </a>
+            <a href="{{ url_for('cart.cart') }}" class="bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded-lg flex items-center transition">
+                <i class="fas fa-shopping-basket mr-2"></i>View Cart
+            </a>
+        </div>
+    </div>
+    <p class="text-gray-600 mt-2">Track your purchases and view your order history.</p>
+</div>
+
+<!-- Statistics Cards -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+    <div class="bg-white rounded-lg shadow-sm border border-gray-200 p-6">
+        <div class="flex items-center">
+            <div class="flex-shrink-0">
+                <div class="w-8 h-8 bg-blue-500 rounded-lg flex items-center justify-center">
+                    <i class="fas fa-receipt text-white text-sm"></i>
+                </div>
+            </div>
+            <div class="ml-4">
+                <h3 class="text-lg font-semibold text-gray-900">{{ orders|length if orders else 0 }}</h3>
+                <p class="text-sm text-gray-500">Total Orders</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="bg-white rounded-lg shadow-sm border border-gray-200 p-6">
+        <div class="flex items-center">
+            <div class="flex-shrink-0">
+                <div class="w-8 h-8 bg-green-500 rounded-lg flex items-center justify-center">
+                    <i class="fas fa-dollar-sign text-white text-sm"></i>
+                </div>
+            </div>
+            <div class="ml-4">
+                <h3 class="text-lg font-semibold text-gray-900">${{ "%.2f"|format(orders|sum(attribute=4) if orders else 0) }}</h3>
+                <p class="text-sm text-gray-500">Total Spent</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="bg-white rounded-lg shadow-sm border border-gray-200 p-6">
+        <div class="flex items-center">
+            <div class="flex-shrink-0">
+                <div class="w-8 h-8 bg-purple-500 rounded-lg flex items-center justify-center">
+                    <i class="fas fa-check-circle text-white text-sm"></i>
+                </div>
+            </div>
+            <div class="ml-4">
+                <h3 class="text-lg font-semibold text-gray-900">{{ orders|selectattr(5, "equalto", "completed")|list|length if orders else 0 }}</h3>
+                <p class="text-sm text-gray-500">Completed Orders</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Orders Section -->
+<div class="bg-white rounded-lg shadow-sm border border-gray-200">
+    <div class="px-6 py-4 border-b border-gray-200 flex justify-between items-center">
+        <h2 class="text-xl font-semibold text-gray-900">
+            <i class="fas fa-list-alt mr-2 text-gray-600"></i>
+            Order History
+        </h2>
+        <span class="bg-blue-100 text-blue-800 text-sm font-medium px-2.5 py-0.5 rounded">
+            {{ orders|length if orders else 0 }} orders
+        </span>
+    </div>
+
+    {% if orders %}
+        <div class="overflow-x-auto">
+            <table class="min-w-full divide-y divide-gray-200">
+                <thead class="bg-gray-50">
+                    <tr>
+                        <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Product</th>
+                        <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Quantity</th>
+                        <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Price</th>
+                        <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Total</th>
+                        <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Status</th>
+                    </tr>
+                </thead>
+                <tbody class="bg-white divide-y divide-gray-200">
+                    {% for order in orders %}
+                    <tr class="hover:bg-gray-50">
+                        <td class="px-6 py-4 whitespace-nowrap">
+                            <div class="flex items-center">
+                                <div class="flex-shrink-0 h-12 w-12">
+                                    {% if order[6].startswith('http') %}
+                                        <img class="h-12 w-12 rounded-lg object-cover border border-gray-200" src="{{ order[6] }}" alt="{{ order[1] }}">
+                                    {% else %}
+                                        <img class="h-12 w-12 rounded-lg object-cover border border-gray-200" src="{{ order[6] }}" alt="{{ order[1] }}">
+                                    {% endif %}
+                                </div>
+                                <div class="ml-4">
+                                    <div class="text-sm font-medium text-gray-900">{{ order[1] }}</div>
+                                    <div class="text-sm text-gray-500">Order #{{ order[0] }}</div>
+                                </div>
+                            </div>
+                        </td>
+                        <td class="px-6 py-4 whitespace-nowrap">
+                            <div class="text-sm font-medium text-gray-900">{{ order[2] }}</div>
+                            <div class="text-sm text-gray-500">items</div>
+                        </td>
+                        <td class="px-6 py-4 whitespace-nowrap">
+                            <div class="text-sm font-medium text-gray-900">${{ "%.2f"|format(order[3]) }}</div>
+                            <div class="text-sm text-gray-500">per item</div>
+                        </td>
+                        <td class="px-6 py-4 whitespace-nowrap">
+                            <div class="text-sm font-medium text-gray-900">${{ "%.2f"|format(order[4]) }}</div>
+                        </td>
+                        <td class="px-6 py-4 whitespace-nowrap">
+                            {% if order[5] == 'pending' %}
+                                <span class="inline-flex px-2 py-1 text-xs font-semibold rounded-full bg-yellow-100 text-yellow-800">
+                                    Pending
+                                </span>
+                            {% elif order[5] == 'processing' %}
+                                <span class="inline-flex px-2 py-1 text-xs font-semibold rounded-full bg-blue-100 text-blue-800">
+                                    Processing
+                                </span>
+                            {% elif order[5] == 'shipped' %}
+                                <span class="inline-flex px-2 py-1 text-xs font-semibold rounded-full bg-purple-100 text-purple-800">
+                                    Shipped
+                                </span>
+                            {% elif order[5] == 'delivered' %}
+                                <span class="inline-flex px-2 py-1 text-xs font-semibold rounded-full bg-green-100 text-green-800">
+                                    Delivered
+                                </span>
+                            {% elif order[5] == 'cancelled' %}
+                                <span class="inline-flex px-2 py-1 text-xs font-semibold rounded-full bg-red-100 text-red-800">
+                                    Cancelled
+                                </span>
+                            {% else %}
+                                <span class="inline-flex px-2 py-1 text-xs font-semibold rounded-full bg-gray-100 text-gray-800">
+                                    {{ order[5]|title }}
+                                </span>
+                            {% endif %}
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    {% else %}
+        <div class="text-center py-12">
+            <div class="mx-auto h-12 w-12 text-gray-400 mb-4">
+                <i class="fas fa-shopping-bag text-4xl"></i>
+            </div>
+            <h3 class="text-lg font-medium text-gray-900 mb-2">No orders yet</h3>
+            <p class="text-gray-500 mb-6">You haven't placed any orders. Start shopping to see your orders here!</p>
+            <a href="{{ url_for('products.products') }}" class="inline-flex items-center px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white font-medium rounded-lg transition">
+                <i class="fas fa-shopping-cart mr-2"></i>Start Shopping
+            </a>
+        </div>
+    {% endif %}
+</div>
+
+<!-- Quick Actions -->
+<div class="mt-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+    <div class="bg-white rounded-lg shadow-sm border border-gray-200 p-6 hover:shadow-md transition">
+        <div class="flex items-center justify-between">
+            <div>
+                <h3 class="text-lg font-medium text-gray-900">Track Order</h3>
+                <p class="text-sm text-gray-500 mt-1">Get real-time updates on your orders</p>
+            </div>
+            <i class="fas fa-truck text-2xl text-blue-500"></i>
+        </div>
+        <div class="mt-4">
+            <span class="text-gray-400 text-sm">Coming Soon</span>
+        </div>
+    </div>
+
+    <div class="bg-white rounded-lg shadow-sm border border-gray-200 p-6 hover:shadow-md transition">
+        <div class="flex items-center justify-between">
+            <div>
+                <h3 class="text-lg font-medium text-gray-900">Order Support</h3>
+                <p class="text-sm text-gray-500 mt-1">Need help with your order?</p>
+            </div>
+            <i class="fas fa-headset text-2xl text-green-500"></i>
+        </div>
+        <div class="mt-4">
+            <span class="text-gray-400 text-sm">Contact Support</span>
+        </div>
+    </div>
+
+    <div class="bg-white rounded-lg shadow-sm border border-gray-200 p-6 hover:shadow-md transition">
+        <div class="flex items-center justify-between">
+            <div>
+                <h3 class="text-lg font-medium text-gray-900">Reorder Items</h3>
+                <p class="text-sm text-gray-500 mt-1">Quickly reorder previous purchases</p>
+            </div>
+            <i class="fas fa-redo text-2xl text-purple-500"></i>
+        </div>
+        <div class="mt-4">
+            <span class="text-gray-400 text-sm">Coming Soon</span>
+        </div>
+    </div>
+</div>
+{% endblock %}

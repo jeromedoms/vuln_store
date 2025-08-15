@@ -1,0 +1,114 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container mx-auto px-4 py-8 max-w-7xl">
+    <!-- Search Section -->
+    <div class="mb-8 text-center">
+        <h1 class="text-3xl font-bold text-gray-900 mb-4">Search Products</h1>
+        <form method="GET" action="{{ url_for('products.products') }}" class="flex max-w-md mx-auto">
+            <input 
+                type="text" 
+                name="search" 
+                placeholder="Search for products..." 
+                value="{{ request.args.get('search', '') }}"
+                class="flex-1 px-4 py-2 border border-gray-300 rounded-l-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none"
+            >
+            <button 
+                type="submit" 
+                class="px-4 py-2 bg-blue-600 text-white font-medium rounded-r-lg hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
+            >
+                Search
+            </button>
+        </form>
+    </div>
+
+    <!-- Product Grid -->
+    {% if products %}
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+        {% for product in products %}
+        <!-- Only show active products (backend should already filter, but extra safety check) -->
+        {% if product.status == 'active' or product.id == 999 %}
+        <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300 border border-gray-200">
+            <!-- Product Image -->
+            <div class="h-48 overflow-hidden">
+                {% if product.id == 999 %}
+                    <img 
+                        src="{{ url_for('static', filename='images/hacked.jpg') }}" 
+                        alt="{{ product.name }}"
+                        class="w-full h-full object-cover"
+                    >
+                {% else %}
+                    {% if product.image %}
+                        <img 
+                                src="{{ product.image }}" 
+                                alt="{{ product.name }}"
+                                class="w-full h-full object-cover"
+                            >
+                    {% else %}
+                        <img 
+                            src="https://via.placeholder.com/300" 
+                            alt="{{ product.name }}"
+                            class="w-full h-full object-cover"
+                        >
+                    {% endif %}
+                {% endif %}
+            </div>
+
+            <!-- Product Info -->
+            <div class="p-4">
+                <h3 class="text-lg font-semibold text-gray-900 mb-1">
+                    {% if product.id == 999 %}
+                        <span class="text-red-600">COMMAND OUTPUT:</span><br>
+                    {% endif %}
+                    {{ product.name }}
+                </h3>
+                
+                <p class="text-gray-600 text-sm mb-3 line-clamp-2">{{ product.description }}</p>
+                
+                {% if product.id != 999 %}
+                    <div class="flex items-center justify-between mb-4">
+                        <span class="text-lg font-bold text-gray-900">${{ "%.2f"|format(product.price) }}</span>
+                        <!-- Show status badge for debugging (optional) -->
+                        <!-- {% if product.status %}
+                        <span class="text-xs bg-green-100 text-green-800 px-2 py-1 rounded-full">{{ product.status }}</span>
+                        {% endif %} -->
+                    </div>
+                    
+                    <div class="space-y-2">
+                        <form method="POST" action="{{ url_for('cart.add_to_cart') }}">
+                            <input type="hidden" name="product_id" value="{{ product.id }}">
+                            <input type="hidden" name="price" value="{{ product.price }}">
+                            <input type="hidden" name="quantity" value="1">
+                            
+                            <button 
+                                type="submit" 
+                                class="w-full flex items-center justify-center gap-2 px-4 py-2 bg-blue-600 text-white text-sm font-medium rounded-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
+                            >
+                                <i class="fas fa-shopping-cart"></i>
+                                Add to Cart
+                            </button>
+                        </form>
+                        
+                        <a 
+                            href="{{ url_for('products.product_detail', product_id=product.id) }}"
+                            class="block text-center px-4 py-2 border border-gray-300 text-sm font-medium rounded-md text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                        >
+                            View Details
+                        </a>
+                    </div>
+                {% endif %}
+            </div>
+        </div>
+        {% endif %}
+        {% endfor %}
+    </div>
+    {% else %}
+    <div class="text-center py-12">
+        <p class="text-gray-500 text-lg">No active products found.</p>
+        {% if request.args.get('search') %}
+        <p class="text-gray-400 text-sm mt-2">Try a different search term.</p>
+        {% endif %}
+    </div>
+    {% endif %}
+</div>
+{% endblock %}

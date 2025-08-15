@@ -1,0 +1,123 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <!-- Hero Section -->
+        <div class="text-center py-16">
+            <i class="fas fa-shield-alt text-5xl text-blue-600 mb-6"></i>
+            <h1 class="text-4xl font-extrabold tracking-tight text-gray-900 sm:text-5xl md:text-6xl">
+                <span class="block">Welcome to</span>
+                <span class="block text-blue-600">Vulnerable Store</span>
+            </h1>
+            <p class="mt-6 max-w-2xl mx-auto text-base text-gray-600 sm:text-lg md:mt-8 md:text-xl">
+                The most <span class="font-bold text-red-500">insecure</span> online shopping experience!
+                <br>Try your hacking skills on our deliberately vulnerable systems.
+            </p>
+            
+            <div class="mt-10 sm:flex sm:justify-center sm:space-x-4">
+                <div class="rounded-md shadow">
+                    <a href="{{ url_for('products.products') }}" class="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-lg text-white bg-blue-600 hover:bg-blue-700 transition md:py-4 md:text-lg md:px-10">
+                        <i class="fas fa-shopping-cart mr-2"></i>
+                        Start Shopping
+                    </a>
+                </div>
+                <!-- <div class="mt-4 sm:mt-0">
+                    <a href="{{ url_for('auth.login') }}" class="w-full flex items-center justify-center px-8 py-3 border border-blue-600 text-base font-medium rounded-lg text-blue-600 bg-white hover:bg-blue-50 transition md:py-4 md:text-lg md:px-10">
+                        <i class="fas fa-sign-in-alt mr-2"></i>
+                        Login
+                    </a>
+                </div> -->
+            </div>
+        </div>
+
+        <!-- Features Section -->
+        <div class="mt-16">
+            <h2 class="text-center text-3xl font-extrabold text-gray-900 mb-12">Our "Special" Features</h2>
+            <div class="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
+                <!-- Feature 1 -->
+                <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                    <div class="flex items-center justify-center h-12 w-12 rounded-lg bg-red-500 text-white mb-4">
+                        <i class="fas fa-lock-open text-xl"></i>
+                    </div>
+                    <h3 class="text-lg font-medium text-gray-900 mb-2">Wide Open Security</h3>
+                    <p class="text-gray-600">
+                        We've left all doors unlocked! Test SQL injection, XSS, and more on our vulnerable systems.
+                    </p>
+                </div>
+
+                <!-- Feature 2 -->
+                <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                    <div class="flex items-center justify-center h-12 w-12 rounded-lg bg-purple-500 text-white mb-4">
+                        <i class="fas fa-user-secret text-xl"></i>
+                    </div>
+                    <h3 class="text-lg font-medium text-gray-900 mb-2">Admin Access? Maybe?</h3>
+                    <p class="text-gray-600">
+                        Our admin panel might be accessible if you can find it... or bypass authentication.
+                    </p>
+                </div>
+
+                <!-- Feature 3 -->
+                <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                    <div class="flex items-center justify-center h-12 w-12 rounded-lg bg-green-500 text-white mb-4">
+                        <i class="fas fa-bug text-xl"></i>
+                    </div>
+                    <h3 class="text-lg font-medium text-gray-900 mb-2">Bug Bounty (For Hackers)</h3>
+                    <p class="text-gray-600">
+                        No real prizes, but plenty of vulnerabilities to discover and exploit!
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Demo Accounts Section
+        <div class="mt-16 bg-blue-50 rounded-lg border border-blue-200 p-6">
+            <h3 class="text-lg font-medium text-blue-900 mb-4 text-center">
+                <i class="fas fa-info-circle mr-2"></i>Demo Accounts Available
+            </h3>
+            <div class="grid grid-cols-1 gap-4 sm:grid-cols-3">
+                <div class="bg-white p-4 rounded-lg border border-blue-200 text-center">
+                    <i class="fas fa-user text-blue-600 mb-2"></i>
+                    <div class="font-medium text-gray-900">Customer</div>
+                    <div class="text-sm text-gray-600 mt-1">
+                        <strong>Username:</strong> user<br>
+                        <strong>Password:</strong> orionuser
+                    </div>
+                </div>
+                <div class="bg-white p-4 rounded-lg border border-red-200 text-center">
+                    <i class="fas fa-user-shield text-red-600 mb-2"></i>
+                    <div class="font-medium text-gray-900">Admin</div>
+                    <div class="text-sm text-gray-600 mt-1">
+                        <strong>Username:</strong> admin<br>
+                        <strong>Password:</strong> admin
+                    </div>
+                </div>
+                <div class="bg-white p-4 rounded-lg border border-green-200 text-center">
+                    <i class="fas fa-store text-green-600 mb-2"></i>
+                    <div class="font-medium text-gray-900">Seller</div>
+                    <div class="text-sm text-gray-600 mt-1">
+                        <strong>Username:</strong> seller1<br>
+                        <strong>Password:</strong> sellpass
+                    </div>
+                </div>
+            </div>
+        </div> -->
+
+        <!-- Warning Banner
+        <div class="mt-16 bg-yellow-50 border border-yellow-200 rounded-lg p-4">
+            <div class="flex">
+                <div class="flex-shrink-0">
+                    <i class="fas fa-exclamation-triangle text-yellow-400"></i>
+                </div>
+                <div class="ml-3">
+                    <h3 class="text-sm font-medium text-yellow-800">Security Notice</h3>
+                    <div class="mt-1 text-sm text-yellow-700">
+                        <p><span class="font-bold">Warning:</span> This is a deliberately vulnerable application for educational purposes. 
+                        Do not use real personal information or passwords you use elsewhere.</p>
+                    </div>
+                </div>
+            </div>
+        </div> -->
+    </div>
+</div>
+{% endblock %}

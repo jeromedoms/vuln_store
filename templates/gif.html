@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flag Viewer</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="apple-touch-icon" sizes="180x180" href="/static/icons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/static/icons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/static/icons/favicon-16x16.png">
+    <link rel="manifest" href="/static/icons/site.webmanifest">
+</head>
+<body class="bg-black min-h-screen flex items-center justify-center">
+    <img src="{{ gif_url }}" 
+         alt="Flag" 
+         class="w-2/5 h-2/5 object-contain rounded-lg shadow-2xl">
+    {% if message %}
+    <a href="{{ message }}" class="absolute bottom-10 text-white underline">Look at me</a>
+    {% endif %}
+</body>
+</html>
