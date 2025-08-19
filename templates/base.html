@@ -15,77 +15,173 @@
     <link rel="manifest" href="/static/icons/site.webmanifest">
 </head>
 <body class="bg-gray-50 min-h-screen flex flex-col">
-    <nav class="bg-white border-b border-gray-200 shadow-sm">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between h-16">
-                <div class="flex items-center">
-                    <a href="{{ url_for('index') }}" class="text-xl font-bold text-gray-900 flex items-center">
-                        <i class="fas fa-store mr-2 text-blue-600"></i>
-                        Vulnerable Store
+    <nav class="bg-white border-b border-gray-200 shadow-sm sticky top-0 z-50">
+        <div class="px-4 sm:px-6 lg:max-w-7xl lg:mx-auto lg:px-8">
+            <div class="flex justify-between items-center h-14 sm:h-16">
+                <!-- Logo -->
+                <div class="flex items-center flex-shrink-0">
+                    <a href="{{ url_for('index') }}" class="text-lg sm:text-xl font-bold text-gray-900 flex items-center">
+                        <i class="fas fa-store mr-1 sm:mr-2 text-blue-600"></i>
+                        <span class="hidden xs:inline">Vulnerable Store</span>
+                        <span class="xs:hidden">Vulnerable Store</span>
                     </a>
                 </div>
-                <div class="flex items-center space-x-4">
+
+                <!-- Mobile menu button -->
+                <div class="flex items-center sm:hidden">
+                    {% if 'user_id' in session %}
+                        <!-- User badge on mobile -->
+                        <span class="{% if session.get('role') == 'admin' %}bg-purple-600 text-white{% elif session.get('role') == 'seller' %}bg-green-600 text-white{% elif session.get('role') == 'customer_vip' %}bg-yellow-500 text-white{% else %}bg-blue-100 text-blue-800{% endif %} text-xs font-medium px-2 py-1 rounded-full mr-2">
+                            <i class="fas {% if session.get('role') == 'admin' %}fa-user-shield{% elif session.get('role') == 'seller' %}fa-store{% else %}fa-user-circle{% endif %}"></i>
+                        </span>
+                    {% endif %}
+                    <button type="button" id="mobile-menu-button" class="text-gray-600 hover:text-gray-900 hover:bg-gray-100 p-2 rounded-md min-w-[44px] min-h-[44px] flex items-center justify-center">
+                        <i class="fas fa-bars text-lg"></i>
+                    </button>
+                </div>
+
+                <!-- Desktop navigation -->
+                <div class="hidden sm:flex sm:items-center sm:space-x-2 lg:space-x-4">
                     {% if 'user_id' in session %}
                         <!-- User Role Badge -->
-                        <span class="{% if session.get('role') == 'admin' %}bg-purple-600 text-white{% elif session.get('role') == 'seller' %}bg-green-600 text-white{% elif session.get('role') == 'customer_vip' %}bg-yellow-500 text-white{% else %}bg-blue-100 text-blue-800{% endif %} text-sm font-medium px-3 py-1 rounded-full flex items-center">
-                            <i class="fas {% if session.get('role') == 'admin' %}fa-user-shield{% elif session.get('role') == 'seller' %}fa-store{% else %}fa-user-circle{% endif %} mr-2"></i>
-                            {{ session['username'] }}
+                        <span class="{% if session.get('role') == 'admin' %}bg-purple-600 text-white{% elif session.get('role') == 'seller' %}bg-green-600 text-white{% elif session.get('role') == 'customer_vip' %}bg-yellow-500 text-white{% else %}bg-blue-100 text-blue-800{% endif %} text-xs sm:text-sm font-medium px-2 sm:px-3 py-1 rounded-full flex items-center">
+                            <i class="fas {% if session.get('role') == 'admin' %}fa-user-shield{% elif session.get('role') == 'seller' %}fa-store{% else %}fa-user-circle{% endif %} mr-1 sm:mr-2"></i>
+                            <span class="hidden md:inline">{{ session['username'] }}</span>
+                            <span class="md:hidden">{{ session['username'][:8] }}...</span>
                             {% if session.get('role') == 'admin' %}
-                                <i class="fas fa-shield-alt ml-2"></i>
+                                <i class="fas fa-shield-alt ml-1 sm:ml-2"></i>
                             {% elif session.get('role') == 'seller' %}
-                                <i class="fas fa-tags ml-2"></i>
+                                <i class="fas fa-tags ml-1 sm:ml-2"></i>
                             {% elif session.get('role') == 'customer_vip' %}
-                                <i class="fas fa-crown ml-2"></i>
+                                <i class="fas fa-crown ml-1 sm:ml-2"></i>
                             {% endif %}
                         </span>
 
                         <!-- Navigation Links Based on Role -->
                         {% if session.get('role') == 'seller' %}
-                            <!-- Seller Navigation - Only selling related -->
-                            <a href="{{ url_for('seller.seller_dashboard') }}" class="{% if request.endpoint == 'seller.seller_dashboard' %}bg-blue-50 text-blue-700 border-blue-500 border-b-2{% else %}text-gray-600 hover:text-gray-900{% endif %} px-3 py-2 rounded-md text-sm font-medium flex items-center">
-                                <i class="fas fa-tachometer-alt mr-1"></i>Dashboard
+                            <!-- Seller Navigation -->
+                            <a href="{{ url_for('seller.seller_dashboard') }}" class="{% if request.endpoint == 'seller.seller_dashboard' %}bg-blue-50 text-blue-700 border-blue-500 border-b-2{% else %}text-gray-600 hover:text-gray-900{% endif %} px-2 lg:px-3 py-2 rounded-md text-xs sm:text-sm font-medium flex items-center">
+                                <i class="fas fa-tachometer-alt mr-1"></i>
+                                <span class="hidden lg:inline">Dashboard</span>
                             </a>
-                            <a href="{{ url_for('seller.add_product') }}" class="{% if request.endpoint == 'seller.add_product' %}bg-blue-50 text-blue-700 border-blue-500 border-b-2{% else %}text-gray-600 hover:text-gray-900{% endif %} px-3 py-2 rounded-md text-sm font-medium flex items-center">
-                                <i class="fas fa-plus-circle mr-1"></i>Add Product
+                            <a href="{{ url_for('seller.add_product') }}" class="{% if request.endpoint == 'seller.add_product' %}bg-blue-50 text-blue-700 border-blue-500 border-b-2{% else %}text-gray-600 hover:text-gray-900{% endif %} px-2 lg:px-3 py-2 rounded-md text-xs sm:text-sm font-medium flex items-center">
+                                <i class="fas fa-plus-circle mr-1"></i>
+                                <span class="hidden lg:inline">Add Product</span>
                             </a>
-                            <a href="{{ url_for('seller.seller_orders') }}" class="{% if request.endpoint == 'seller.seller_orders' %}bg-blue-50 text-blue-700 border-blue-500 border-b-2{% else %}text-gray-600 hover:text-gray-900{% endif %} px-3 py-2 rounded-md text-sm font-medium flex items-center">
-                                <i class="fas fa-shopping-bag mr-1"></i>My Orders
+                            <a href="{{ url_for('seller.seller_orders') }}" class="{% if request.endpoint == 'seller.seller_orders' %}bg-blue-50 text-blue-700 border-blue-500 border-b-2{% else %}text-gray-600 hover:text-gray-900{% endif %} px-2 lg:px-3 py-2 rounded-md text-xs sm:text-sm font-medium flex items-center">
+                                <i class="fas fa-shopping-bag mr-1"></i>
+                                <span class="hidden lg:inline">Orders</span>
                             </a>
                             
                         {% elif session.get('role') == 'admin' %}
-                            <!-- Admin Navigation - Only admin controls -->
-                            <a href="{{ url_for('admin.admin') }}" class="{% if request.endpoint == 'admin' %}bg-red-50 text-red-700 border-red-500 border-b-2{% else %}text-red-600 hover:text-red-900{% endif %} px-3 py-2 rounded-md text-sm font-medium flex items-center">
-                                <i class="fas fa-terminal mr-1"></i>Admin Panel
+                            <!-- Admin Navigation -->
+                            <a href="{{ url_for('admin.admin') }}" class="{% if request.endpoint == 'admin' %}bg-red-50 text-red-700 border-red-500 border-b-2{% else %}text-red-600 hover:text-red-900{% endif %} px-2 lg:px-3 py-2 rounded-md text-xs sm:text-sm font-medium flex items-center">
+                                <i class="fas fa-terminal mr-1"></i>
+                                <span class="hidden lg:inline">Admin</span>
                             </a>
-                            <a href="{{ url_for('files.browse_files') }}" class="{% if request.endpoint == 'files.browse_files' %}bg-blue-50 text-blue-700 border-blue-500 border-b-2{% else %}text-gray-600 hover:text-gray-900{% endif %} px-3 py-2 rounded-md text-sm font-medium flex items-center">
-                                <i class="fas fa-folder mr-1"></i>Browse Files
+                            <a href="{{ url_for('files.browse_files') }}" class="{% if request.endpoint == 'files.browse_files' %}bg-blue-50 text-blue-700 border-blue-500 border-b-2{% else %}text-gray-600 hover:text-gray-900{% endif %} px-2 lg:px-3 py-2 rounded-md text-xs sm:text-sm font-medium flex items-center">
+                                <i class="fas fa-folder mr-1"></i>
+                                <span class="hidden lg:inline">Files</span>
                             </a>
-                            <a href="{{ url_for('products.products') }}" class="{% if request.endpoint == 'products.products' %}bg-blue-50 text-blue-700 border-blue-500 border-b-2{% else %}text-gray-600 hover:text-gray-900{% endif %} px-3 py-2 rounded-md text-sm font-medium flex items-center">
-                                <i class="fas fa-eye mr-1"></i>View Store
+                            <a href="{{ url_for('products.products') }}" class="{% if request.endpoint == 'products.products' %}bg-blue-50 text-blue-700 border-blue-500 border-b-2{% else %}text-gray-600 hover:text-gray-900{% endif %} px-2 lg:px-3 py-2 rounded-md text-xs sm:text-sm font-medium flex items-center">
+                                <i class="fas fa-eye mr-1"></i>
+                                <span class="hidden lg:inline">Store</span>
                             </a>
                             
                         {% else %}
-                            <!-- Customer Navigation - Only shopping related -->
-                            <a href="{{ url_for('products.products') }}" class="{% if request.endpoint == 'products.products' %}bg-blue-50 text-blue-700 border-blue-500 border-b-2{% else %}text-gray-600 hover:text-gray-900{% endif %} px-3 py-2 rounded-md text-sm font-medium flex items-center">
-                                <i class="fas fa-box mr-1"></i>Products
+                            <!-- Customer Navigation -->
+                            <a href="{{ url_for('products.products') }}" class="{% if request.endpoint == 'products.products' %}bg-blue-50 text-blue-700 border-blue-500 border-b-2{% else %}text-gray-600 hover:text-gray-900{% endif %} px-2 lg:px-3 py-2 rounded-md text-xs sm:text-sm font-medium flex items-center">
+                                <i class="fas fa-box mr-1"></i>
+                                <span class="hidden lg:inline">Products</span>
                             </a>
-                            <a href="{{ url_for('cart.cart') }}" class="{% if request.endpoint == 'cart.cart' %}bg-blue-50 text-blue-700 border-blue-500 border-b-2{% else %}text-gray-600 hover:text-gray-900{% endif %} px-3 py-2 rounded-md text-sm font-medium flex items-center">
-                                <i class="fas fa-shopping-cart mr-1"></i>Cart
+                            <a href="{{ url_for('cart.cart') }}" class="{% if request.endpoint == 'cart.cart' %}bg-blue-50 text-blue-700 border-blue-500 border-b-2{% else %}text-gray-600 hover:text-gray-900{% endif %} px-2 lg:px-3 py-2 rounded-md text-xs sm:text-sm font-medium flex items-center">
+                                <i class="fas fa-shopping-cart mr-1"></i>
+                                <span class="hidden lg:inline">Cart</span>
                             </a>
-                            <a href="{{ url_for('cart.orders') }}" class="{% if request.endpoint == 'cart.orders' %}bg-blue-50 text-blue-700 border-blue-500 border-b-2{% else %}text-gray-600 hover:text-gray-900{% endif %} px-3 py-2 rounded-md text-sm font-medium flex items-center">
-                                <i class="fas fa-receipt mr-1"></i>My Orders
+                            <a href="{{ url_for('cart.orders') }}" class="{% if request.endpoint == 'cart.orders' %}bg-blue-50 text-blue-700 border-blue-500 border-b-2{% else %}text-gray-600 hover:text-gray-900{% endif %} px-2 lg:px-3 py-2 rounded-md text-xs sm:text-sm font-medium flex items-center">
+                                <i class="fas fa-receipt mr-1"></i>
+                                <span class="hidden lg:inline">Orders</span>
                             </a>
                         {% endif %}
 
-                        <a href="{{ url_for('auth.logout') }}" class="text-gray-600 hover:text-gray-900 px-3 py-2 rounded-md text-sm font-medium flex items-center">
-                            <i class="fas fa-sign-out-alt mr-1"></i>Logout
+                        <a href="{{ url_for('auth.logout') }}" class="text-gray-600 hover:text-gray-900 px-2 lg:px-3 py-2 rounded-md text-xs sm:text-sm font-medium flex items-center">
+                            <i class="fas fa-sign-out-alt"></i>
+                            <span class="hidden lg:inline ml-1">Logout</span>
                         </a>
                     {% else %}
-                        <a href="{{ url_for('auth.login') }}" class="{% if request.endpoint == 'auth.login' %}bg-blue-50 text-blue-700 border-blue-500 border-b-2{% else %}text-gray-600 hover:text-gray-900{% endif %} px-3 py-2 rounded-md text-sm font-medium flex items-center">
+                        <a href="{{ url_for('auth.login') }}" class="{% if request.endpoint == 'auth.login' %}bg-blue-50 text-blue-700 border-blue-500 border-b-2{% else %}text-gray-600 hover:text-gray-900{% endif %} px-2 sm:px-3 py-2 rounded-md text-xs sm:text-sm font-medium flex items-center">
                             <i class="fas fa-sign-in-alt mr-1"></i>Login
                         </a>
-                        <a href="{{ url_for('auth.register') }}" class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg flex items-center">
+                        <a href="{{ url_for('auth.register') }}" class="bg-blue-600 hover:bg-blue-700 text-white px-3 sm:px-4 py-2 rounded-lg flex items-center text-xs sm:text-sm font-medium">
                             <i class="fas fa-user-plus mr-1"></i>Register
+                        </a>
+                    {% endif %}
+                </div>
+            </div>
+
+            <!-- Mobile menu -->
+            <div id="mobile-menu" class="hidden sm:hidden border-t border-gray-200 bg-white">
+                <div class="px-2 pt-2 pb-3 space-y-1">
+                    {% if 'user_id' in session %}
+                        <!-- User info in mobile menu -->
+                        <div class="px-3 py-2 text-xs font-medium text-gray-500 border-b border-gray-100 mb-2">
+                            <div class="flex items-center">
+                                <i class="fas {% if session.get('role') == 'admin' %}fa-user-shield{% elif session.get('role') == 'seller' %}fa-store{% else %}fa-user-circle{% endif %} mr-2"></i>
+                                {{ session['username'] }}
+                                <span class="ml-2 {% if session.get('role') == 'admin' %}text-purple-600{% elif session.get('role') == 'seller' %}text-green-600{% elif session.get('role') == 'customer_vip' %}text-yellow-500{% else %}text-blue-600{% endif %} capitalize">
+                                    ({{ session.get('role', 'customer') }})
+                                </span>
+                            </div>
+                        </div>
+
+                        {% if session.get('role') == 'seller' %}
+                            <!-- Seller Mobile Navigation -->
+                            <a href="{{ url_for('seller.seller_dashboard') }}" class="{% if request.endpoint == 'seller.seller_dashboard' %}bg-blue-50 text-blue-700{% else %}text-gray-700 hover:bg-gray-50{% endif %} block px-3 py-2 rounded-md text-sm font-medium">
+                                <i class="fas fa-tachometer-alt mr-3 w-4"></i>Dashboard
+                            </a>
+                            <a href="{{ url_for('seller.add_product') }}" class="{% if request.endpoint == 'seller.add_product' %}bg-blue-50 text-blue-700{% else %}text-gray-700 hover:bg-gray-50{% endif %} block px-3 py-2 rounded-md text-sm font-medium">
+                                <i class="fas fa-plus-circle mr-3 w-4"></i>Add Product
+                            </a>
+                            <a href="{{ url_for('seller.seller_orders') }}" class="{% if request.endpoint == 'seller.seller_orders' %}bg-blue-50 text-blue-700{% else %}text-gray-700 hover:bg-gray-50{% endif %} block px-3 py-2 rounded-md text-sm font-medium">
+                                <i class="fas fa-shopping-bag mr-3 w-4"></i>My Orders
+                            </a>
+                            
+                        {% elif session.get('role') == 'admin' %}
+                            <!-- Admin Mobile Navigation -->
+                            <a href="{{ url_for('admin.admin') }}" class="{% if request.endpoint == 'admin' %}bg-red-50 text-red-700{% else %}text-red-600 hover:bg-red-50{% endif %} block px-3 py-2 rounded-md text-sm font-medium">
+                                <i class="fas fa-terminal mr-3 w-4"></i>Admin Panel
+                            </a>
+                            <a href="{{ url_for('files.browse_files') }}" class="{% if request.endpoint == 'files.browse_files' %}bg-blue-50 text-blue-700{% else %}text-gray-700 hover:bg-gray-50{% endif %} block px-3 py-2 rounded-md text-sm font-medium">
+                                <i class="fas fa-folder mr-3 w-4"></i>Browse Files
+                            </a>
+                            <a href="{{ url_for('products.products') }}" class="{% if request.endpoint == 'products.products' %}bg-blue-50 text-blue-700{% else %}text-gray-700 hover:bg-gray-50{% endif %} block px-3 py-2 rounded-md text-sm font-medium">
+                                <i class="fas fa-eye mr-3 w-4"></i>View Store
+                            </a>
+                            
+                        {% else %}
+                            <!-- Customer Mobile Navigation -->
+                            <a href="{{ url_for('products.products') }}" class="{% if request.endpoint == 'products.products' %}bg-blue-50 text-blue-700{% else %}text-gray-700 hover:bg-gray-50{% endif %} block px-3 py-2 rounded-md text-sm font-medium">
+                                <i class="fas fa-box mr-3 w-4"></i>Products
+                            </a>
+                            <a href="{{ url_for('cart.cart') }}" class="{% if request.endpoint == 'cart.cart' %}bg-blue-50 text-blue-700{% else %}text-gray-700 hover:bg-gray-50{% endif %} block px-3 py-2 rounded-md text-sm font-medium">
+                                <i class="fas fa-shopping-cart mr-3 w-4"></i>Cart
+                            </a>
+                            <a href="{{ url_for('cart.orders') }}" class="{% if request.endpoint == 'cart.orders' %}bg-blue-50 text-blue-700{% else %}text-gray-700 hover:bg-gray-50{% endif %} block px-3 py-2 rounded-md text-sm font-medium">
+                                <i class="fas fa-receipt mr-3 w-4"></i>My Orders
+                            </a>
+                        {% endif %}
+
+                        <div class="border-t border-gray-100 pt-2 mt-2">
+                            <a href="{{ url_for('auth.logout') }}" class="text-gray-700 hover:bg-gray-50 block px-3 py-2 rounded-md text-sm font-medium">
+                                <i class="fas fa-sign-out-alt mr-3 w-4 text-red-500"></i>Logout
+                            </a>
+                        </div>
+                    {% else %}
+                        <a href="{{ url_for('auth.login') }}" class="{% if request.endpoint == 'auth.login' %}bg-blue-50 text-blue-700{% else %}text-gray-700 hover:bg-gray-50{% endif %} block px-3 py-2 rounded-md text-sm font-medium">
+                            <i class="fas fa-sign-in-alt mr-3 w-4"></i>Login
+                        </a>
+                        <a href="{{ url_for('auth.register') }}" class="bg-blue-600 text-white block px-3 py-2 rounded-md text-sm font-medium hover:bg-blue-700">
+                            <i class="fas fa-user-plus mr-3 w-4"></i>Register
                         </a>
                     {% endif %}
                 </div>
@@ -94,11 +190,11 @@
     </nav>
 
     <main class="flex-1">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        <div class="px-4 sm:px-6 lg:max-w-7xl lg:mx-auto lg:px-8 py-4 sm:py-6 lg:py-8">
             {% with messages = get_flashed_messages(with_categories=true) %}
                 {% if messages %}
                     {% for category, message in messages %}
-                        <div class="mb-6 {% if category == 'error' %}bg-red-50 border-red-200 text-red-800{% elif category == 'info' %}bg-blue-50 border-blue-200 text-blue-800{% else %}bg-green-50 border-green-200 text-green-800{% endif %} border-l-4 p-4 rounded-r-lg shadow-sm">
+                        <div class="mb-4 sm:mb-6 {% if category == 'error' %}bg-red-50 border-red-200 text-red-800{% elif category == 'info' %}bg-blue-50 border-blue-200 text-blue-800{% else %}bg-green-50 border-green-200 text-green-800{% endif %} border-l-4 p-3 sm:p-4 rounded-r-lg shadow-sm">
                             <div class="flex items-start">
                                 <div class="flex-shrink-0">
                                     <i class="fas {% if category == 'error' %}fa-exclamation-triangle text-red-500{% elif category == 'info' %}fa-info-circle text-blue-500{% else %}fa-check-circle text-green-500{% endif %} mt-0.5"></i>
@@ -120,14 +216,41 @@
     </main>
     
     <!-- Footer -->
-    <footer class="bg-white border-t border-gray-200 py-6 mt-auto">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <p class="text-gray-400 text-sm mb-2">
+    <footer class="bg-white border-t border-gray-200 py-4 sm:py-6 mt-auto">
+        <div class="px-4 sm:px-6 lg:max-w-7xl lg:mx-auto lg:px-8 text-center">
+            <p class="text-gray-400 text-xs sm:text-sm mb-2">
                 <i class="fas fa-code mr-1"></i>
                 Developed for Security Testing Purposes Only
             </p>
             <p class="text-gray-300 text-xs">crxckeyed0ms</p>
         </div>
     </footer>
+
+    <!-- Mobile menu toggle script -->
+    <script>
+        document.getElementById('mobile-menu-button').addEventListener('click', function() {
+            const mobileMenu = document.getElementById('mobile-menu');
+            const isHidden = mobileMenu.classList.contains('hidden');
+            
+            if (isHidden) {
+                mobileMenu.classList.remove('hidden');
+                this.innerHTML = '<i class="fas fa-times text-lg"></i>';
+            } else {
+                mobileMenu.classList.add('hidden');
+                this.innerHTML = '<i class="fas fa-bars text-lg"></i>';
+            }
+        });
+
+        // Close mobile menu when clicking outside
+        document.addEventListener('click', function(event) {
+            const mobileMenu = document.getElementById('mobile-menu');
+            const mobileButton = document.getElementById('mobile-menu-button');
+            
+            if (!mobileMenu.contains(event.target) && !mobileButton.contains(event.target)) {
+                mobileMenu.classList.add('hidden');
+                mobileButton.innerHTML = '<i class="fas fa-bars text-lg"></i>';
+            }
+        });
+    </script>
 </body>
 </html>

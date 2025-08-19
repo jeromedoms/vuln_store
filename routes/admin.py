@@ -139,125 +139,145 @@ def admin():
     if 'user_id' not in session or not session.get('role') == 'admin':
         return render_template('unauthorized.html')
 
-    # Allowed commands and paths configuration
-    ALLOWED_COMMANDS = {
-        'whoami': 'Show current user',
-        'id': 'Show user identity',
-        'date': 'Show current date/time',
-        'hostname': 'Show system hostname',
-        'uptime': 'Show system uptime',
-        'uname': 'Show system information (uname -a)',
-        'pwd': 'Show current directory',
-        'echo': 'Echo input (echo [text])',
-        'head': 'View first 10 lines of file (head [file])',
-        'tail': 'View last 10 lines of file (tail [file])',
-        'ls': 'List directory contents (ls [path])',
-        'cat': 'View file contents (cat [file])',
-        'file': 'Determine file type (file [filename])',
-        'stat': 'Display file status (stat [file])',
-        'wc': 'Count lines/words (wc [file])'
-    }
-
-    ALLOWED_PATHS = [
-        os.getcwd(),  # Current directory
-        '/usr',       # System binaries
-        '/var/log',   # Log files
-        '/tmp'        # Temporary files
+    # Base commands allowed (arguments can be added freely)
+    ALLOWED_BASE_COMMANDS = [
+        'whoami',
+        'date',
+        'pwd',
+        'ls',
+        'tail',
+        'nslookup',
+        'base64',
+        'man'
     ]
 
-    def is_path_allowed(path):
-        """Check if path is within allowed directories, including subdirs of working dir"""
-        try:
-            abs_path = os.path.abspath(path)
-            # Allow: (1) Exact allowed paths, (2) Subdirs of working directory
-            return (any(abs_path.startswith(os.path.abspath(allowed)) for allowed in ALLOWED_PATHS) or 
-                    abs_path.startswith(os.getcwd()))
-        except:
-            return False
+    # Allowed base paths (absolute paths only)
+    ALLOWED_BASE_PATHS = [
+        '/home/ctfuser',  # CTF user home directory
+        '/tmp',  # Temporary directory
+        '/var/log'  # Log directory
+    ]
+    
+    # Blocked paths specifically for tail command
+    BLOCKED_PATHS_FOR_TAIL = [
+        '/home/ctfuser/vulnstore_repo/vuln_store',
+        '/vulnstore_repo/vuln_store'
+    ]
 
     def validate_command(cmd):
-        if not cmd:
-            return False
-            
-        parts = shlex.split(cmd)  # Safer than simple split()
-        if not parts:
-            return False
-            
-        base_cmd = parts[0]
+        print(f"\n[VALIDATION] Checking command: '{cmd}'")
         
-        # Block disallowed commands
-        if base_cmd not in ALLOWED_COMMANDS:
-            return False
-           
-        # Block dangerous characters
-        dangerous_chars = [';', '&', '|', '`', '', '>', '<', '(', ')', '{', '}', '[', ']', '\\']
+        # Block dangerous characters that could enable command chaining
+        dangerous_chars = [';', '&', '|', '`', '>', '<', '(', ')', '{', '}', '[', ']', '\\', '$', '\n']
         if any(char in cmd for char in dangerous_chars):
+            print(f"[VALIDATION FAILED] Dangerous character detected")
+            return False
+        
+        # Block path traversal
+        if '../' in cmd or '/..' in cmd:
+            print(f"[VALIDATION FAILED] Path traversal detected")
             return False
             
-        # Block dangerous patterns
-        dangerous_patterns = [
-            'sudo', 'su', 'bash', 'sh', 'python', 'perl', 'nc', 'netcat',
-            'ssh', 'scp', 'wget', 'curl', 'ftp', 'telnet', 'rm', 'mv',
-            'chmod', 'chown', 'dd', 'kill', 'exec', 'system'
-        ]
-        if any(pattern in base_cmd.lower() for pattern in dangerous_patterns):
+        # Extract base command
+        base_cmd = cmd.split()[0] if cmd else ''
+        if base_cmd not in ALLOWED_BASE_COMMANDS:
+            print(f"[VALIDATION FAILED] Command not in whitelist")
             return False
             
-        # Validate file paths for file operations
-        file_commands = ['head', 'tail', 'ls', 'cat', 'file', 'stat', 'wc']
-        if base_cmd in file_commands and len(parts) > 1:
-            # Get the last argument (assumed to be file path)
-            file_path = parts[-1]
-            
-            # Handle relative paths
-            if not os.path.isabs(file_path):
-                file_path = os.path.join(os.getcwd(), file_path)
+        # Check all paths in command are allowed
+        for part in cmd.split()[1:]:  # Skip command itself
+            if part.startswith('-'):
+                continue  # Skip command options
                 
-            if not is_path_allowed(file_path):
+            # Special check for tail command
+            if base_cmd == 'tail' and is_path_blocked_for_tail(part):
+                print(f"[VALIDATION FAILED] Tail command not allowed on path: {part}")
                 return False
                 
-            # Additional check for parent directory traversal
-            if '../' in file_path or '/..' in file_path:
+            if not is_path_allowed(part):
+                print(f"[VALIDATION FAILED] Path not allowed: {part}")
                 return False
                 
+        print("[VALIDATION PASSED] Command allowed")
         return True
 
+    def is_path_allowed(path):
+        """Check if path is within allowed directories"""
+        try:
+            # Handle relative paths
+            if not path.startswith('/'):
+                path = os.path.normpath(os.path.join('/home/ctfuser', path))
+            
+            abs_path = os.path.abspath(path)
+            
+            # Check if path is within any allowed base path
+            return any(abs_path.startswith(os.path.abspath(base)) for base in ALLOWED_BASE_PATHS)
+        except:
+            return False
+            
+    def is_path_blocked_for_tail(path):
+        """Check if path is blocked specifically for tail command"""
+        try:
+            # Handle relative paths
+            if not path.startswith('/'):
+                path = os.path.normpath(os.path.join('/home/ctfuser', path))
+            
+            abs_path = os.path.abspath(path)
+            
+            # Check if path is within any blocked path for tail
+            return any(abs_path.startswith(os.path.abspath(base)) for base in BLOCKED_PATHS_FOR_TAIL)
+        except:
+            return False
+            
     output = ""
     if request.method == 'POST':
         command = request.form.get('command', '').strip()
-        
+        print(f"\n[INPUT] Received command: '{command}'")
+
         if not validate_command(command):
-            output = f"Error: Command not allowed or invalid - {command}"
+            output = f"Error: Command not allowed - {command}"
+            print(f"[REJECTED] {command}")
         else:
             try:
-                # Execute with restricted permissions
+                print(f"[EXECUTING] Running: '{command}'")
+                
+                # Restrict environment
+                env = os.environ.copy()
+                env['PATH'] = '/bin:/usr/bin'  # Minimal PATH
+                
                 result = subprocess.run(
-                    ['sudo', '-u', 'restricted_user', 'bash', '-c', command],
+                    ['sudo', '-u', 'kali', 'bash', '-c', command],
                     stdout=subprocess.PIPE,
                     stderr=subprocess.PIPE,
                     text=True,
                     timeout=10,
-                    cwd=os.getcwd()  # Set working directory
+                    env=env,
+                    cwd='/home/kali'
                 )
+                
                 output = result.stdout if result.returncode == 0 else f"Error: {result.stderr}"
+                print(f"[RESULT] {output[:200]}...")  # Truncate long output
                 
             except subprocess.TimeoutExpired:
-                output = "Error: Command timed out (max 3 seconds)"
+                output = "Error: Command timed out"
             except Exception as e:
                 output = f"Error: {str(e)}"
-                
-        log_action('ADMIN_COMMAND', {
-            'user': session.get('username'),
-            'command': command,
-            'output': output[:200],  # Truncate long outputs
-            'allowed': validate_command(command),
-            'ip': request.remote_addr
-        })
+
+    # Generate help text for UI
+    allowed_commands_help = {
+        'whoami': 'Print effective user name',
+        'date': 'Show current date/time',
+        'pwd': 'Print name of current/working directory',
+        'ls': 'List information about the FILEs (the current directory by default).',
+        'tail': 'Print the last 10 lines of each FILE to standard output.',
+        '***': 'Encode/decode data and print to standard output',
+        'nslookup':'Query Internet name servers interactively'
+    }
 
     return render_template(
         'admin.html',
         output=output,
-        allowed_commands=ALLOWED_COMMANDS,
-        current_directory=os.getcwd(),
-        allowed_paths=", ".join(ALLOWED_PATHS)
+        allowed_commands=allowed_commands_help,
+        allowed_paths=", ".join(ALLOWED_BASE_PATHS),
+        current_directory=os.getcwd()
     )

